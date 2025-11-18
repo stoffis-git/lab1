@@ -11,7 +11,18 @@ const translations = {
             "process": "Process",
             "results": "Results",
             "tests": "Tests",
-            "get-started": "Get Started"
+            "get-started": "Get Started",
+            "login": "Login"
+        },
+        "login": {
+            "title": "Welcome Back",
+            "subtitle": "Access your personalized health dashboard",
+            "email": "Email",
+            "password": "Password",
+            "submit": "Login",
+            "forgot": "Forgot password?",
+            "signup-prompt": "Don't have an account?",
+            "signup": "Sign up"
         },
         "hero": {
             "title": {
@@ -162,7 +173,21 @@ const translations = {
             "button": "Begin Your Journey"
         },
         "footer": {
-            "copyright": "© 2024 Lab1. All rights reserved."
+            "description": "Precision health insights powered by the unique combination of blood and DNA analysis.",
+            "tagline": "Coded with ❤️ in Frankfurt",
+            "contact": {
+                "title": "Contact"
+            },
+            "legal": {
+                "title": "Legal",
+                "terms": "Terms of Service",
+                "privacy": "Privacy Policy",
+                "impressum": "Impressum"
+            },
+            "company": {
+                "title": "Company"
+            },
+            "copyright": "© 2025 Bio Scan. All rights reserved."
         },
         "dna-kit": {
             "hero": {
@@ -239,46 +264,62 @@ const translations = {
                 "title": "What's Included in Every Test",
                 "item1": {
                     "title": "At-Home Collection",
-                    "desc": "Simple finger-prick blood collection kit delivered to your door"
+                    "desc": "Simple finger-prick blood and saliva (DNA) collection kit delivered to your door"
                 },
                 "item2": {
-                    "title": "Lab Analysis",
-                    "desc": "EU-certified laboratory testing with medical-grade accuracy"
+                    "title": "Combined Lab Analysis",
+                    "desc": "Unique combination of blood biomarkers and DNA analysis in EU-certified labs"
                 },
                 "item3": {
-                    "title": "Detailed Report",
-                    "desc": "Easy-to-understand results with actionable insights"
+                    "title": "Mobile App Access",
+                    "desc": "Track results, monitor your journey, and access insights through our dedicated app"
                 },
                 "item4": {
+                    "title": "Personalized Supplements",
+                    "desc": "Custom formulations based on your unique blood + DNA insights"
+                },
+                "item5": {
                     "title": "Expert Consultation",
                     "desc": "15-minute call with health advisor to review your results"
                 }
             },
             "how-works": {
-                "title": "How It Works",
+                "title": "Your Health Journey",
+                "subtitle": "Testing is just the beginning—your personalized supplementation journey starts with insights",
                 "step1": {
-                    "title": "Book",
-                    "desc": "Choose your test and complete booking online"
+                    "title": "Test",
+                    "desc": "Blood + DNA samples collected at home and analyzed in our labs"
                 },
                 "step2": {
-                    "title": "Collect",
-                    "desc": "Receive kit, collect sample at home, send back"
+                    "title": "Analyze",
+                    "desc": "Unique insights from combining blood biomarkers with genetic data"
                 },
                 "step3": {
-                    "title": "Results",
-                    "desc": "Get detailed insights within 5-7 business days"
+                    "title": "Formulate",
+                    "desc": "Custom supplement blend tailored to your unique biology"
                 },
                 "step4": {
+                    "title": "Track",
+                    "desc": "Monitor progress through our mobile app during your treatment journey"
+                },
+                "step5": {
                     "title": "Optimize",
-                    "desc": "Receive personalized supplement recommendations"
+                    "desc": "Continuous adjustments based on your evolving health data"
                 }
             },
             "comparison": {
                 "title": "Compare Tests",
-                "row1": "Biomarkers Tested",
-                "row2": "Hormone Analysis",
+                "subtitle": "Each test focuses on different biomarkers specific to your health goals",
+                "row1": "Focus Area",
+                "row2": "Key Markers Tested",
                 "row3": "DNA Analysis",
-                "row4": "Follow-up Tests"
+                "row4": "Number of Biomarkers",
+                "nutrition-focus": "Nutritional deficiencies",
+                "performance-focus": "Energy & recovery",
+                "longevity-focus": "Aging & longevity",
+                "nutrition-markers": "Vitamins, minerals, omega-3",
+                "performance-markers": "Cortisol, testosterone, metabolic markers",
+                "longevity-markers": "Inflammation, hormones, cellular health"
             },
             "faq": {
                 "title": "Frequently Asked Questions",
@@ -296,7 +337,7 @@ const translations = {
                 },
                 "q4": {
                     "question": "What happens after I get results?",
-                    "answer": "You'll receive a personalized supplement plan and can schedule a consultation with our health advisors."
+                    "answer": "Your personalized supplementation journey begins! You'll receive custom formulations based on your unique blood+DNA insights, access our mobile app to track progress, and get ongoing support."
                 }
             },
             "final-cta": {
@@ -313,7 +354,18 @@ const translations = {
             "process": "Prozess",
             "results": "Ergebnisse",
             "tests": "Tests",
-            "get-started": "Loslegen"
+            "get-started": "Loslegen",
+            "login": "Anmelden"
+        },
+        "login": {
+            "title": "Willkommen zurück",
+            "subtitle": "Zugang zu Ihrem personalisierten Gesundheits-Dashboard",
+            "email": "E-Mail",
+            "password": "Passwort",
+            "submit": "Anmelden",
+            "forgot": "Passwort vergessen?",
+            "signup-prompt": "Noch kein Konto?",
+            "signup": "Registrieren"
         },
         "hero": {
             "title": {
@@ -464,7 +516,21 @@ const translations = {
             "button": "Beginnen Sie Ihre Reise"
         },
         "footer": {
-            "copyright": "© 2024 Lab1. Alle Rechte vorbehalten."
+            "description": "Präzise Gesundheitseinblicke durch die einzigartige Kombination von Blut- und DNA-Analyse.",
+            "tagline": "Mit ❤️ in Frankfurt entwickelt",
+            "contact": {
+                "title": "Kontakt"
+            },
+            "legal": {
+                "title": "Rechtliches",
+                "terms": "Nutzungsbedingungen",
+                "privacy": "Datenschutzerklärung",
+                "impressum": "Impressum"
+            },
+            "company": {
+                "title": "Unternehmen"
+            },
+            "copyright": "© 2025 Bio Scan. Alle Rechte vorbehalten."
         },
         "dna-kit": {
             "hero": {
@@ -541,46 +607,62 @@ const translations = {
                 "title": "In jedem Test enthalten",
                 "item1": {
                     "title": "Heimabnahme",
-                    "desc": "Einfaches Fingerstich-Blutentnahme-Kit zu Ihnen nach Hause geliefert"
+                    "desc": "Einfaches Fingerstich-Blut- und Speichel-Kit (DNA) zu Ihnen nach Hause geliefert"
                 },
                 "item2": {
-                    "title": "Laboranalyse",
-                    "desc": "EU-zertifizierte Laboruntersuchung mit medizinischer Genauigkeit"
+                    "title": "Kombinierte Laboranalyse",
+                    "desc": "Einzigartige Kombination von Blut-Biomarkern und DNA-Analyse in EU-zertifizierten Laboren"
                 },
                 "item3": {
-                    "title": "Detaillierter Bericht",
-                    "desc": "Leicht verständliche Ergebnisse mit umsetzbaren Erkenntnissen"
+                    "title": "Mobile App-Zugang",
+                    "desc": "Verfolgen Sie Ergebnisse, überwachen Sie Ihre Reise und greifen Sie auf Erkenntnisse über unsere App zu"
                 },
                 "item4": {
+                    "title": "Personalisierte Nahrungsergänzung",
+                    "desc": "Maßgeschneiderte Formulierungen basierend auf Ihren einzigartigen Blut- + DNA-Erkenntnissen"
+                },
+                "item5": {
                     "title": "Expertenberatung",
                     "desc": "15-minütiges Gespräch mit Gesundheitsberater zur Besprechung Ihrer Ergebnisse"
                 }
             },
             "how-works": {
-                "title": "So funktioniert es",
+                "title": "Ihre Gesundheitsreise",
+                "subtitle": "Testen ist nur der Anfang—Ihre personalisierte Nahrungsergänzungsreise beginnt mit Erkenntnissen",
                 "step1": {
-                    "title": "Buchen",
-                    "desc": "Wählen Sie Ihren Test und schließen Sie die Buchung online ab"
+                    "title": "Testen",
+                    "desc": "Blut- + DNA-Proben zu Hause entnommen und in unseren Laboren analysiert"
                 },
                 "step2": {
-                    "title": "Sammeln",
-                    "desc": "Kit erhalten, Probe zu Hause sammeln, zurücksenden"
+                    "title": "Analysieren",
+                    "desc": "Einzigartige Erkenntnisse aus der Kombination von Blut-Biomarkern mit genetischen Daten"
                 },
                 "step3": {
-                    "title": "Ergebnisse",
-                    "desc": "Detaillierte Einblicke innerhalb von 5-7 Werktagen erhalten"
+                    "title": "Formulieren",
+                    "desc": "Maßgeschneiderte Nahrungsergänzungsmischung auf Ihre einzigartige Biologie abgestimmt"
                 },
                 "step4": {
+                    "title": "Verfolgen",
+                    "desc": "Überwachen Sie Fortschritte durch unsere mobile App während Ihrer Behandlungsreise"
+                },
+                "step5": {
                     "title": "Optimieren",
-                    "desc": "Personalisierte Nahrungsergänzungsempfehlungen erhalten"
+                    "desc": "Kontinuierliche Anpassungen basierend auf Ihren sich entwickelnden Gesundheitsdaten"
                 }
             },
             "comparison": {
                 "title": "Tests vergleichen",
-                "row1": "Getestete Biomarker",
-                "row2": "Hormonanalyse",
+                "subtitle": "Jeder Test konzentriert sich auf unterschiedliche Biomarker für Ihre Gesundheitsziele",
+                "row1": "Schwerpunkt",
+                "row2": "Wichtigste getestete Marker",
                 "row3": "DNA-Analyse",
-                "row4": "Folgetests"
+                "row4": "Anzahl der Biomarker",
+                "nutrition-focus": "Nährstoffmängel",
+                "performance-focus": "Energie & Erholung",
+                "longevity-focus": "Alterung & Langlebigkeit",
+                "nutrition-markers": "Vitamine, Mineralien, Omega-3",
+                "performance-markers": "Cortisol, Testosteron, Stoffwechselmarker",
+                "longevity-markers": "Entzündung, Hormone, Zellgesundheit"
             },
             "faq": {
                 "title": "Häufig gestellte Fragen",
@@ -598,7 +680,7 @@ const translations = {
                 },
                 "q4": {
                     "question": "Was passiert nach den Ergebnissen?",
-                    "answer": "Sie erhalten einen personalisierten Nahrungsergänzungsplan und können eine Beratung mit unseren Gesundheitsberatern vereinbaren."
+                    "answer": "Ihre personalisierte Nahrungsergänzungsreise beginnt! Sie erhalten maßgeschneiderte Formulierungen basierend auf Ihren einzigartigen Blut+DNA-Erkenntnissen, Zugang zu unserer mobilen App zur Fortschrittsverfolgung und fortlaufende Unterstützung."
                 }
             },
             "final-cta": {

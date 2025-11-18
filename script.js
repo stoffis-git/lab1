@@ -320,3 +320,65 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     `;
     document.head.appendChild(style);
 }
+
+// ========================================
+// 10. LOGIN MODAL
+// ========================================
+
+function initLoginModal() {
+    const loginBtn = document.getElementById('loginBtn');
+    const loginModal = document.getElementById('loginModal');
+    const closeModal = document.getElementById('closeModal');
+    const loginForm = document.getElementById('loginForm');
+
+    if (!loginBtn || !loginModal) return;
+
+    // Open modal
+    loginBtn.addEventListener('click', () => {
+        loginModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        // Focus on email input
+        setTimeout(() => {
+            document.getElementById('email')?.focus();
+        }, 100);
+    });
+
+    // Close modal
+    function closeLoginModal() {
+        loginModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    closeModal?.addEventListener('click', closeLoginModal);
+
+    // Close on overlay click
+    loginModal.addEventListener('click', (e) => {
+        if (e.target === loginModal) {
+            closeLoginModal();
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && loginModal.classList.contains('active')) {
+            closeLoginModal();
+        }
+    });
+
+    // Handle form submission
+    loginForm?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('email')?.value;
+        const password = document.getElementById('password')?.value;
+
+        // Placeholder for actual authentication
+        console.log('Login attempt:', { email, password });
+        alert('Login functionality coming soon! This is a demo.');
+        closeLoginModal();
+    });
+}
+
+// Initialize login modal on DOM load
+document.addEventListener('DOMContentLoaded', () => {
+    initLoginModal();
+});

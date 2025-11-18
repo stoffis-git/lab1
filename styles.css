@@ -164,6 +164,43 @@ section {
     color: var(--color-black);
 }
 
+.nav-links a.primary-nav-btn {
+    background: var(--color-black);
+    color: var(--color-white);
+    padding: 0.625rem 1.5rem;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+}
+
+.nav-links a.primary-nav-btn:hover {
+    background: var(--color-text-primary);
+    opacity: 0.9;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.login-btn {
+    background: none;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--radius-sm);
+    font-weight: 400;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    font-family: var(--font-primary);
+}
+
+.login-btn:hover {
+    border-color: var(--color-black);
+    background: var(--color-bg-light);
+}
+
 /* Language Switcher */
 .language-switcher {
     display: flex;
@@ -936,10 +973,42 @@ section {
    ======================================== */
 
 .footer {
-    padding: var(--space-lg) 0;
-    background: var(--color-white);
+    padding: var(--space-2xl) 0 var(--space-lg);
+    background: var(--color-bg-light);
     border-top: 1px solid var(--color-border);
-    text-align: center;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.footer-column h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-black);
+    margin-bottom: var(--space-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.footer-column p {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+}
+
+.footer-column a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.footer-column a:hover {
+    color: var(--color-black);
 }
 
 .footer-logo {
@@ -949,13 +1018,197 @@ section {
     margin-bottom: var(--space-sm);
 }
 
-.footer-content p {
-    color: var(--color-text-secondary);
-    font-size: 0.875rem;
+.footer-description {
+    max-width: 300px;
+    margin-bottom: var(--space-md);
+    line-height: 1.6;
+}
+
+.footer-tagline {
+    font-size: 0.8125rem;
+    color: var(--color-text-light);
+    font-style: italic;
+}
+
+.footer-company {
+    line-height: 1.8;
+}
+
+.footer-company strong {
+    color: var(--color-black);
+    font-weight: 600;
+}
+
+.footer-bottom {
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: var(--color-text-light);
+    font-size: 0.8125rem;
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
 }
 
 /* ========================================
-   22. ANIMATIONS
+   22. LOGIN MODAL
+   ======================================== */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2000;
+    backdrop-filter: blur(4px);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    max-width: 400px;
+    width: 90%;
+    padding: var(--space-xl);
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--transition-smooth);
+}
+
+.modal-close:hover {
+    background: var(--color-bg-light);
+    color: var(--color-black);
+}
+
+.modal-header {
+    margin-bottom: var(--space-lg);
+}
+
+.modal-header h2 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin-bottom: var(--space-xs);
+    color: var(--color-black);
+}
+
+.modal-header p {
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-black);
+}
+
+.form-group input {
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 0.9375rem;
+    font-family: var(--font-primary);
+    transition: var(--transition-smooth);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-black);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.form-submit {
+    background: var(--color-black);
+    color: var(--color-white);
+    border: none;
+    padding: 0.875rem;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    font-size: 0.9375rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    font-family: var(--font-primary);
+    margin-top: var(--space-sm);
+}
+
+.form-submit:hover {
+    opacity: 0.9;
+}
+
+.form-footer {
+    margin-top: var(--space-md);
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+}
+
+.form-footer a {
+    color: var(--color-black);
+    text-decoration: underline;
+}
+
+.form-footer a:hover {
+    opacity: 0.7;
+}
+
+/* ========================================
+   23. ANIMATIONS
    ======================================== */
 
 .animate-on-scroll {
@@ -1025,7 +1278,7 @@ section {
 }
 
 .tests-section {
-    padding: var(--space-2xl) 0;
+    padding: var(--space-md) 0 var(--space-2xl) 0;
     background: var(--color-white);
 }
 
@@ -1041,10 +1294,11 @@ section {
     background: var(--color-white);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
-    padding: var(--space-lg);
+    padding: 0;
     display: flex;
     flex-direction: column;
     transition: var(--transition-smooth);
+    overflow: hidden;
 }
 
 .pricing-card:hover {
@@ -1058,9 +1312,28 @@ section {
     background: var(--color-bg-light);
 }
 
+.pricing-image {
+    background: var(--color-bg-light);
+    padding: var(--space-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px;
+}
+
+.pricing-icon {
+    color: var(--color-text-secondary);
+    transition: var(--transition-smooth);
+}
+
+.pricing-card:hover .pricing-icon {
+    color: var(--color-black);
+    transform: scale(1.1);
+}
+
 .pricing-header {
     text-align: center;
-    padding-bottom: var(--space-md);
+    padding: var(--space-lg) var(--space-lg) var(--space-md);
     border-bottom: 1px solid var(--color-border);
     margin-bottom: var(--space-md);
 }
@@ -1093,6 +1366,7 @@ section {
 .pricing-features {
     flex: 1;
     margin-bottom: var(--space-lg);
+    padding: 0 var(--space-lg);
 }
 
 .pricing-features ul {
@@ -1119,9 +1393,9 @@ section {
 }
 
 .pricing-card .cta-button {
-    width: 100%;
+    width: calc(100% - 2 * var(--space-lg));
     text-align: center;
-    margin-top: auto;
+    margin: 0 var(--space-lg) var(--space-lg);
 }
 
 /* Comparison Table for Tests */

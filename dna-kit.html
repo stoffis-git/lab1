@@ -25,18 +25,20 @@
     <header role="banner">
         <nav class="navbar" role="navigation" aria-label="Main navigation">
             <div class="container nav-container">
-                <a href="index.html" class="logo">Lab1</a>
+                <a href="index.html" class="logo">Bio Scan</a>
                 <ul class="nav-links">
                     <li><a href="index.html#science" data-i18n="nav.science">Science</a></li>
                     <li><a href="index.html#process" data-i18n="nav.process">Process</a></li>
                     <li><a href="index.html#results" data-i18n="nav.results">Results</a></li>
-                    <li><a href="tests.html" data-i18n="nav.tests">Tests</a></li>
-                    <li><a href="index.html#journey" data-i18n="nav.get-started">Get Started</a></li>
+                    <li><a href="tests.html" class="primary-nav-btn" data-i18n="nav.tests">Tests</a></li>
                 </ul>
-                <div class="language-switcher">
-                    <button class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
-                    <span class="lang-separator">/</span>
-                    <button class="lang-btn" data-lang="de" aria-label="Switch to German">DE</button>
+                <div class="nav-actions">
+                    <button class="login-btn" id="loginBtn" data-i18n="nav.login">Login</button>
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
+                        <span class="lang-separator">/</span>
+                        <button class="lang-btn" data-lang="de" aria-label="Switch to German">DE</button>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -236,12 +238,63 @@
     <!-- Footer -->
     <footer class="footer" role="contentinfo">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">Lab1</div>
-                <p data-i18n="footer.copyright">&copy; 2024 Lab1. All rights reserved.</p>
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">Bio Scan</div>
+                    <p class="footer-description" data-i18n="footer.description">Precision health insights powered by the unique combination of blood and DNA analysis.</p>
+                    <p class="footer-tagline" data-i18n="footer.tagline">Coded with ❤️ in Frankfurt</p>
+                </div>
+                <div class="footer-column">
+                    <h4 data-i18n="footer.contact.title">Contact</h4>
+                    <p><a href="mailto:max@eterno.health">max@eterno.health</a></p>
+                    <p><a href="tel:+491234567890">+49 (0) 123 456 789</a></p>
+                </div>
+                <div class="footer-column">
+                    <h4 data-i18n="footer.legal.title">Legal</h4>
+                    <p><a href="terms.html" data-i18n="footer.legal.terms">Terms of Service</a></p>
+                    <p><a href="privacy.html" data-i18n="footer.legal.privacy">Privacy Policy</a></p>
+                    <p><a href="#impressum" data-i18n="footer.legal.impressum">Impressum</a></p>
+                </div>
+                <div class="footer-column">
+                    <h4 data-i18n="footer.company.title">Company</h4>
+                    <p class="footer-company">
+                        <strong>AMO GmbH</strong><br>
+                        Mittelweg 25<br>
+                        20148 Hamburg
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">&copy; 2025 Bio Scan. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Login Modal -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal" aria-label="Close">&times;</button>
+            <div class="modal-header">
+                <h2 data-i18n="login.title">Welcome Back</h2>
+                <p data-i18n="login.subtitle">Access your personalized health dashboard</p>
+            </div>
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="email" data-i18n="login.email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="password" data-i18n="login.password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="form-submit" data-i18n="login.submit">Login</button>
+            </form>
+            <div class="form-footer">
+                <p><a href="#" data-i18n="login.forgot">Forgot password?</a></p>
+                <p data-i18n="login.signup-prompt">Don't have an account? <a href="#" data-i18n="login.signup">Sign up</a></p>
+            </div>
+        </div>
+    </div>
 
     <script src="translations.js"></script>
     <script src="script.js" defer></script>
