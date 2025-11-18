@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Lab1 DNA Kit - Personalized Health Analysis</title>
+    <meta name="title" content="Lab1 DNA Kit - Personalized Health Analysis">
+    <meta name="description" content="Order your Lab1 DNA and blood analysis kit. Unlock personalized health insights based on your unique biology.">
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="styles.css" as="style">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main" class="skip-link" data-i18n="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <header role="banner">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="container nav-container">
+                <a href="index.html" class="logo">Lab1</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#science" data-i18n="nav.science">Science</a></li>
+                    <li><a href="index.html#process" data-i18n="nav.process">Process</a></li>
+                    <li><a href="index.html#results" data-i18n="nav.results">Results</a></li>
+                    <li><a href="dna-kit.html" data-i18n="nav.dna-kit">DNA Kit</a></li>
+                    <li><a href="index.html#journey" data-i18n="nav.get-started">Get Started</a></li>
+                </ul>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
+                    <span class="lang-separator">/</span>
+                    <button class="lang-btn" data-lang="de" aria-label="Switch to German">DE</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" id="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content animate-on-scroll">
+                        <h1 class="hero-title" data-i18n="dna-kit.hero.title">Your DNA, Your Blueprint</h1>
+                        <p class="hero-subtitle" data-i18n="dna-kit.hero.subtitle">Unlock personalized health insights with our comprehensive DNA analysis kit</p>
+                        <a href="#order" class="cta-button" data-i18n="dna-kit.hero.cta">Order Your Kit</a>
+                    </div>
+                    <div class="hero-image animate-on-scroll">
+                        <div class="image-placeholder" aria-label="DNA test kit package">
+                            <div class="placeholder-content">
+                                <div class="kit-visual">
+                                    <div class="kit-box"></div>
+                                    <div class="kit-swab"></div>
+                                    <div class="kit-vial"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What's Included -->
+        <section class="content-block">
+            <div class="container">
+                <h2 class="section-title center animate-on-scroll" data-i18n="dna-kit.what-included.title">What's Included</h2>
+                <div class="ecosystem-grid" style="margin-top: 4rem;">
+                    <div class="ecosystem-card animate-on-scroll">
+                        <h3 data-i18n="dna-kit.what-included.item1.title">DNA Collection Kit</h3>
+                        <p data-i18n="dna-kit.what-included.item1.desc">Simple, painless cheek swab</p>
+                    </div>
+                    <div class="ecosystem-card animate-on-scroll">
+                        <h3 data-i18n="dna-kit.what-included.item2.title">Blood Test Kit</h3>
+                        <p data-i18n="dna-kit.what-included.item2.desc">At-home finger prick test</p>
+                    </div>
+                    <div class="ecosystem-card animate-on-scroll">
+                        <h3 data-i18n="dna-kit.what-included.item3.title">Prepaid Return Shipping</h3>
+                        <p data-i18n="dna-kit.what-included.item3.desc">Free return label included</p>
+                    </div>
+                    <div class="ecosystem-card animate-on-scroll">
+                        <h3 data-i18n="dna-kit.what-included.item4.title">Comprehensive Analysis</h3>
+                        <p data-i18n="dna-kit.what-included.item4.desc">300+ genetic markers analyzed</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="process-section">
+            <div class="container">
+                <h2 class="section-title center animate-on-scroll" data-i18n="dna-kit.how-works.title">Simple Process</h2>
+                <div class="steps">
+                    <div class="step animate-on-scroll">
+                        <span class="step-number">1</span>
+                        <p data-i18n="dna-kit.how-works.step1">Order your kit online</p>
+                    </div>
+                    <div class="step animate-on-scroll">
+                        <span class="step-number">2</span>
+                        <p data-i18n="dna-kit.how-works.step2">Collect samples at home</p>
+                    </div>
+                    <div class="step animate-on-scroll">
+                        <span class="step-number">3</span>
+                        <p data-i18n="dna-kit.how-works.step3">Mail back with prepaid label</p>
+                    </div>
+                    <div class="step animate-on-scroll">
+                        <span class="step-number">4</span>
+                        <p data-i18n="dna-kit.how-works.step4">Results in 2-3 weeks</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy Guarantee -->
+        <section class="trust-section" style="background: var(--color-bg-light);">
+            <div class="container">
+                <div class="cta-block animate-on-scroll" style="max-width: 800px; margin: 0 auto;">
+                    <h3 data-i18n="dna-kit.privacy.title">Your Privacy Guaranteed</h3>
+                    <p data-i18n="dna-kit.privacy.desc">Bank-level encryption. Your data belongs to you. We never sell or share your genetic information.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Information Sections -->
+        <section class="content-block">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="content-image animate-on-scroll">
+                        <div class="image-placeholder" aria-label="DNA sample collection">
+                            <div class="placeholder-content">
+                                <div class="sample-visual">
+                                    <div class="swab-icon"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-text animate-on-scroll">
+                        <span class="text-label">Step 1: Collection</span>
+                        <h2 class="content-title">Easy at-home sample collection</h2>
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <h3>DNA Swab</h3>
+                                <p>Quick cheek swab takes less than 2 minutes. No pain, no needles for DNA collection.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h3>Blood Sample</h3>
+                                <p>Simple finger prick provides key biomarker data. Detailed instructions included.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-block reverse">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="content-image animate-on-scroll">
+                        <div class="image-placeholder" aria-label="Laboratory analysis">
+                            <div class="placeholder-content">
+                                <div class="lab-visual">
+                                    <div class="beaker"></div>
+                                    <div class="flask"></div>
+                                    <div class="test-tube"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-text animate-on-scroll">
+                        <span class="text-label">Step 2: Analysis</span>
+                        <h2 class="content-title">Advanced laboratory testing</h2>
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <h3>Genetic Sequencing</h3>
+                                <p>State-of-the-art sequencing technology analyzes 300+ genetic markers related to nutrition, metabolism, and health.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h3>Biomarker Testing</h3>
+                                <p>Comprehensive blood panel measures vitamins, minerals, hormones, and metabolic markers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-block">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="content-image animate-on-scroll">
+                        <div class="image-placeholder" aria-label="Personalized results">
+                            <div class="placeholder-content">
+                                <div class="results-visual">
+                                    <div class="chart-bar"></div>
+                                    <div class="chart-bar"></div>
+                                    <div class="chart-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-text animate-on-scroll">
+                        <span class="text-label">Step 3: Your Results</span>
+                        <h2 class="content-title">Personalized insights you can act on</h2>
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <h3>Detailed Report</h3>
+                                <p>Easy-to-understand breakdown of your genetic predispositions and current nutritional status.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h3>Custom Recommendations</h3>
+                                <p>Specific supplement formulation tailored to your unique biology and health goals.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="final-cta" id="order">
+            <div class="container">
+                <div class="cta-content animate-on-scroll">
+                    <h2 class="cta-title" data-i18n="dna-kit.cta.title">Start Your Personalized Health Journey</h2>
+                    <a href="#" class="cta-button large" data-i18n="dna-kit.cta.button">Order DNA Kit - €299</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Lab1</div>
+                <p data-i18n="footer.copyright">&copy; 2024 Lab1. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js" defer></script>
+
+    <style>
+        /* Additional styles for DNA kit page visuals */
+        .kit-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            height: 100%;
+        }
+
+        .kit-box {
+            width: 80px;
+            height: 80px;
+            background: var(--color-bg-light);
+            border: 2px solid var(--color-text-light);
+            border-radius: var(--radius-sm);
+        }
+
+        .kit-swab,
+        .kit-vial {
+            width: 15px;
+            height: 60px;
+            background: var(--color-bg-light);
+            border: 2px solid var(--color-text-light);
+            border-radius: 20px;
+        }
+
+        .sample-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .swab-icon {
+            width: 120px;
+            height: 8px;
+            background: var(--color-text-light);
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .swab-icon::before {
+            content: '';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--color-bg-light);
+            border: 2px solid var(--color-text-light);
+            border-radius: 50%;
+        }
+
+        .results-visual {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 15px;
+            height: 100%;
+            padding: 40px 0;
+        }
+
+        .chart-bar {
+            width: 40px;
+            background: linear-gradient(to top, var(--color-text-secondary), var(--color-text-light));
+            border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+        }
+
+        .chart-bar:nth-child(1) { height: 60%; }
+        .chart-bar:nth-child(2) { height: 85%; }
+        .chart-bar:nth-child(3) { height: 70%; }
+    </style>
+</body>
+</html>

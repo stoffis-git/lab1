@@ -4,6 +4,62 @@
  */
 
 // ========================================
+// 0. LOCALIZATION / I18N
+// ========================================
+
+let currentLanguage = localStorage.getItem('lab1-language') || 'en';
+
+// Helper function to get nested translation
+function getNestedTranslation(obj, path) {
+    return path.split('.').reduce((current, key) => current?.[key], obj);
+}
+
+// Update page content based on selected language
+function updateLanguage(lang) {
+    currentLanguage = lang;
+    localStorage.setItem('lab1-language', lang);
+    document.documentElement.lang = lang;
+
+    // Update all elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        const translation = getNestedTranslation(translations[lang], key);
+
+        if (translation) {
+            element.textContent = translation;
+        }
+    });
+
+    // Update language buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.lang === lang) {
+            btn.classList.add('active');
+        }
+    });
+}
+
+// Initialize language switcher
+function initLanguageSwitcher() {
+    const langButtons = document.querySelectorAll('.lang-btn');
+
+    langButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const selectedLang = button.dataset.lang;
+            updateLanguage(selectedLang);
+        });
+    });
+
+    // Set initial language
+    updateLanguage(currentLanguage);
+}
+
+// Run on DOM load
+document.addEventListener('DOMContentLoaded', () => {
+    initLanguageSwitcher();
+});
+
+// ========================================
 // 1. SMOOTH SCROLLING
 // ========================================
 

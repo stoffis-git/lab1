@@ -127,6 +127,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: var(--space-md);
 }
 
 .logo {
@@ -134,12 +135,20 @@ section {
     font-weight: 500;
     color: var(--color-black);
     letter-spacing: -0.02em;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.logo:hover {
+    opacity: 0.7;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
     gap: var(--space-md);
+    flex: 1;
+    justify-content: center;
 }
 
 .nav-links a {
@@ -155,9 +164,56 @@ section {
     color: var(--color-black);
 }
 
+/* Language Switcher */
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    transition: var(--transition-smooth);
+    font-family: var(--font-primary);
+}
+
+.lang-btn:hover {
+    color: var(--color-black);
+}
+
+.lang-btn.active {
+    color: var(--color-black);
+    position: relative;
+}
+
+.lang-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--color-black);
+}
+
+.lang-separator {
+    color: var(--color-border);
+    font-size: 0.875rem;
+}
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
+    }
+
+    .language-switcher {
+        margin-left: auto;
     }
 }
 
