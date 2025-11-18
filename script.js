@@ -1,11 +1,24 @@
-// Smooth scroll with offset for fixed navbar
+/**
+ * Lab1 - Muhdohub Style Implementation
+ * Minimal, Subtle Interactions
+ */
+
+// ========================================
+// 1. SMOOTH SCROLLING
+// ========================================
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const targetId = this.getAttribute('href');
+
+        if (targetId === '#') return;
+
+        const target = document.querySelector(targetId);
         if (target) {
-            const offset = 80; // navbar height
-            const targetPosition = target.offsetTop - offset;
+            const navbarHeight = 80;
+            const targetPosition = target.offsetTop - navbarHeight;
+
             window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
@@ -14,205 +27,240 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar background on scroll
-const navbar = document.querySelector('.navbar');
-let lastScroll = 0;
+// ========================================
+// 2. NAVBAR SCROLL EFFECT
+// ========================================
 
-window.addEventListener('scroll', () => {
+const navbar = document.querySelector('.navbar');
+let lastScrollPosition = 0;
+
+function updateNavbarOnScroll() {
     const currentScroll = window.pageYOffset;
 
+    // Add subtle shadow after scrolling past hero
     if (currentScroll > 100) {
-        navbar.style.background = 'rgba(15, 23, 42, 0.95)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.2)';
+        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
     } else {
-        navbar.style.background = 'rgba(15, 23, 42, 0.8)';
         navbar.style.boxShadow = 'none';
     }
 
-    lastScroll = currentScroll;
-});
+    lastScrollPosition = currentScroll;
+}
 
-// Intersection Observer for fade-in animations
+window.addEventListener('scroll', updateNavbarOnScroll, { passive: true });
+
+// ========================================
+// 3. INTERSECTION OBSERVER - FADE IN ANIMATIONS
+// ========================================
+
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
+const intersectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            observer.unobserve(entry.target);
+            entry.target.classList.add('visible');
+            // Unobserve after animation to improve performance
+            intersectionObserver.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Observe all sections and cards
-document.querySelectorAll('section, .step-card, .result-card, .ecosystem-card, .trust-card, .info-card').forEach(el => {
-    observer.observe(el);
+// Observe all elements with animate-on-scroll class
+document.querySelectorAll('.animate-on-scroll').forEach(element => {
+    intersectionObserver.observe(element);
 });
 
-// Animate stat number count-up
-const statNumber = document.querySelector('.stat-number');
-if (statNumber) {
-    const observerStat = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateValue(statNumber, 0, 87, 2000);
-                observerStat.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
+// ========================================
+// 4. FOCUS MANAGEMENT FOR ACCESSIBILITY
+// ========================================
 
-    observerStat.observe(statNumber);
-}
-
-function animateValue(element, start, end, duration) {
-    let startTimestamp = null;
-    const step = (timestamp) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        element.textContent = Math.floor(progress * (end - start) + start) + '%';
-        if (progress < 1) {
-            window.requestAnimationFrame(step);
-        }
-    };
-    window.requestAnimationFrame(step);
-}
-
-// Animate biomarker values on scroll
-const resultCards = document.querySelectorAll('.result-card');
-resultCards.forEach(card => {
-    const observerResult = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const markerValues = entry.target.querySelector('.marker-values');
-                if (markerValues) {
-                    markerValues.style.opacity = '0';
-                    setTimeout(() => {
-                        markerValues.style.transition = 'opacity 0.8s ease-in';
-                        markerValues.style.opacity = '1';
-                    }, 200);
-                }
-                observerResult.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.3 });
-
-    observerResult.observe(card);
-});
-
-// DNA helix animation
-const dnaCircles = document.querySelectorAll('.dna-svg circle');
-dnaCircles.forEach((circle, index) => {
-    circle.style.animation = `pulse 2s ease-in-out infinite ${index * 0.2}s`;
-});
-
-// Parallax effect for hero background
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const heroBackground = document.querySelector('.hero-background');
-    if (heroBackground && scrolled < window.innerHeight) {
-        heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
+// Add visible focus states for keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab') {
+        document.body.classList.add('keyboard-navigation');
     }
 });
 
-// Add hover effect to nav links
-const navLinks = document.querySelectorAll('.nav-links a');
-navLinks.forEach(link => {
-    link.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-2px)';
-    });
-    link.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0)';
-    });
+document.addEventListener('mousedown', () => {
+    document.body.classList.remove('keyboard-navigation');
 });
 
-// Button ripple effect
-document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('click', function(e) {
-        const ripple = document.createElement('span');
-        const rect = this.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        const x = e.clientX - rect.left - size / 2;
-        const y = e.clientY - rect.top - size / 2;
+// ========================================
+// 5. MOBILE MENU TOGGLE
+// ========================================
 
-        ripple.style.width = ripple.style.height = size + 'px';
-        ripple.style.left = x + 'px';
-        ripple.style.top = y + 'px';
-        ripple.classList.add('ripple');
+function initMobileMenu() {
+    const navLinks = document.querySelector('.nav-links');
 
-        this.appendChild(ripple);
+    if (window.innerWidth <= 768 && navLinks) {
+        // Check if menu button already exists
+        if (document.querySelector('.mobile-menu-toggle')) return;
 
-        setTimeout(() => {
-            ripple.remove();
-        }, 600);
-    });
-});
+        // Create mobile menu toggle button
+        const menuButton = document.createElement('button');
+        menuButton.classList.add('mobile-menu-toggle');
+        menuButton.setAttribute('aria-label', 'Toggle navigation menu');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.innerHTML = `
+            <span class="menu-icon"></span>
+            <span class="menu-icon"></span>
+            <span class="menu-icon"></span>
+        `;
 
-// Add ripple styles dynamically
-const style = document.createElement('style');
-style.textContent = `
-    .btn {
-        position: relative;
-        overflow: hidden;
-    }
-    .ripple {
-        position: absolute;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.3);
-        transform: scale(0);
-        animation: ripple-animation 0.6s ease-out;
-        pointer-events: none;
-    }
-    @keyframes ripple-animation {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
-    }
-`;
-document.head.appendChild(style);
-
-// Mobile menu toggle (basic implementation)
-const createMobileMenu = () => {
-    if (window.innerWidth <= 768) {
-        const navLinks = document.querySelector('.nav-links');
-        if (navLinks && !document.querySelector('.mobile-menu-btn')) {
-            const menuBtn = document.createElement('button');
-            menuBtn.classList.add('mobile-menu-btn');
-            menuBtn.innerHTML = '☰';
-            menuBtn.style.cssText = `
+        // Add styles dynamically
+        const style = document.createElement('style');
+        style.textContent = `
+            .mobile-menu-toggle {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
                 background: none;
                 border: none;
-                color: var(--text-primary);
-                font-size: 1.5rem;
                 cursor: pointer;
                 padding: 0.5rem;
-            `;
+                z-index: 1001;
+            }
 
-            const navContainer = document.querySelector('.nav-container');
-            navContainer.appendChild(menuBtn);
+            .menu-icon {
+                width: 24px;
+                height: 2px;
+                background: var(--color-black);
+                transition: all 0.3s ease;
+            }
 
-            menuBtn.addEventListener('click', () => {
-                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-                if (navLinks.style.display === 'flex') {
-                    navLinks.style.flexDirection = 'column';
-                    navLinks.style.position = 'absolute';
-                    navLinks.style.top = '100%';
-                    navLinks.style.left = '0';
-                    navLinks.style.right = '0';
-                    navLinks.style.background = 'var(--background-dark)';
-                    navLinks.style.padding = 'var(--spacing-md)';
+            .mobile-menu-toggle[aria-expanded="true"] .menu-icon:nth-child(1) {
+                transform: rotate(45deg) translateY(6px);
+            }
+
+            .mobile-menu-toggle[aria-expanded="true"] .menu-icon:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-menu-toggle[aria-expanded="true"] .menu-icon:nth-child(3) {
+                transform: rotate(-45deg) translateY(-6px);
+            }
+
+            @media (max-width: 768px) {
+                .nav-links {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    background: white;
+                    flex-direction: column;
+                    padding: var(--space-md);
+                    border-bottom: 1px solid var(--color-border);
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
                 }
+
+                .nav-links.open {
+                    display: flex;
+                }
+
+                .nav-links li {
+                    margin: 0;
+                }
+
+                .nav-links a {
+                    display: block;
+                    padding: var(--space-sm);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Insert menu button
+        const navContainer = document.querySelector('.nav-container');
+        navContainer.appendChild(menuButton);
+
+        // Toggle menu on click
+        menuButton.addEventListener('click', () => {
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+            menuButton.setAttribute('aria-expanded', !isExpanded);
+            navLinks.classList.toggle('open');
+        });
+
+        // Close menu when clicking nav links
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuButton.setAttribute('aria-expanded', 'false');
+                navLinks.classList.remove('open');
             });
-        }
+        });
     }
-};
+}
 
-window.addEventListener('resize', createMobileMenu);
-createMobileMenu();
+// Initialize on load and resize
+window.addEventListener('load', initMobileMenu);
+window.addEventListener('resize', () => {
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    if (window.innerWidth > 768 && menuToggle) {
+        menuToggle.remove();
+        document.querySelector('.nav-links')?.classList.remove('open');
+    } else if (window.innerWidth <= 768 && !menuToggle) {
+        initMobileMenu();
+    }
+});
 
-// Console message
-console.log('%cLab1 - Precision Nutrition', 'font-size: 20px; font-weight: bold; color: #6366f1;');
-console.log('%cBuilt with modern web technologies', 'font-size: 12px; color: #94a3b8;');
+// ========================================
+// 6. PERFORMANCE OPTIMIZATION
+// ========================================
+
+// Preload fonts
+if ('fonts' in document) {
+    Promise.all([
+        document.fonts.load('400 1rem Inter'),
+        document.fonts.load('300 2rem Inter'),
+        document.fonts.load('500 1rem Inter')
+    ]).then(() => {
+        document.body.classList.add('fonts-loaded');
+    });
+}
+
+// ========================================
+// 7. CONSOLE BRANDING
+// ========================================
+
+if (console && console.log) {
+    console.log(
+        '%cLab1',
+        'font-size: 24px; font-weight: 300; color: #000;'
+    );
+    console.log(
+        '%cPrecision Nutrition Based on Your Genes & Blood',
+        'font-size: 12px; color: #666;'
+    );
+}
+
+// ========================================
+// 8. ERROR HANDLING
+// ========================================
+
+window.addEventListener('error', (e) => {
+    console.error('An error occurred:', e.message);
+});
+
+// ========================================
+// 9. REDUCED MOTION SUPPORT
+// ========================================
+
+// Respect user's motion preferences
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    // Disable animations for users who prefer reduced motion
+    const style = document.createElement('style');
+    style.textContent = `
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    `;
+    document.head.appendChild(style);
+}
