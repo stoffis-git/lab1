@@ -187,7 +187,7 @@ const translations = {
             "company": {
                 "title": "Company"
             },
-            "copyright": "© 2025 Bio Scan. All rights reserved."
+            "copyright": "© 2025 Lab1. All rights reserved."
         },
         "dna-kit": {
             "hero": {
@@ -530,7 +530,7 @@ const translations = {
             "company": {
                 "title": "Unternehmen"
             },
-            "copyright": "© 2025 Bio Scan. Alle Rechte vorbehalten."
+            "copyright": "© 2025 Lab1. Alle Rechte vorbehalten."
         },
         "dna-kit": {
             "hero": {
