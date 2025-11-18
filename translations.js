@@ -10,7 +10,7 @@ const translations = {
             "science": "Science",
             "process": "Process",
             "results": "Results",
-            "dna-kit": "DNA Kit",
+            "tests": "Tests",
             "get-started": "Get Started"
         },
         "hero": {
@@ -204,6 +204,106 @@ const translations = {
                 "title": "Start Your Personalized Health Journey",
                 "button": "Order DNA Kit - €299"
             }
+        },
+        "tests": {
+            "hero": {
+                "title": "Choose Your Test",
+                "subtitle": "Select the health analysis that matches your goals"
+            },
+            "longevity": {
+                "title": "Longevity",
+                "subtitle": "Understand and influence your aging process",
+                "feature1": "Comprehensive health analysis",
+                "feature2": "Biomarkers of aging",
+                "feature3": "Hormone balance",
+                "feature4": "Inflammation markers"
+            },
+            "performance": {
+                "title": "Performance",
+                "subtitle": "Optimize your physical and mental performance",
+                "feature1": "Energy metabolism",
+                "feature2": "Recovery indicators",
+                "feature3": "Performance hormones",
+                "feature4": "Stress markers"
+            },
+            "nutrition": {
+                "title": "Nutrition",
+                "subtitle": "Identify nutritional deficiencies and optimize your diet",
+                "feature1": "Vitamin and mineral status",
+                "feature2": "Omega fatty acids",
+                "feature3": "Metabolic health",
+                "feature4": "Food sensitivities indicators"
+            },
+            "cta": "Book Test",
+            "included": {
+                "title": "What's Included in Every Test",
+                "item1": {
+                    "title": "At-Home Collection",
+                    "desc": "Simple finger-prick blood collection kit delivered to your door"
+                },
+                "item2": {
+                    "title": "Lab Analysis",
+                    "desc": "EU-certified laboratory testing with medical-grade accuracy"
+                },
+                "item3": {
+                    "title": "Detailed Report",
+                    "desc": "Easy-to-understand results with actionable insights"
+                },
+                "item4": {
+                    "title": "Expert Consultation",
+                    "desc": "15-minute call with health advisor to review your results"
+                }
+            },
+            "how-works": {
+                "title": "How It Works",
+                "step1": {
+                    "title": "Book",
+                    "desc": "Choose your test and complete booking online"
+                },
+                "step2": {
+                    "title": "Collect",
+                    "desc": "Receive kit, collect sample at home, send back"
+                },
+                "step3": {
+                    "title": "Results",
+                    "desc": "Get detailed insights within 5-7 business days"
+                },
+                "step4": {
+                    "title": "Optimize",
+                    "desc": "Receive personalized supplement recommendations"
+                }
+            },
+            "comparison": {
+                "title": "Compare Tests",
+                "row1": "Biomarkers Tested",
+                "row2": "Hormone Analysis",
+                "row3": "DNA Analysis",
+                "row4": "Follow-up Tests"
+            },
+            "faq": {
+                "title": "Frequently Asked Questions",
+                "q1": {
+                    "question": "How long until I get results?",
+                    "answer": "Results are typically available within 5-7 business days after your sample arrives at our laboratory."
+                },
+                "q2": {
+                    "question": "Is the test safe?",
+                    "answer": "Yes, completely safe. A simple finger-prick blood sample is all that's needed. Detailed instructions are included."
+                },
+                "q3": {
+                    "question": "Can I take multiple tests?",
+                    "answer": "Absolutely! Many customers start with one test and add others later. We offer bundle discounts for multiple tests."
+                },
+                "q4": {
+                    "question": "What happens after I get results?",
+                    "answer": "You'll receive a personalized supplement plan and can schedule a consultation with our health advisors."
+                }
+            },
+            "final-cta": {
+                "title": "Ready to Optimize Your Health?",
+                "subtitle": "Choose your test and start your personalized health journey today",
+                "button": "Book Your Test"
+            }
         }
     },
     de: {
@@ -212,7 +312,7 @@ const translations = {
             "science": "Wissenschaft",
             "process": "Prozess",
             "results": "Ergebnisse",
-            "dna-kit": "DNA-Kit",
+            "tests": "Tests",
             "get-started": "Loslegen"
         },
         "hero": {
@@ -405,6 +505,106 @@ const translations = {
             "cta": {
                 "title": "Beginnen Sie Ihre personalisierte Gesundheitsreise",
                 "button": "DNA-Kit bestellen - 299€"
+            }
+        },
+        "tests": {
+            "hero": {
+                "title": "Wählen Sie Ihren Test",
+                "subtitle": "Wählen Sie die Gesundheitsanalyse, die zu Ihren Zielen passt"
+            },
+            "longevity": {
+                "title": "Langlebigkeit",
+                "subtitle": "Verstehen und beeinflussen Sie Ihren Alterungsprozess",
+                "feature1": "Umfassende Gesundheitsanalyse",
+                "feature2": "Biomarker des Alterns",
+                "feature3": "Hormonbalance",
+                "feature4": "Entzündungsmarker"
+            },
+            "performance": {
+                "title": "Leistung",
+                "subtitle": "Optimieren Sie Ihre körperliche und geistige Leistung",
+                "feature1": "Energiestoffwechsel",
+                "feature2": "Erholungsindikatoren",
+                "feature3": "Leistungshormone",
+                "feature4": "Stressmarker"
+            },
+            "nutrition": {
+                "title": "Ernährung",
+                "subtitle": "Identifizieren Sie Nährstoffmängel und optimieren Sie Ihre Ernährung",
+                "feature1": "Vitamin- und Mineralstoffstatus",
+                "feature2": "Omega-Fettsäuren",
+                "feature3": "Stoffwechselgesundheit",
+                "feature4": "Indikatoren für Lebensmittelempfindlichkeiten"
+            },
+            "cta": "Test buchen",
+            "included": {
+                "title": "In jedem Test enthalten",
+                "item1": {
+                    "title": "Heimabnahme",
+                    "desc": "Einfaches Fingerstich-Blutentnahme-Kit zu Ihnen nach Hause geliefert"
+                },
+                "item2": {
+                    "title": "Laboranalyse",
+                    "desc": "EU-zertifizierte Laboruntersuchung mit medizinischer Genauigkeit"
+                },
+                "item3": {
+                    "title": "Detaillierter Bericht",
+                    "desc": "Leicht verständliche Ergebnisse mit umsetzbaren Erkenntnissen"
+                },
+                "item4": {
+                    "title": "Expertenberatung",
+                    "desc": "15-minütiges Gespräch mit Gesundheitsberater zur Besprechung Ihrer Ergebnisse"
+                }
+            },
+            "how-works": {
+                "title": "So funktioniert es",
+                "step1": {
+                    "title": "Buchen",
+                    "desc": "Wählen Sie Ihren Test und schließen Sie die Buchung online ab"
+                },
+                "step2": {
+                    "title": "Sammeln",
+                    "desc": "Kit erhalten, Probe zu Hause sammeln, zurücksenden"
+                },
+                "step3": {
+                    "title": "Ergebnisse",
+                    "desc": "Detaillierte Einblicke innerhalb von 5-7 Werktagen erhalten"
+                },
+                "step4": {
+                    "title": "Optimieren",
+                    "desc": "Personalisierte Nahrungsergänzungsempfehlungen erhalten"
+                }
+            },
+            "comparison": {
+                "title": "Tests vergleichen",
+                "row1": "Getestete Biomarker",
+                "row2": "Hormonanalyse",
+                "row3": "DNA-Analyse",
+                "row4": "Folgetests"
+            },
+            "faq": {
+                "title": "Häufig gestellte Fragen",
+                "q1": {
+                    "question": "Wie lange dauert es bis zu den Ergebnissen?",
+                    "answer": "Ergebnisse sind in der Regel innerhalb von 5-7 Werktagen verfügbar, nachdem Ihre Probe in unserem Labor angekommen ist."
+                },
+                "q2": {
+                    "question": "Ist der Test sicher?",
+                    "answer": "Ja, völlig sicher. Es wird nur eine einfache Fingerstich-Blutprobe benötigt. Detaillierte Anweisungen sind enthalten."
+                },
+                "q3": {
+                    "question": "Kann ich mehrere Tests machen?",
+                    "answer": "Auf jeden Fall! Viele Kunden beginnen mit einem Test und fügen später weitere hinzu. Wir bieten Rabatte für mehrere Tests an."
+                },
+                "q4": {
+                    "question": "Was passiert nach den Ergebnissen?",
+                    "answer": "Sie erhalten einen personalisierten Nahrungsergänzungsplan und können eine Beratung mit unseren Gesundheitsberatern vereinbaren."
+                }
+            },
+            "final-cta": {
+                "title": "Bereit, Ihre Gesundheit zu optimieren?",
+                "subtitle": "Wählen Sie Ihren Test und starten Sie heute Ihre personalisierte Gesundheitsreise",
+                "button": "Test buchen"
             }
         }
     }
