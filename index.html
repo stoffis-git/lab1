@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab1 - Precision Nutrition Based on Your Genes & Blood</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">Lab1</div>
+            <ul class="nav-links">
+                <li><a href="#science">Science</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#why-lab1">Why Lab1</a></li>
+            </ul>
+            <a href="#journey" class="btn btn-primary">Begin Your Journey</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">INFORMED BY YOU.</span><br>
+                    <span class="gradient-text">BUILT BY LAB1.</span><br>
+                    <span class="gradient-text">PROVEN BY SCIENCE.</span>
+                </h1>
+                <p class="hero-subtitle">Precision nutrition based on your genes & blood</p>
+                <a href="#journey" class="btn btn-large btn-primary">Begin Your Journey</a>
+            </div>
+            <div class="hero-badge">
+                <span class="badge">strictly confidential</span>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Process</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Problem Statement -->
+    <section class="problem-section" id="science">
+        <div class="container">
+            <h2 class="section-title">One-size-fits-all supplements don't work.</h2>
+            <p class="section-subtitle">Your biology is unique. Your supplements should be too.</p>
+            <div class="stat-card">
+                <span class="stat-number">87%</span>
+                <span class="stat-text">of people take supplements that don't align with their biology</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nature Meets Science -->
+    <section class="nature-science">
+        <div class="container">
+            <div class="two-column">
+                <div class="image-column">
+                    <div class="dna-visualization">
+                        <svg viewBox="0 0 400 400" class="dna-svg">
+                            <defs>
+                                <linearGradient id="dna-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <!-- DNA Helix -->
+                            <path d="M100,50 Q150,100 100,150 T100,250 T100,350" stroke="url(#dna-gradient)" stroke-width="3" fill="none" class="helix-path"/>
+                            <path d="M300,50 Q250,100 300,150 T300,250 T300,350" stroke="url(#dna-gradient)" stroke-width="3" fill="none" class="helix-path"/>
+                            <!-- Base pairs -->
+                            <line x1="100" y1="75" x2="300" y2="75" stroke="url(#dna-gradient)" stroke-width="2" opacity="0.6"/>
+                            <line x1="100" y1="125" x2="300" y2="125" stroke="url(#dna-gradient)" stroke-width="2" opacity="0.6"/>
+                            <line x1="100" y1="175" x2="300" y2="175" stroke="url(#dna-gradient)" stroke-width="2" opacity="0.6"/>
+                            <line x1="100" y1="225" x2="300" y2="225" stroke="url(#dna-gradient)" stroke-width="2" opacity="0.6"/>
+                            <line x1="100" y1="275" x2="300" y2="275" stroke="url(#dna-gradient)" stroke-width="2" opacity="0.6"/>
+                            <line x1="100" y1="325" x2="300" y2="325" stroke="url(#dna-gradient)" stroke-width="2" opacity="0.6"/>
+                            <!-- Nodes -->
+                            <circle cx="100" cy="75" r="6" fill="#6366f1"/>
+                            <circle cx="300" cy="75" r="6" fill="#8b5cf6"/>
+                            <circle cx="100" cy="175" r="6" fill="#6366f1"/>
+                            <circle cx="300" cy="175" r="6" fill="#8b5cf6"/>
+                            <circle cx="100" cy="275" r="6" fill="#6366f1"/>
+                            <circle cx="300" cy="275" r="6" fill="#8b5cf6"/>
+                        </svg>
+                        <div class="nature-overlay">
+                            <div class="leaf leaf-1">🌿</div>
+                            <div class="leaf leaf-2">🍃</div>
+                            <div class="leaf leaf-3">🌱</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-column">
+                    <h3 class="subtitle">Nature Meets Science</h3>
+                    <h2 class="title">We decode your unique biology—genes, blood, lifestyle—to formulate supplements that work for you</h2>
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <h4>Your Data</h4>
+                            <p>DNA + Blood analysis reveals your unique nutritional blueprint</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>Your Formula</h4>
+                            <p>Custom supplement blend created specifically for your body</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="process">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Test</h3>
+                    <p>At-home DNA swab + blood test kit delivered to your door</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Analyze</h3>
+                    <p>Lab analysis reveals nutrient deficiencies & genetic markers</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Formulate</h3>
+                    <p>Personalized supplement blend created for your biology</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Optimize</h3>
+                    <p>Monthly adjustments based on your progress and goals</p>
+                </div>
+            </div>
+            <div class="cta-section">
+                <h3>Your journey to optimized health starts here</h3>
+                <p>Simple, science-backed, personalized</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Backed by Science -->
+    <section class="backed-by-science">
+        <div class="container">
+            <h2 class="section-title">Backed by Science, Trusted by Experts</h2>
+            <p class="section-subtitle">Partnered with leading medical institutions and research centers</p>
+
+            <div class="two-column">
+                <div class="image-column">
+                    <div class="lab-image">
+                        <svg viewBox="0 0 400 400" class="lab-svg">
+                            <!-- Laboratory glassware illustration -->
+                            <defs>
+                                <linearGradient id="glass-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:0.3" />
+                                    <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0.6" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Beaker -->
+                            <path d="M150,100 L150,250 Q150,280 170,290 L230,290 Q250,280 250,250 L250,100 Z"
+                                  fill="url(#glass-gradient)" stroke="#3b82f6" stroke-width="2"/>
+                            <line x1="140" y1="100" x2="260" y2="100" stroke="#3b82f6" stroke-width="3"/>
+                            <!-- Liquid -->
+                            <ellipse cx="200" cy="200" rx="40" ry="15" fill="#10b981" opacity="0.5"/>
+                            <!-- Flask -->
+                            <circle cx="300" cy="250" r="40" fill="url(#glass-gradient)" stroke="#3b82f6" stroke-width="2"/>
+                            <path d="M290,210 L290,180 L310,180 L310,210" fill="none" stroke="#3b82f6" stroke-width="2"/>
+                            <!-- Test tube -->
+                            <rect x="80" y="200" width="30" height="120" rx="15"
+                                  fill="url(#glass-gradient)" stroke="#3b82f6" stroke-width="2"/>
+                            <!-- Botanicals -->
+                            <circle cx="95" cy="280" r="8" fill="#10b981"/>
+                            <path d="M95,272 Q90,260 85,255" stroke="#10b981" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="content-column">
+                    <blockquote class="testimonial">
+                        <p>"Personalized nutrition based on genetic testing represents the future of preventive healthcare."</p>
+                        <cite>
+                            <strong>Dr. Sarah Mitchell</strong><br>
+                            Chief Medical Advisor, Lab1
+                        </cite>
+                    </blockquote>
+                    <div class="trust-badges">
+                        <div class="badge-item">
+                            <div class="badge-icon">🏥</div>
+                            <span>Medical Partners</span>
+                        </div>
+                        <div class="badge-item">
+                            <div class="badge-icon">⚕️</div>
+                            <span>Sports Physicians</span>
+                        </div>
+                        <div class="badge-item">
+                            <div class="badge-icon">🇪🇺</div>
+                            <span>EU Quality Standards</span>
+                        </div>
+                        <div class="badge-item">
+                            <div class="badge-icon">🔬</div>
+                            <span>Research Backed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Ecosystem -->
+    <section class="health-ecosystem">
+        <div class="container">
+            <h2 class="section-title">Your 360° Health Ecosystem</h2>
+            <p class="section-subtitle">Beyond supplementation—comprehensive health optimization</p>
+            <div class="ecosystem-grid">
+                <div class="ecosystem-card">
+                    <div class="icon">💊</div>
+                    <h3>Personalized Supplements</h3>
+                    <p>Custom formulations based on your unique biology</p>
+                </div>
+                <div class="ecosystem-card">
+                    <div class="icon">📊</div>
+                    <h3>Lifestyle Tracking</h3>
+                    <p>Monitor progress and optimize daily habits</p>
+                </div>
+                <div class="ecosystem-card">
+                    <div class="icon">👨‍⚕️</div>
+                    <h3>Medical Partners</h3>
+                    <p>Connect with healthcare professionals</p>
+                </div>
+                <div class="ecosystem-card">
+                    <div class="icon">🎯</div>
+                    <h3>Performance Optimization</h3>
+                    <p>Achieve your health and fitness goals</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results/Testimonials -->
+    <section class="results-section" id="results">
+        <div class="container">
+            <h2 class="section-title">Transformation, Quantified</h2>
+            <p class="section-subtitle">Real results from real people, measured through biomarker improvements</p>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="biomarker">
+                        <span class="marker-name">Vitamin D:</span>
+                        <span class="marker-values">18 → 52 ng/mL</span>
+                    </div>
+                    <div class="timeline">3 months</div>
+                    <p class="quote">"Finally have energy for my morning runs"</p>
+                    <p class="author">Michael R.</p>
+                </div>
+                <div class="result-card">
+                    <div class="biomarker">
+                        <span class="marker-name">Iron:</span>
+                        <span class="marker-values">45 → 98 μg/dL</span>
+                    </div>
+                    <div class="timeline">2 months</div>
+                    <p class="quote">"No more afternoon crashes at work"</p>
+                    <p class="author">Sarah K.</p>
+                </div>
+                <div class="result-card">
+                    <div class="biomarker">
+                        <span class="marker-name">B12:</span>
+                        <span class="marker-values">280 → 680 pg/mL</span>
+                    </div>
+                    <div class="timeline">6 weeks</div>
+                    <p class="quote">"Better focus and mental clarity throughout the day"</p>
+                    <p class="author">David L.</p>
+                </div>
+                <div class="result-card">
+                    <div class="biomarker">
+                        <span class="marker-name">Omega-3:</span>
+                        <span class="marker-values">4.2% → 8.1%</span>
+                    </div>
+                    <div class="timeline">4 months</div>
+                    <p class="quote">"Better focus and mental clarity throughout the day"</p>
+                    <p class="author">Jessica M.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section" id="why-lab1">
+        <div class="container">
+            <h2 class="section-title">The Lab1 Difference</h2>
+            <div class="comparison-table">
+                <div class="table-header">
+                    <div class="header-item"></div>
+                    <div class="header-item">Generic Supplements</div>
+                    <div class="header-item highlight">Lab1 Approach</div>
+                </div>
+                <div class="table-row">
+                    <div class="row-label">Approach</div>
+                    <div class="row-value">One-size-fits-all</div>
+                    <div class="row-value highlight">Personalized to DNA & blood</div>
+                </div>
+                <div class="table-row">
+                    <div class="row-label">Testing</div>
+                    <div class="row-value">No testing</div>
+                    <div class="row-value highlight">Comprehensive analysis</div>
+                </div>
+                <div class="table-row">
+                    <div class="row-label">Dosing</div>
+                    <div class="row-value">Standard dosages</div>
+                    <div class="row-value highlight">Precise amounts</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Transparency -->
+    <section class="trust-section">
+        <div class="container">
+            <h2 class="section-title">Trust & Transparency</h2>
+            <div class="trust-grid">
+                <div class="trust-card">
+                    <div class="trust-icon">🔒</div>
+                    <h3>Strictly Confidential</h3>
+                    <p>Your data is encrypted and never shared without consent</p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-icon">🏆</div>
+                    <h3>German Quality Standards</h3>
+                    <p>Manufactured in EU-certified facilities</p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-icon">🌿</div>
+                    <h3>Transparent Sourcing</h3>
+                    <p>Every ingredient traced from origin to bottle</p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-icon">👨‍🔬</div>
+                    <h3>Scientific Advisory Board</h3>
+                    <p>Overseen by leading health researchers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="journey">
+        <div class="container">
+            <h2 class="cta-title">
+                <span class="gradient-text">DESIGNED FOR YOUR DAY.</span><br>
+                <span class="gradient-text">DRIVEN BY YOUR DATA.</span>
+            </h2>
+            <p class="cta-subtitle">Free consultation with health advisor included</p>
+            <a href="#" class="btn btn-large btn-primary">Begin Your Journey</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Lab1</div>
+                <p>&copy; 2024 Lab1. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
