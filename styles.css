@@ -1361,6 +1361,37 @@ section {
     font-weight: 300;
     color: var(--color-black);
     line-height: 1;
+    display: block;
+}
+
+.price-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+    margin-top: 0.25rem;
+    text-transform: lowercase;
+    font-weight: 400;
+}
+
+.pricing-monthly {
+    margin-top: var(--space-sm);
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.monthly-label {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+}
+
+.monthly-price {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-black);
 }
 
 .pricing-features {

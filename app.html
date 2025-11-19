@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Lab1 App - Track Your Health Journey</title>
+    <meta name="title" content="Lab1 App - Track Your Health Journey">
+    <meta name="description" content="Monitor your test results, track health markers, and optimize your supplement journey with the Lab1 mobile app.">
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="styles.css" as="style">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main" class="skip-link" data-i18n="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <header role="banner">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="container nav-container">
+                <a href="index.html" class="logo">Lab1</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#science" data-i18n="nav.science">Science</a></li>
+                    <li><a href="index.html#process" data-i18n="nav.process">Process</a></li>
+                    <li><a href="index.html#results" data-i18n="nav.results">Results</a></li>
+                    <li><a href="tests.html" class="primary-nav-btn" data-i18n="nav.tests">Tests</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="login-btn" id="loginBtn" data-i18n="nav.login">Login</button>
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
+                        <span class="lang-separator">/</span>
+                        <button class="lang-btn" data-lang="de" aria-label="Switch to German">DE</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" id="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content animate-on-scroll">
+                        <h1 class="hero-title" data-i18n="app.hero.title">
+                            Your Health,<br>In Your Pocket
+                        </h1>
+                        <p class="hero-subtitle" data-i18n="app.hero.subtitle">Track your test results, monitor health markers, and optimize your supplement journey with the Lab1 app</p>
+                        <a href="tests.html" class="cta-button" data-i18n="app.hero.cta">Start Your Journey</a>
+                    </div>
+                    <div class="hero-image animate-on-scroll">
+                        <div class="image-placeholder" aria-label="Lab1 mobile app interface" style="background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%); border-radius: 24px; aspect-ratio: 9/16; max-width: 320px; margin: 0 auto;">
+                            <div class="placeholder-content" style="display: flex; align-items: center; justify-content: center; height: 100%; color: #999; font-size: 0.875rem;">
+                                App Interface
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- App Features -->
+        <section class="content-block">
+            <div class="container">
+                <h2 class="section-title center animate-on-scroll" data-i18n="app.features.title">Everything You Need to Track Your Health</h2>
+                <p class="section-subtitle center" data-i18n="app.features.subtitle">Your personalized health dashboard, designed for clarity and actionable insights</p>
+
+                <div class="ecosystem-grid" style="margin-top: 4rem;">
+                    <div class="ecosystem-card animate-on-scroll">
+                        <h3 data-i18n="app.features.feature1.title">Test Results</h3>
+                        <p data-i18n="app.features.feature1.desc">View all your blood biomarkers and DNA insights in one place, with easy-to-understand visualizations</p>
+                    </div>
+                    <div class="ecosystem-card animate-on-scroll">
+                        <h3 data-i18n="app.features.feature2.title">Health Markers Tracking</h3>
+                        <p data-i18n="app.features.feature2.desc">Monitor changes in your key health markers over time and see how your interventions are working</p>
+                    </div>
+                    <div class="ecosystem-card animate-on-scroll">
+                        <h3 data-i18n="app.features.feature3.title">Supplement Journey</h3>
+                        <p data-i18n="app.features.feature3.desc">Track your daily supplement intake and get reminders to stay consistent with your personalized protocol</p>
+                    </div>
+                    <div class="ecosystem-card animate-on-scroll">
+                        <h3 data-i18n="app.features.feature4.title">Progress Insights</h3>
+                        <p data-i18n="app.features.feature4.desc">Receive personalized recommendations and insights based on your ongoing health data</p>
+                    </div>
+                    <div class="ecosystem-card animate-on-scroll">
+                        <h3 data-i18n="app.features.feature5.title">Secure & Private</h3>
+                        <p data-i18n="app.features.feature5.desc">Your health data is encrypted with bank-level security and never shared with third parties</p>
+                    </div>
+                    <div class="ecosystem-card animate-on-scroll">
+                        <h3 data-i18n="app.features.feature6.title">Expert Access</h3>
+                        <p data-i18n="app.features.feature6.desc">Connect directly with health advisors through the app for questions about your results</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works with the App -->
+        <section class="process-section" style="background: var(--color-bg-light);">
+            <div class="container">
+                <h2 class="section-title center animate-on-scroll" data-i18n="app.workflow.title">Your Complete Health Journey</h2>
+                <p class="section-subtitle center" data-i18n="app.workflow.subtitle">From testing to optimization, the Lab1 app guides you every step of the way</p>
+                <div class="steps">
+                    <div class="step animate-on-scroll">
+                        <span class="step-number">1</span>
+                        <h3 data-i18n="app.workflow.step1.title">Get Tested</h3>
+                        <p data-i18n="app.workflow.step1.desc">Order your test kit and collect samples at home</p>
+                    </div>
+                    <div class="step animate-on-scroll">
+                        <span class="step-number">2</span>
+                        <h3 data-i18n="app.workflow.step2.title">Receive Results</h3>
+                        <p data-i18n="app.workflow.step2.desc">Get your personalized insights delivered directly to the app</p>
+                    </div>
+                    <div class="step animate-on-scroll">
+                        <span class="step-number">3</span>
+                        <h3 data-i18n="app.workflow.step3.title">Start Supplements</h3>
+                        <p data-i18n="app.workflow.step3.desc">Begin your custom supplement protocol tailored to your biology</p>
+                    </div>
+                    <div class="step animate-on-scroll">
+                        <span class="step-number">4</span>
+                        <h3 data-i18n="app.workflow.step4.title">Track Progress</h3>
+                        <p data-i18n="app.workflow.step4.desc">Monitor your health markers and supplement adherence daily</p>
+                    </div>
+                    <div class="step animate-on-scroll">
+                        <span class="step-number">5</span>
+                        <h3 data-i18n="app.workflow.step5.title">Optimize Continuously</h3>
+                        <p data-i18n="app.workflow.step5.desc">Refine your protocol based on ongoing data and expert guidance</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- App Benefits -->
+        <section class="content-block">
+            <div class="container">
+                <h2 class="section-title center animate-on-scroll" data-i18n="app.benefits.title">Why Use the Lab1 App?</h2>
+                <div class="trust-grid">
+                    <div class="trust-card animate-on-scroll">
+                        <h3 data-i18n="app.benefits.benefit1.title">Data-Driven Decisions</h3>
+                        <p data-i18n="app.benefits.benefit1.desc">Make informed choices about your health based on real biomarker data, not guesswork</p>
+                    </div>
+                    <div class="trust-card animate-on-scroll">
+                        <h3 data-i18n="app.benefits.benefit2.title">Accountability & Consistency</h3>
+                        <p data-i18n="app.benefits.benefit2.desc">Stay on track with daily reminders and progress tracking to ensure you reach your health goals</p>
+                    </div>
+                    <div class="trust-card animate-on-scroll">
+                        <h3 data-i18n="app.benefits.benefit3.title">Personalized Insights</h3>
+                        <p data-i18n="app.benefits.benefit3.desc">Receive recommendations tailored specifically to your unique biology and health journey</p>
+                    </div>
+                    <div class="trust-card animate-on-scroll">
+                        <h3 data-i18n="app.benefits.benefit4.title">Complete Transparency</h3>
+                        <p data-i18n="app.benefits.benefit4.desc">See exactly what's in your supplements and why each ingredient was chosen for you</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Included with Your Test -->
+        <section class="trust-section" style="background: var(--color-bg-light);">
+            <div class="container">
+                <div class="cta-content animate-on-scroll" style="text-align: center; max-width: 700px; margin: 0 auto;">
+                    <h2 class="section-title" data-i18n="app.included.title">Included with Every Test</h2>
+                    <p class="section-subtitle" data-i18n="app.included.subtitle">App access is included with all Lab1 tests at no additional cost. Track your entire health journey from day one.</p>
+                    <a href="tests.html" class="cta-button large" data-i18n="app.included.button">Choose Your Test</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="content-block">
+            <div class="container">
+                <h2 class="section-title center animate-on-scroll" data-i18n="app.faq.title">App Questions</h2>
+                <div class="faq-grid">
+                    <div class="trust-card animate-on-scroll">
+                        <h3 data-i18n="app.faq.q1.question">When do I get app access?</h3>
+                        <p data-i18n="app.faq.q1.answer">You'll receive app access immediately after booking your test. Your results will appear in the app 5-7 days after your sample arrives at our lab.</p>
+                    </div>
+                    <div class="trust-card animate-on-scroll">
+                        <h3 data-i18n="app.faq.q2.question">Is the app available on iOS and Android?</h3>
+                        <p data-i18n="app.faq.q2.answer">Yes, the Lab1 app is available on both iOS (App Store) and Android (Google Play). You can also access your dashboard via web browser.</p>
+                    </div>
+                    <div class="trust-card animate-on-scroll">
+                        <h3 data-i18n="app.faq.q3.question">How is my data protected?</h3>
+                        <p data-i18n="app.faq.q3.answer">All data is encrypted with AES-256 bank-level encryption, stored on GDPR-compliant EU servers, and never shared with third parties.</p>
+                    </div>
+                    <div class="trust-card animate-on-scroll">
+                        <h3 data-i18n="app.faq.q4.question">Can I export my data?</h3>
+                        <p data-i18n="app.faq.q4.answer">Yes, you can download all your health data at any time in standard formats like PDF and CSV for your personal records.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">Lab1</div>
+                    <p class="footer-description" data-i18n="footer.description">Precision health insights powered by the unique combination of blood and DNA analysis.</p>
+                    <p class="footer-tagline" data-i18n="footer.tagline">Coded with ❤️ in Frankfurt</p>
+                </div>
+                <div class="footer-column">
+                    <h4 data-i18n="footer.contact.title">Contact</h4>
+                    <p><a href="mailto:max@eterno.health">max@eterno.health</a></p>
+                    <p><a href="tel:+491234567890">+49 (0) 123 456 789</a></p>
+                </div>
+                <div class="footer-column">
+                    <h4 data-i18n="footer.legal.title">Legal</h4>
+                    <p><a href="terms.html" data-i18n="footer.legal.terms">Terms of Service</a></p>
+                    <p><a href="privacy.html" data-i18n="footer.legal.privacy">Privacy Policy</a></p>
+                    <p><a href="#impressum" data-i18n="footer.legal.impressum">Impressum</a></p>
+                </div>
+                <div class="footer-column">
+                    <h4 data-i18n="footer.company.title">Company</h4>
+                    <p class="footer-company">
+                        <strong>AMO GmbH</strong><br>
+                        Mittelweg 25<br>
+                        20148 Hamburg
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">&copy; 2025 Lab1. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal" aria-label="Close">&times;</button>
+            <div class="modal-header">
+                <h2 data-i18n="login.title">Welcome Back</h2>
+                <p data-i18n="login.subtitle">Access your personalized health dashboard</p>
+            </div>
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="email" data-i18n="login.email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="password" data-i18n="login.password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="form-submit" data-i18n="login.submit">Login</button>
+            </form>
+            <div class="form-footer">
+                <p><a href="#" data-i18n="login.forgot">Forgot password?</a></p>
+                <p data-i18n="login.signup-prompt">Don't have an account? <a href="#" data-i18n="login.signup">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

@@ -172,6 +172,11 @@ const translations = {
             "subtitle": "Free consultation with health advisor included",
             "button": "Begin Your Journey"
         },
+        "contact": {
+            "title": "Get in Touch",
+            "subtitle": "Have questions? We're here to help you on your health journey",
+            "button": "Contact Us"
+        },
         "footer": {
             "description": "Precision health insights powered by the unique combination of blood and DNA analysis.",
             "tagline": "Coded with ❤️ in Frankfurt",
@@ -260,6 +265,10 @@ const translations = {
                 "feature4": "Food sensitivities indicators"
             },
             "cta": "Book Test",
+            "pricing": {
+                "initial": "one-time test",
+                "monthly-label": "Monthly supplements:"
+            },
             "included": {
                 "title": "What's Included in Every Test",
                 "item1": {
@@ -272,7 +281,7 @@ const translations = {
                 },
                 "item3": {
                     "title": "Mobile App Access",
-                    "desc": "Track results, monitor your journey, and access insights through our dedicated app"
+                    "desc": "Monitor your test results and health markers through our dedicated app during your treatment journey"
                 },
                 "item4": {
                     "title": "Personalized Supplements",
@@ -344,6 +353,108 @@ const translations = {
                 "title": "Ready to Optimize Your Health?",
                 "subtitle": "Choose your test and start your personalized health journey today",
                 "button": "Book Your Test"
+            }
+        },
+        "app": {
+            "hero": {
+                "title": "Your Health, In Your Pocket",
+                "subtitle": "Track your test results, monitor health markers, and optimize your supplement journey with the Lab1 app",
+                "cta": "Start Your Journey"
+            },
+            "features": {
+                "title": "Everything You Need to Track Your Health",
+                "subtitle": "Your personalized health dashboard, designed for clarity and actionable insights",
+                "feature1": {
+                    "title": "Test Results",
+                    "desc": "View all your blood biomarkers and DNA insights in one place, with easy-to-understand visualizations"
+                },
+                "feature2": {
+                    "title": "Health Markers Tracking",
+                    "desc": "Monitor changes in your key health markers over time and see how your interventions are working"
+                },
+                "feature3": {
+                    "title": "Supplement Journey",
+                    "desc": "Track your daily supplement intake and get reminders to stay consistent with your personalized protocol"
+                },
+                "feature4": {
+                    "title": "Progress Insights",
+                    "desc": "Receive personalized recommendations and insights based on your ongoing health data"
+                },
+                "feature5": {
+                    "title": "Secure & Private",
+                    "desc": "Your health data is encrypted with bank-level security and never shared with third parties"
+                },
+                "feature6": {
+                    "title": "Expert Access",
+                    "desc": "Connect directly with health advisors through the app for questions about your results"
+                }
+            },
+            "workflow": {
+                "title": "Your Complete Health Journey",
+                "subtitle": "From testing to optimization, the Lab1 app guides you every step of the way",
+                "step1": {
+                    "title": "Get Tested",
+                    "desc": "Order your test kit and collect samples at home"
+                },
+                "step2": {
+                    "title": "Receive Results",
+                    "desc": "Get your personalized insights delivered directly to the app"
+                },
+                "step3": {
+                    "title": "Start Supplements",
+                    "desc": "Begin your custom supplement protocol tailored to your biology"
+                },
+                "step4": {
+                    "title": "Track Progress",
+                    "desc": "Monitor your health markers and supplement adherence daily"
+                },
+                "step5": {
+                    "title": "Optimize Continuously",
+                    "desc": "Refine your protocol based on ongoing data and expert guidance"
+                }
+            },
+            "benefits": {
+                "title": "Why Use the Lab1 App?",
+                "benefit1": {
+                    "title": "Data-Driven Decisions",
+                    "desc": "Make informed choices about your health based on real biomarker data, not guesswork"
+                },
+                "benefit2": {
+                    "title": "Accountability & Consistency",
+                    "desc": "Stay on track with daily reminders and progress tracking to ensure you reach your health goals"
+                },
+                "benefit3": {
+                    "title": "Personalized Insights",
+                    "desc": "Receive recommendations tailored specifically to your unique biology and health journey"
+                },
+                "benefit4": {
+                    "title": "Complete Transparency",
+                    "desc": "See exactly what's in your supplements and why each ingredient was chosen for you"
+                }
+            },
+            "included": {
+                "title": "Included with Every Test",
+                "subtitle": "App access is included with all Lab1 tests at no additional cost. Track your entire health journey from day one.",
+                "button": "Choose Your Test"
+            },
+            "faq": {
+                "title": "App Questions",
+                "q1": {
+                    "question": "When do I get app access?",
+                    "answer": "You'll receive app access immediately after booking your test. Your results will appear in the app 5-7 days after your sample arrives at our lab."
+                },
+                "q2": {
+                    "question": "Is the app available on iOS and Android?",
+                    "answer": "Yes, the Lab1 app is available on both iOS (App Store) and Android (Google Play). You can also access your dashboard via web browser."
+                },
+                "q3": {
+                    "question": "How is my data protected?",
+                    "answer": "All data is encrypted with AES-256 bank-level encryption, stored on GDPR-compliant EU servers, and never shared with third parties."
+                },
+                "q4": {
+                    "question": "Can I export my data?",
+                    "answer": "Yes, you can download all your health data at any time in standard formats like PDF and CSV for your personal records."
+                }
             }
         }
     },
@@ -515,6 +626,11 @@ const translations = {
             "subtitle": "Kostenlose Beratung mit Gesundheitsberater inklusive",
             "button": "Beginnen Sie Ihre Reise"
         },
+        "contact": {
+            "title": "Kontakt aufnehmen",
+            "subtitle": "Haben Sie Fragen? Wir helfen Ihnen gerne auf Ihrer Gesundheitsreise",
+            "button": "Kontaktieren Sie uns"
+        },
         "footer": {
             "description": "Präzise Gesundheitseinblicke durch die einzigartige Kombination von Blut- und DNA-Analyse.",
             "tagline": "Mit ❤️ in Frankfurt entwickelt",
@@ -603,6 +719,10 @@ const translations = {
                 "feature4": "Indikatoren für Lebensmittelempfindlichkeiten"
             },
             "cta": "Test buchen",
+            "pricing": {
+                "initial": "einmaliger Test",
+                "monthly-label": "Monatliche Nahrungsergänzung:"
+            },
             "included": {
                 "title": "In jedem Test enthalten",
                 "item1": {
@@ -615,7 +735,7 @@ const translations = {
                 },
                 "item3": {
                     "title": "Mobile App-Zugang",
-                    "desc": "Verfolgen Sie Ergebnisse, überwachen Sie Ihre Reise und greifen Sie auf Erkenntnisse über unsere App zu"
+                    "desc": "Überwachen Sie Ihre Testergebnisse und Gesundheitsmarker während Ihrer Behandlungsreise über unsere App"
                 },
                 "item4": {
                     "title": "Personalisierte Nahrungsergänzung",
@@ -687,6 +807,108 @@ const translations = {
                 "title": "Bereit, Ihre Gesundheit zu optimieren?",
                 "subtitle": "Wählen Sie Ihren Test und starten Sie heute Ihre personalisierte Gesundheitsreise",
                 "button": "Test buchen"
+            }
+        },
+        "app": {
+            "hero": {
+                "title": "Ihre Gesundheit, In Ihrer Tasche",
+                "subtitle": "Verfolgen Sie Ihre Testergebnisse, überwachen Sie Gesundheitsmarker und optimieren Sie Ihre Nahrungsergänzungsreise mit der Lab1-App",
+                "cta": "Starten Sie Ihre Reise"
+            },
+            "features": {
+                "title": "Alles, was Sie brauchen, um Ihre Gesundheit zu verfolgen",
+                "subtitle": "Ihr personalisiertes Gesundheits-Dashboard, entworfen für Klarheit und umsetzbare Erkenntnisse",
+                "feature1": {
+                    "title": "Testergebnisse",
+                    "desc": "Sehen Sie alle Ihre Blut-Biomarker und DNA-Erkenntnisse an einem Ort mit leicht verständlichen Visualisierungen"
+                },
+                "feature2": {
+                    "title": "Verfolgung von Gesundheitsmarkern",
+                    "desc": "Überwachen Sie Veränderungen Ihrer wichtigsten Gesundheitsmarker im Laufe der Zeit und sehen Sie, wie Ihre Maßnahmen wirken"
+                },
+                "feature3": {
+                    "title": "Nahrungsergänzungsreise",
+                    "desc": "Verfolgen Sie Ihre tägliche Nahrungsergänzungseinnahme und erhalten Sie Erinnerungen für Ihr persönliches Protokoll"
+                },
+                "feature4": {
+                    "title": "Fortschrittseinblicke",
+                    "desc": "Erhalten Sie personalisierte Empfehlungen und Erkenntnisse basierend auf Ihren laufenden Gesundheitsdaten"
+                },
+                "feature5": {
+                    "title": "Sicher & Privat",
+                    "desc": "Ihre Gesundheitsdaten sind mit Bank-Level-Sicherheit verschlüsselt und werden niemals mit Dritten geteilt"
+                },
+                "feature6": {
+                    "title": "Expertenzugang",
+                    "desc": "Verbinden Sie sich direkt über die App mit Gesundheitsberatern für Fragen zu Ihren Ergebnissen"
+                }
+            },
+            "workflow": {
+                "title": "Ihre vollständige Gesundheitsreise",
+                "subtitle": "Vom Testen bis zur Optimierung – die Lab1-App begleitet Sie bei jedem Schritt",
+                "step1": {
+                    "title": "Testen lassen",
+                    "desc": "Bestellen Sie Ihr Testkit und sammeln Sie Proben zu Hause"
+                },
+                "step2": {
+                    "title": "Ergebnisse erhalten",
+                    "desc": "Erhalten Sie Ihre personalisierten Erkenntnisse direkt in der App"
+                },
+                "step3": {
+                    "title": "Nahrungsergänzung starten",
+                    "desc": "Beginnen Sie mit Ihrem maßgeschneiderten Nahrungsergänzungsprotokoll für Ihre Biologie"
+                },
+                "step4": {
+                    "title": "Fortschritt verfolgen",
+                    "desc": "Überwachen Sie täglich Ihre Gesundheitsmarker und Nahrungsergänzungseinnahme"
+                },
+                "step5": {
+                    "title": "Kontinuierlich optimieren",
+                    "desc": "Verfeinern Sie Ihr Protokoll basierend auf laufenden Daten und Expertenberatung"
+                }
+            },
+            "benefits": {
+                "title": "Warum die Lab1-App verwenden?",
+                "benefit1": {
+                    "title": "Datengesteuerte Entscheidungen",
+                    "desc": "Treffen Sie fundierte Entscheidungen über Ihre Gesundheit basierend auf echten Biomarkerdaten, nicht Vermutungen"
+                },
+                "benefit2": {
+                    "title": "Verantwortung & Konsistenz",
+                    "desc": "Bleiben Sie mit täglichen Erinnerungen und Fortschrittsverfolgung auf Kurs, um Ihre Gesundheitsziele zu erreichen"
+                },
+                "benefit3": {
+                    "title": "Personalisierte Einblicke",
+                    "desc": "Erhalten Sie Empfehlungen, die speziell auf Ihre einzigartige Biologie und Gesundheitsreise zugeschnitten sind"
+                },
+                "benefit4": {
+                    "title": "Vollständige Transparenz",
+                    "desc": "Sehen Sie genau, was in Ihren Nahrungsergänzungsmitteln enthalten ist und warum jede Zutat für Sie gewählt wurde"
+                }
+            },
+            "included": {
+                "title": "In jedem Test enthalten",
+                "subtitle": "App-Zugang ist in allen Lab1-Tests ohne zusätzliche Kosten enthalten. Verfolgen Sie Ihre gesamte Gesundheitsreise von Tag eins an.",
+                "button": "Wählen Sie Ihren Test"
+            },
+            "faq": {
+                "title": "App-Fragen",
+                "q1": {
+                    "question": "Wann bekomme ich App-Zugang?",
+                    "answer": "Sie erhalten sofort nach der Buchung Ihres Tests Zugang zur App. Ihre Ergebnisse erscheinen 5-7 Tage nachdem Ihre Probe in unserem Labor angekommen ist."
+                },
+                "q2": {
+                    "question": "Ist die App für iOS und Android verfügbar?",
+                    "answer": "Ja, die Lab1-App ist sowohl für iOS (App Store) als auch Android (Google Play) verfügbar. Sie können auch über den Webbrowser auf Ihr Dashboard zugreifen."
+                },
+                "q3": {
+                    "question": "Wie werden meine Daten geschützt?",
+                    "answer": "Alle Daten sind mit AES-256 Bank-Level-Verschlüsselung verschlüsselt, auf GDPR-konformen EU-Servern gespeichert und werden niemals mit Dritten geteilt."
+                },
+                "q4": {
+                    "question": "Kann ich meine Daten exportieren?",
+                    "answer": "Ja, Sie können jederzeit alle Ihre Gesundheitsdaten in Standardformaten wie PDF und CSV für Ihre persönlichen Unterlagen herunterladen."
+                }
             }
         }
     }
