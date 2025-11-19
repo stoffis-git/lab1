@@ -28,8 +28,9 @@ const translations = {
         "hero": {
             "title": {
                 "line1": "Informed by You.",
-                "line2": "Built by Lab1.",
-                "line3": "Proven by Science."
+                "line2": "Built by ",
+                "line3": "Proven by Science.",
+                "period": "."
             },
             "subtitle": "Precision nutrition based on your genes & blood",
             "cta": "Begin Your Journey"
@@ -483,8 +484,9 @@ const translations = {
         "hero": {
             "title": {
                 "line1": "Basiert auf Dir.",
-                "line2": "Entwickelt von Lab1.",
-                "line3": "Wissenschaftlich belegt."
+                "line2": "Entwickelt von ",
+                "line3": "Wissenschaftlich belegt.",
+                "period": "."
             },
             "subtitle": "Präzisionsernährung basierend auf Ihren Genen & Blut",
             "cta": "Starten Sie Ihre Reise"

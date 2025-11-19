@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Performance Test - Lab1</title>
+    <meta name="description" content="Book your Performance test package with Lab1. Choose your sample collection method and schedule your appointment.">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .booking-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: calc(80px + var(--space-lg)) var(--space-md) var(--space-2xl);
+        }
+
+        .booking-header {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .booking-step {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-lg);
+        }
+
+        .booking-step.active {
+            border-color: var(--color-black);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .booking-step.completed {
+            opacity: 0.6;
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--space-md);
+        }
+
+        .step-number {
+            width: 36px;
+            height: 36px;
+            background: var(--color-black);
+            color: var(--color-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            margin-right: var(--space-sm);
+        }
+
+        .booking-step.completed .step-number {
+            background: var(--color-border);
+            color: var(--color-text-secondary);
+        }
+
+        .step-title {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .option-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+        }
+
+        .option-card {
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .option-card:hover {
+            border-color: var(--color-black);
+            transform: translateY(-2px);
+        }
+
+        .option-card.selected {
+            border-color: var(--color-black);
+            background: var(--color-bg-light);
+        }
+
+        .option-card h4 {
+            margin: 0 0 var(--space-xs) 0;
+            font-size: 1.125rem;
+            font-weight: 500;
+        }
+
+        .option-card p {
+            margin: 0;
+            font-size: 0.875rem;
+            color: var(--color-text-secondary);
+        }
+
+        .location-select {
+            width: 100%;
+            padding: var(--space-sm) var(--space-md);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 1rem;
+            margin-top: var(--space-md);
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: var(--space-xs);
+            margin: var(--space-md) 0;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            padding: var(--space-xs);
+        }
+
+        .calendar-day:hover:not(.disabled) {
+            border-color: var(--color-black);
+            background: var(--color-bg-light);
+        }
+
+        .calendar-day.selected {
+            background: var(--color-black);
+            color: var(--color-white);
+            border-color: var(--color-black);
+        }
+
+        .calendar-day.disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .calendar-day-name {
+            font-size: 0.625rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--color-text-secondary);
+        }
+
+        .calendar-day-number {
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: var(--space-sm);
+            margin-top: var(--space-md);
+        }
+
+        .time-slot {
+            padding: var(--space-sm) var(--space-md);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.875rem;
+        }
+
+        .time-slot:hover:not(.disabled) {
+            border-color: var(--color-black);
+            background: var(--color-bg-light);
+        }
+
+        .time-slot.selected {
+            background: var(--color-black);
+            color: var(--color-white);
+            border-color: var(--color-black);
+        }
+
+        .time-slot.disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .form-group {
+            margin-bottom: var(--space-md);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: var(--space-xs);
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: var(--space-sm) var(--space-md);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .summary-box {
+            background: var(--color-bg-light);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--space-sm);
+        }
+
+        .summary-row.total {
+            font-weight: 600;
+            font-size: 1.125rem;
+            padding-top: var(--space-sm);
+            border-top: 1px solid var(--color-border);
+            margin-top: var(--space-sm);
+        }
+
+        .button-group {
+            display: flex;
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+
+        .btn {
+            padding: var(--space-sm) var(--space-lg);
+            border: none;
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--color-black);
+            color: var(--color-white);
+            flex: 1;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-black);
+            border: 1px solid var(--color-border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--color-black);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <header role="banner">
+        <nav class="navbar" role="navigation">
+            <div class="container nav-container">
+                <a href="../index.html" class="logo">
+                    <svg width="80" height="32" viewBox="0 0 80 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+                        <text x="0" y="24" font-family="Inter, sans-serif" font-size="24" font-weight="500" fill="currentColor">Lab1</text>
+                    </svg>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="../index.html#science">Science</a></li>
+                    <li><a href="../index.html#process">Process</a></li>
+                    <li><a href="../index.html#results">Results</a></li>
+                    <li><a href="../app.html">App</a></li>
+                    <li><a href="../tests.html">Shop</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="login-btn">Login</button>
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <span class="lang-separator">/</span>
+                        <button class="lang-btn" data-lang="de">DE</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="booking-container">
+            <div class="booking-header">
+                <h1>Book Your Performance Test</h1>
+                <p style="color: var(--color-text-secondary); margin-top: var(--space-sm);">Complete your booking in just a few steps</p>
+            </div>
+
+            <!-- Step 1: Collection Method -->
+            <div class="booking-step active" id="step1">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Choose Collection Method</h3>
+                </div>
+                <div class="option-grid">
+                    <div class="option-card" onclick="selectCollectionMethod('home')">
+                        <h4>🏠 At-Home Collection</h4>
+                        <p>Kit delivered to your address. Collect samples at your convenience and send back via prepaid shipping.</p>
+                    </div>
+                    <div class="option-card" onclick="selectCollectionMethod('location')">
+                        <h4>📍 Collection Location</h4>
+                        <p>Visit one of our partner locations for professional sample collection with trained staff.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Location Selection (shown only for location method) -->
+            <div class="booking-step hidden" id="step2-location">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Select Collection Location</h3>
+                </div>
+                <select class="location-select" id="locationSelect" onchange="selectLocation()">
+                    <option value="">Choose a location...</option>
+                    <option value="berlin">Berlin - Mitte Medical Center</option>
+                    <option value="hamburg">Hamburg - Alster Health Hub</option>
+                    <option value="munich">Munich - Marienplatz Clinic</option>
+                    <option value="frankfurt">Frankfurt - Hauptwache Lab</option>
+                    <option value="cologne">Cologne - Dom Medical Point</option>
+                </select>
+            </div>
+
+            <!-- Step 2/3: Address (for home collection) -->
+            <div class="booking-step hidden" id="step2-address">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Delivery Address</h3>
+                </div>
+                <div class="form-group">
+                    <label for="street">Street Address</label>
+                    <input type="text" id="street" placeholder="Hauptstraße 123">
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 2fr; gap: var(--space-md);">
+                    <div class="form-group">
+                        <label for="postal">Postal Code</label>
+                        <input type="text" id="postal" placeholder="10115">
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" placeholder="Berlin">
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="goToStep(1)">Back</button>
+                    <button class="btn btn-primary" onclick="confirmAddress()">Continue</button>
+                </div>
+            </div>
+
+            <!-- Step 3/4: Appointment (for location method) -->
+            <div class="booking-step hidden" id="step3-appointment">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Schedule Appointment</h3>
+                </div>
+                <p style="margin-bottom: var(--space-md); color: var(--color-text-secondary);">Select your preferred date and time</p>
+
+                <div class="calendar-grid" id="calendar">
+                    <!-- Calendar will be generated by JS -->
+                </div>
+
+                <div id="timeSlotsContainer" class="hidden">
+                    <p style="margin: var(--space-md) 0 var(--space-sm) 0; font-weight: 500;">Available Times</p>
+                    <div class="time-slots" id="timeSlots">
+                        <!-- Time slots will be generated by JS -->
+                    </div>
+                </div>
+
+                <div class="button-group" style="margin-top: var(--space-lg);">
+                    <button class="btn btn-secondary" onclick="goToStep(2)">Back</button>
+                    <button class="btn btn-primary" id="continueFromAppointment" onclick="confirmAppointment()" disabled>Continue</button>
+                </div>
+            </div>
+
+            <!-- Final Step: Personal Info & Confirmation -->
+            <div class="booking-step hidden" id="stepFinal">
+                <div class="step-header">
+                    <div class="step-number" id="finalStepNumber">3</div>
+                    <h3 class="step-title">Personal Information</h3>
+                </div>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" placeholder="Max Mustermann">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="max@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="+49 123 456789">
+                </div>
+
+                <div class="summary-box">
+                    <h4 style="margin: 0 0 var(--space-md) 0;">Booking Summary</h4>
+                    <div class="summary-row">
+                        <span>Performance Test Package</span>
+                        <span>€199.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span id="summaryMethod">Collection Method</span>
+                        <span id="summaryMethodValue">-</span>
+                    </div>
+                    <div class="summary-row" id="summaryLocationRow" style="display: none;">
+                        <span>Location</span>
+                        <span id="summaryLocation">-</span>
+                    </div>
+                    <div class="summary-row" id="summaryAppointmentRow" style="display: none;">
+                        <span>Appointment</span>
+                        <span id="summaryAppointment">-</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total (one-time)</span>
+                        <span>€199.00</span>
+                    </div>
+                    <p style="margin-top: var(--space-sm); font-size: 0.875rem; color: var(--color-text-secondary);">
+                        + €39.90/month for personalized supplements (after results)
+                    </p>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="goBackFromFinal()">Back</button>
+                    <button class="btn btn-primary" onclick="completeBooking()">Complete Booking</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let bookingData = {
+            packageId: 2,
+            packageName: 'Performance',
+            price: 199,
+            collectionMethod: null,
+            location: null,
+            address: {},
+            appointmentDate: null,
+            appointmentTime: null
+        };
+
+        function selectCollectionMethod(method) {
+            bookingData.collectionMethod = method;
+            document.querySelectorAll('.option-card').forEach(card => card.classList.remove('selected'));
+            event.target.closest('.option-card').classList.add('selected');
+
+            setTimeout(() => {
+                document.getElementById('step1').classList.add('completed');
+                document.getElementById('step1').classList.remove('active');
+
+                if (method === 'home') {
+                    document.getElementById('step2-address').classList.remove('hidden');
+                    document.getElementById('step2-address').classList.add('active');
+                    document.getElementById('finalStepNumber').textContent = '3';
+                } else {
+                    document.getElementById('step2-location').classList.remove('hidden');
+                    document.getElementById('step2-location').classList.add('active');
+                    document.getElementById('finalStepNumber').textContent = '4';
+                }
+            }, 300);
+        }
+
+        function selectLocation() {
+            const select = document.getElementById('locationSelect');
+            if (select.value) {
+                bookingData.location = select.options[select.selectedIndex].text;
+                setTimeout(() => {
+                    document.getElementById('step2-location').classList.add('completed');
+                    document.getElementById('step2-location').classList.remove('active');
+                    document.getElementById('step3-appointment').classList.remove('hidden');
+                    document.getElementById('step3-appointment').classList.add('active');
+                    generateCalendar();
+                }, 300);
+            }
+        }
+
+        function confirmAddress() {
+            const street = document.getElementById('street').value;
+            const postal = document.getElementById('postal').value;
+            const city = document.getElementById('city').value;
+
+            if (street && postal && city) {
+                bookingData.address = { street, postal, city };
+                goToFinalStep();
+            } else {
+                alert('Please fill in all address fields');
+            }
+        }
+
+        function generateCalendar() {
+            const calendar = document.getElementById('calendar');
+            const today = new Date();
+            const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+            calendar.innerHTML = '';
+
+            for (let i = 0; i < 14; i++) {
+                const date = new Date(today);
+                date.setDate(today.getDate() + i);
+
+                const dayDiv = document.createElement('div');
+                dayDiv.className = 'calendar-day';
+                if (i < 2) dayDiv.classList.add('disabled');
+
+                dayDiv.innerHTML = `
+                    <div class="calendar-day-name">${days[date.getDay()]}</div>
+                    <div class="calendar-day-number">${date.getDate()}</div>
+                `;
+
+                if (i >= 2) {
+                    dayDiv.onclick = () => selectDate(date);
+                }
+
+                calendar.appendChild(dayDiv);
+            }
+        }
+
+        function selectDate(date) {
+            bookingData.appointmentDate = date;
+            document.querySelectorAll('.calendar-day').forEach(day => day.classList.remove('selected'));
+            event.target.closest('.calendar-day').classList.add('selected');
+
+            document.getElementById('timeSlotsContainer').classList.remove('hidden');
+            generateTimeSlots();
+        }
+
+        function generateTimeSlots() {
+            const timeSlotsDiv = document.getElementById('timeSlots');
+            const slots = ['09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30'];
+
+            timeSlotsDiv.innerHTML = '';
+
+            slots.forEach(time => {
+                const slot = document.createElement('div');
+                slot.className = 'time-slot';
+                slot.textContent = time;
+                slot.onclick = () => selectTime(time);
+                timeSlotsDiv.appendChild(slot);
+            });
+        }
+
+        function selectTime(time) {
+            bookingData.appointmentTime = time;
+            document.querySelectorAll('.time-slot').forEach(slot => slot.classList.remove('selected'));
+            event.target.classList.add('selected');
+            document.getElementById('continueFromAppointment').disabled = false;
+        }
+
+        function confirmAppointment() {
+            if (bookingData.appointmentDate && bookingData.appointmentTime) {
+                goToFinalStep();
+            }
+        }
+
+        function goToFinalStep() {
+            document.querySelectorAll('.booking-step').forEach(step => {
+                step.classList.add('completed');
+                step.classList.remove('active');
+            });
+            document.getElementById('stepFinal').classList.remove('hidden');
+            document.getElementById('stepFinal').classList.remove('completed');
+            document.getElementById('stepFinal').classList.add('active');
+            updateSummary();
+        }
+
+        function updateSummary() {
+            if (bookingData.collectionMethod === 'home') {
+                document.getElementById('summaryMethodValue').textContent = 'At-Home Collection';
+                document.getElementById('summaryLocationRow').style.display = 'none';
+                document.getElementById('summaryAppointmentRow').style.display = 'none';
+            } else {
+                document.getElementById('summaryMethodValue').textContent = 'Collection Location';
+                document.getElementById('summaryLocationRow').style.display = 'flex';
+                document.getElementById('summaryLocation').textContent = bookingData.location;
+
+                if (bookingData.appointmentDate && bookingData.appointmentTime) {
+                    document.getElementById('summaryAppointmentRow').style.display = 'flex';
+                    const dateStr = bookingData.appointmentDate.toLocaleDateString('en-GB');
+                    document.getElementById('summaryAppointment').textContent = `${dateStr} at ${bookingData.appointmentTime}`;
+                }
+            }
+        }
+
+        function goToStep(stepNum) {
+            document.querySelectorAll('.booking-step').forEach(step => {
+                step.classList.remove('active');
+                step.classList.add('hidden');
+            });
+            document.getElementById('step1').classList.remove('hidden');
+
+            if (stepNum === 1) {
+                document.getElementById('step1').classList.add('active');
+                document.getElementById('step1').classList.remove('completed');
+            }
+        }
+
+        function goBackFromFinal() {
+            document.getElementById('stepFinal').classList.add('hidden');
+            document.getElementById('stepFinal').classList.remove('active');
+
+            if (bookingData.collectionMethod === 'home') {
+                document.getElementById('step2-address').classList.remove('completed');
+                document.getElementById('step2-address').classList.remove('hidden');
+                document.getElementById('step2-address').classList.add('active');
+            } else {
+                document.getElementById('step3-appointment').classList.remove('completed');
+                document.getElementById('step3-appointment').classList.remove('hidden');
+                document.getElementById('step3-appointment').classList.add('active');
+            }
+        }
+
+        function completeBooking() {
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+
+            if (fullName && email && phone) {
+                bookingData.personalInfo = { fullName, email, phone };
+                alert('Booking completed! You will receive a confirmation email shortly.');
+                console.log('Booking Data:', bookingData);
+                // In production, this would send data to your backend
+                window.location.href = '../tests.html';
+            } else {
+                alert('Please fill in all personal information fields');
+            }
+        }
+    </script>
+</body>
+</html>
