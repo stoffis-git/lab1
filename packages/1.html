@@ -284,7 +284,7 @@
         <nav class="navbar" role="navigation">
             <div class="container nav-container">
                 <a href="../index.html" class="logo">
-                    <img src="../images/lab1-logo.png" alt="Lab1" style="height: 32px; width: auto; display: block;">
+                    <img src="../images/lab1-logo.png" alt="Lab1" style="height: 40px; width: auto; display: block;">
                 </a>
                 <ul class="nav-links">
                     <li><a href="../index.html#science">Science</a></li>
@@ -320,11 +320,11 @@
                 </div>
                 <div class="option-grid">
                     <div class="option-card" onclick="selectCollectionMethod('home')">
-                        <h4>🏠 At-Home Collection</h4>
+                        <h4>At-Home Collection</h4>
                         <p>Kit delivered to your address. Collect samples at your convenience and send back via prepaid shipping.</p>
                     </div>
                     <div class="option-card" onclick="selectCollectionMethod('location')">
-                        <h4>📍 Collection Location</h4>
+                        <h4>Collection Location</h4>
                         <p>Visit one of our partner locations for professional sample collection with trained staff.</p>
                     </div>
                 </div>
@@ -472,15 +472,27 @@
                 document.getElementById('step1').classList.add('completed');
                 document.getElementById('step1').classList.remove('active');
 
+                let nextStep;
                 if (method === 'home') {
+                    // Hide location picker, show address form
+                    document.getElementById('step2-location').classList.add('hidden');
+                    document.getElementById('step2-location').classList.remove('active');
                     document.getElementById('step2-address').classList.remove('hidden');
                     document.getElementById('step2-address').classList.add('active');
                     document.getElementById('finalStepNumber').textContent = '3';
+                    nextStep = document.getElementById('step2-address');
                 } else {
+                    // Hide address form, show location picker
+                    document.getElementById('step2-address').classList.add('hidden');
+                    document.getElementById('step2-address').classList.remove('active');
                     document.getElementById('step2-location').classList.remove('hidden');
                     document.getElementById('step2-location').classList.add('active');
                     document.getElementById('finalStepNumber').textContent = '4';
+                    nextStep = document.getElementById('step2-location');
                 }
+
+                // Auto-scroll to next section
+                nextStep.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }, 300);
         }
 
