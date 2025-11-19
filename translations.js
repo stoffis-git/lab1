@@ -10,7 +10,8 @@ const translations = {
             "science": "Science",
             "process": "Process",
             "results": "Results",
-            "tests": "Tests",
+            "app": "App",
+            "shop": "Shop",
             "get-started": "Get Started",
             "login": "Login"
         },
@@ -464,7 +465,8 @@ const translations = {
             "science": "Wissenschaft",
             "process": "Prozess",
             "results": "Ergebnisse",
-            "tests": "Tests",
+            "app": "App",
+            "shop": "Shop",
             "get-started": "Loslegen",
             "login": "Anmelden"
         },
