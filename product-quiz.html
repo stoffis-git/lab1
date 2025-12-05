@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Selector Quiz - Find Your Perfect Lab1 Product | Lab1</title>
+    <meta name="description" content="Take our quick quiz to find the perfect Lab1 product line for your health goals and lifestyle.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: calc(80px + var(--space-xl)) auto var(--space-2xl);
+            padding: 0 var(--space-md);
+        }
+
+        .quiz-progress {
+            width: 100%;
+            height: 8px;
+            background: var(--color-bg-light);
+            border-radius: 4px;
+            margin-bottom: var(--space-2xl);
+            overflow: hidden;
+        }
+
+        .quiz-progress-bar {
+            height: 100%;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            transition: width 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .quiz-step {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .quiz-step.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .quiz-question {
+            background: white;
+            padding: var(--space-2xl);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: var(--space-lg);
+        }
+
+        .quiz-question h2 {
+            font-size: 1.75rem;
+            margin-bottom: var(--space-sm);
+            color: var(--color-text);
+        }
+
+        .quiz-question p {
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-xl);
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: var(--space-md);
+        }
+
+        .quiz-option {
+            padding: var(--space-lg);
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .quiz-option:hover {
+            border-color: var(--color-primary);
+            transform: translateX(4px);
+        }
+
+        .quiz-option.selected {
+            border-color: var(--color-primary);
+            background: linear-gradient(135deg, rgba(118, 75, 162, 0.05) 0%, rgba(102, 126, 234, 0.05) 100%);
+        }
+
+        .quiz-option h3 {
+            font-size: 1.125rem;
+            margin-bottom: var(--space-xs);
+            color: var(--color-text);
+        }
+
+        .quiz-option p {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            margin: 0;
+        }
+
+        .quiz-nav {
+            display: flex;
+            justify-content: space-between;
+            gap: var(--space-md);
+        }
+
+        .quiz-button {
+            padding: var(--space-md) var(--space-xl);
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .quiz-button-primary {
+            background: var(--color-black);
+            color: white;
+            flex: 1;
+        }
+
+        .quiz-button-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .quiz-button-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .quiz-button-secondary {
+            background: transparent;
+            color: var(--color-text);
+            border: 1px solid var(--color-border);
+        }
+
+        .quiz-button-secondary:hover {
+            border-color: var(--color-black);
+        }
+
+        .quiz-result {
+            background: white;
+            padding: var(--space-2xl);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .quiz-result h2 {
+            font-size: 2rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .quiz-result-card {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: white;
+            padding: var(--space-2xl);
+            border-radius: var(--radius-lg);
+            margin: var(--space-xl) 0;
+        }
+
+        .quiz-result-card h3 {
+            font-size: 1.75rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .quiz-result-features {
+            text-align: left;
+            margin: var(--space-lg) 0;
+        }
+
+        .quiz-result-features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .quiz-result-features li {
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .quiz-result-features li:last-child {
+            border-bottom: none;
+        }
+
+        @media (max-width: 768px) {
+            .quiz-question {
+                padding: var(--space-lg);
+            }
+
+            .quiz-question h2 {
+                font-size: 1.5rem;
+            }
+
+            .quiz-nav {
+                flex-direction: column;
+            }
+
+            .quiz-button-secondary {
+                order: 2;
+            }
+
+            .quiz-button-primary {
+                order: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <header role="banner">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <a href="index.html" class="logo">
+                    <img src="images/lab1-logo.png" alt="Lab1" style="height: 50px; width: auto;">
+                </a>
+                <ul class="nav-links">
+                    <li class="nav-dropdown">
+                        <a href="#" data-i18n="nav.products">Products ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="products-compare.html">Compare All Lines</a></li>
+                            <li><a href="products-essential.html">Essential Line</a></li>
+                            <li><a href="products-core.html">Core Line</a></li>
+                            <li><a href="products-pro.html">Pro Line</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="how-it-works.html" data-i18n="nav.process">How It Works</a></li>
+                    <li><a href="science.html" data-i18n="nav.science">Science</a></li>
+                    <li><a href="results.html" data-i18n="nav.results">Results</a></li>
+                    <li><a href="app.html" data-i18n="nav.app">App</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="login-btn" id="loginBtn">Login</button>
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <span class="lang-separator">/</span>
+                        <button class="lang-btn" data-lang="de">DE</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" id="main">
+        <div class="quiz-container">
+            <div class="quiz-progress">
+                <div class="quiz-progress-bar" id="progressBar" style="width: 0%"></div>
+            </div>
+
+            <!-- Step 1: Health Goal -->
+            <div class="quiz-step active" id="step1">
+                <div class="quiz-question">
+                    <h2>What's your primary health goal?</h2>
+                    <p>Choose the goal that matters most to you right now</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-value="general">
+                            <h3>General Wellness</h3>
+                            <p>Feel better day-to-day with foundational nutrition support</p>
+                        </div>
+                        <div class="quiz-option" data-value="optimization">
+                            <h3>Performance Optimization</h3>
+                            <p>Maximize energy, recovery, and athletic performance</p>
+                        </div>
+                        <div class="quiz-option" data-value="longevity">
+                            <h3>Longevity & Aging</h3>
+                            <p>Support healthy aging and long-term disease prevention</p>
+                        </div>
+                        <div class="quiz-option" data-value="specific">
+                            <h3>Address Specific Issues</h3>
+                            <p>Target known deficiencies or health concerns</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-nav">
+                    <button class="quiz-button quiz-button-primary" onclick="nextStep()" disabled id="next1">Next</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Testing Preference -->
+            <div class="quiz-step" id="step2">
+                <div class="quiz-question">
+                    <h2>How do you feel about testing?</h2>
+                    <p>Different product lines offer different levels of personalization</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-value="no-testing">
+                            <h3>I prefer no testing</h3>
+                            <p>Just give me high-quality supplements based on my demographics</p>
+                        </div>
+                        <div class="quiz-option" data-value="basic-testing">
+                            <h3>I'm open to one-time testing</h3>
+                            <p>DNA + blood test to personalize my formula</p>
+                        </div>
+                        <div class="quiz-option" data-value="ongoing">
+                            <h3>I want ongoing monitoring</h3>
+                            <p>Regular testing to continuously optimize my results</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-nav">
+                    <button class="quiz-button quiz-button-secondary" onclick="prevStep()">Back</button>
+                    <button class="quiz-button quiz-button-primary" onclick="nextStep()" disabled id="next2">Next</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Budget -->
+            <div class="quiz-step" id="step3">
+                <div class="quiz-question">
+                    <h2>What's your monthly budget?</h2>
+                    <p>We offer options at different price points</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-value="budget">
+                            <h3>Under €50/month</h3>
+                            <p>Affordable premium supplements</p>
+                        </div>
+                        <div class="quiz-option" data-value="mid">
+                            <h3>€50-150/month</h3>
+                            <p>Personalized testing and formulation</p>
+                        </div>
+                        <div class="quiz-option" data-value="premium">
+                            <h3>€150+/month or custom</h3>
+                            <p>Elite-level optimization and support</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-nav">
+                    <button class="quiz-button quiz-button-secondary" onclick="prevStep()">Back</button>
+                    <button class="quiz-button quiz-button-primary" onclick="showResults()" disabled id="next3">See Results</button>
+                </div>
+            </div>
+
+            <!-- Result -->
+            <div class="quiz-step" id="result">
+                <div class="quiz-result">
+                    <h2>Your Perfect Match</h2>
+                    <div class="quiz-result-card" id="resultCard"></div>
+                    <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+                        <a href="#" id="resultLink" class="cta-button large">View This Product Line</a>
+                        <button class="quiz-button quiz-button-secondary" onclick="restartQuiz()">Start Over</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="how-it-works.html">How It Works</a></p>
+                    <p><a href="science.html">Science</a></p>
+                </div>
+                <div class="footer-column">
+                    <h4>Products</h4>
+                    <p><a href="products-essential.html">Essential Line</a></p>
+                    <p><a href="products-core.html">Core Line</a></p>
+                    <p><a href="products-pro.html">Pro Line</a></p>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <p><a href="terms.html">Terms</a></p>
+                    <p><a href="privacy.html">Privacy</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentStep = 1;
+        let answers = {
+            goal: null,
+            testing: null,
+            budget: null
+        };
+
+        // Handle option selection
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const step = this.closest('.quiz-step');
+                step.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+
+                const nextButton = step.querySelector('.quiz-button-primary');
+                if (nextButton) nextButton.disabled = false;
+
+                // Store answer
+                const stepId = step.id;
+                const value = this.dataset.value;
+                if (stepId === 'step1') answers.goal = value;
+                if (stepId === 'step2') answers.testing = value;
+                if (stepId === 'step3') answers.budget = value;
+            });
+        });
+
+        function updateProgress() {
+            const progress = ((currentStep - 1) / 3) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        function nextStep() {
+            document.getElementById('step' + currentStep).classList.remove('active');
+            currentStep++;
+            document.getElementById('step' + currentStep).classList.add('active');
+            updateProgress();
+            window.scrollTo(0, 0);
+        }
+
+        function prevStep() {
+            document.getElementById('step' + currentStep).classList.remove('active');
+            currentStep--;
+            document.getElementById('step' + currentStep).classList.add('active');
+            updateProgress();
+            window.scrollTo(0, 0);
+        }
+
+        function determineProduct() {
+            // Priority 1: Budget
+            if (answers.budget === 'budget') return 'essential';
+            if (answers.budget === 'premium') return 'pro';
+
+            // Priority 2: Testing preference
+            if (answers.testing === 'no-testing') return 'essential';
+            if (answers.testing === 'ongoing') return 'pro';
+
+            // Default to core for mid-budget and basic testing
+            return 'core';
+        }
+
+        function showResults() {
+            const product = determineProduct();
+            const results = {
+                essential: {
+                    title: 'Essential Line',
+                    price: '€49/month',
+                    description: 'Premium supplements without testing - perfect for general wellness on a budget',
+                    features: [
+                        'Self-select formula based on age, gender, and lifestyle',
+                        'Premium bioavailable ingredients',
+                        'Therapeutic doses backed by research',
+                        'Daily convenience packs',
+                        'No testing required',
+                        '30-day money-back guarantee'
+                    ],
+                    link: 'products-essential.html',
+                    gradient: 'linear-gradient(135deg, #ff9a76 0%, #f97c5d 100%)'
+                },
+                core: {
+                    title: 'Core Line',
+                    price: '€99/month',
+                    description: 'Personalized supplements based on your DNA and blood analysis',
+                    features: [
+                        'DNA analysis (40+ genetic markers)',
+                        'Comprehensive blood testing (35+ biomarkers)',
+                        'Fully personalized formula',
+                        'Choose your focus: Nutrition, Performance, or Longevity',
+                        'Retest every 6 months',
+                        'App access with progress tracking'
+                    ],
+                    link: 'products-core.html',
+                    gradient: 'linear-gradient(135deg, #764ba2 0%, #667eea 100%)'
+                },
+                pro: {
+                    title: 'Pro Line',
+                    price: 'Custom pricing',
+                    description: 'Elite performance optimization with monthly monitoring and dedicated support',
+                    features: [
+                        'Monthly blood testing and adjustments',
+                        'Advanced biomarker panel (60+ markers)',
+                        'Dedicated nutrition coach',
+                        'Unlimited expert consultations',
+                        'Team support available',
+                        'Priority customer service'
+                    ],
+                    link: 'products-pro.html',
+                    gradient: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)'
+                }
+            };
+
+            const result = results[product];
+            const resultCard = document.getElementById('resultCard');
+            resultCard.style.background = result.gradient;
+            resultCard.innerHTML = `
+                <h3>${result.title}</h3>
+                <div style="font-size: 2rem; font-weight: 600; margin: var(--space-md) 0;">${result.price}</div>
+                <p style="margin-bottom: var(--space-lg);">${result.description}</p>
+                <div class="quiz-result-features">
+                    <ul>
+                        ${result.features.map(f => `<li>✓ ${f}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+            document.getElementById('resultLink').href = result.link;
+
+            document.getElementById('step3').classList.remove('active');
+            document.getElementById('result').classList.add('active');
+            document.getElementById('progressBar').style.width = '100%';
+            window.scrollTo(0, 0);
+        }
+
+        function restartQuiz() {
+            currentStep = 1;
+            answers = { goal: null, testing: null, budget: null };
+            document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+            document.querySelectorAll('.quiz-button-primary').forEach(btn => btn.disabled = true);
+            document.getElementById('result').classList.remove('active');
+            document.getElementById('step1').classList.add('active');
+            updateProgress();
+            window.scrollTo(0, 0);
+        }
+
+        updateProgress();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

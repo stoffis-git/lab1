@@ -29,11 +29,19 @@
                     <img src="images/lab1-logo.png" alt="Lab1" style="height: 50px; width: auto; display: block;">
                 </a>
                 <ul class="nav-links">
-                    <li><a href="index.html#science" data-i18n="nav.science">Science</a></li>
-                    <li><a href="process.html" data-i18n="nav.process">Process</a></li>
-                    <li><a href="index.html#results" data-i18n="nav.results">Results</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" data-i18n="nav.products">Products ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="products-compare.html">Compare All Lines</a></li>
+                            <li><a href="products-essential.html">Essential Line</a></li>
+                            <li><a href="products-core.html">Core Line</a></li>
+                            <li><a href="products-pro.html">Pro Line</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="how-it-works.html" data-i18n="nav.process">How It Works</a></li>
+                    <li><a href="science.html" data-i18n="nav.science">Science</a></li>
+                    <li><a href="results.html" data-i18n="nav.results">Results</a></li>
                     <li><a href="app.html" data-i18n="nav.app">App</a></li>
-                    <li><a href="tests.html" data-i18n="nav.shop">Shop</a></li>
                 </ul>
                 <div class="nav-actions">
                     <button class="login-btn" id="loginBtn" data-i18n="nav.login">Login</button>
@@ -57,7 +65,7 @@
                             Your Health,<br>In Your Pocket
                         </h1>
                         <p class="hero-subtitle" data-i18n="app.hero.subtitle">Track your test results, monitor health markers, and optimize your supplement journey with the Lab1 app</p>
-                        <a href="tests.html" class="cta-button" data-i18n="app.hero.cta">Start Your Journey</a>
+                        <a href="products-core.html" class="cta-button" data-i18n="app.hero.cta">Start Your Journey</a>
                     </div>
                     <div class="hero-image animate-on-scroll">
                         <img src="images/pexels-belych-8047169.jpg" alt="Health and wellness" style="width: 100%; max-width: 400px; height: auto; border-radius: var(--radius-lg); object-fit: cover; margin: 0 auto; display: block;">
@@ -164,7 +172,7 @@
                 <div class="cta-content animate-on-scroll" style="text-align: center; max-width: 700px; margin: 0 auto;">
                     <h2 class="section-title" data-i18n="app.included.title">Included with Every Test</h2>
                     <p class="section-subtitle" data-i18n="app.included.subtitle">App access is included with all Lab1 tests at no additional cost. Track your entire health journey from day one.</p>
-                    <a href="tests.html" class="cta-button large" data-i18n="app.included.button">Choose Your Test</a>
+                    <a href="products-core.html" class="cta-button large" data-i18n="app.included.button">Choose Your Test</a>
                 </div>
             </div>
             </div>

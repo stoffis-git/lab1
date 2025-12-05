@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Lab1 Tests - Choose Your Health Analysis</title>
+    <meta name="title" content="Lab1 Tests - Choose Your Health Analysis">
+    <meta name="description" content="Choose from Longevity, Performance, or Nutrition testing. Personalized health insights based on your biology.">
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="styles.css" as="style">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main" class="skip-link" data-i18n="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <header role="banner">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="container nav-container">
+                <a href="index.html" class="logo">
+                    <img src="images/lab1-logo.png" alt="Lab1" style="height: 50px; width: auto; display: block;">
+                </a>
+                <ul class="nav-links">
+                    <li class="nav-dropdown">
+                        <a href="#" data-i18n="nav.products">Products ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="products-compare.html">Compare All Lines</a></li>
+                            <li><a href="products-essential.html">Essential Line</a></li>
+                            <li><a href="products-core.html">Core Line</a></li>
+                            <li><a href="products-pro.html">Pro Line</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="how-it-works.html" data-i18n="nav.process">How It Works</a></li>
+                    <li><a href="science.html" data-i18n="nav.science">Science</a></li>
+                    <li><a href="results.html" data-i18n="nav.results">Results</a></li>
+                    <li><a href="app.html" data-i18n="nav.app">App</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="login-btn" id="loginBtn" data-i18n="nav.login">Login</button>
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
+                        <span class="lang-separator">/</span>
+                        <button class="lang-btn" data-lang="de" aria-label="Switch to German">DE</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" id="main">
+        <!-- Hero Section -->
+        <section class="hero" style="min-height: auto; padding-top: calc(80px + var(--space-lg)); padding-bottom: var(--space-xs);">
+            <div class="container">
+                <div class="hero-content-centered animate-on-scroll">
+                    <h1 class="hero-title" data-i18n="tests.hero.title" style="font-size: 2.5rem;">Choose Your Test</h1>
+                    <p class="hero-subtitle" data-i18n="tests.hero.subtitle" style="margin-bottom: 0;">Select the health analysis that matches your goals</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Test Offerings -->
+        <section class="tests-section" style="padding-top: var(--space-lg);">
+            <div class="container">
+                <div class="pricing-grid">
+                    <!-- Longevity Test -->
+                    <div class="pricing-card featured animate-on-scroll">
+                        <div class="pricing-image">
+                            <img src="images/pexels-ron-lach-8626076.jpg" alt="Longevity and aging" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md);">
+                        </div>
+                        <div class="pricing-header">
+                            <h3 class="pricing-title" data-i18n="tests.longevity.title">Longevity</h3>
+                            <p class="pricing-subtitle" data-i18n="tests.longevity.subtitle">Understand and influence your aging process</p>
+                            <div class="pricing-price">
+                                <span class="price-amount">€249</span>
+                                <span class="price-label" data-i18n="tests.pricing.initial">one-time test</span>
+                            </div>
+                            <div class="pricing-monthly">
+                                <span class="monthly-label" data-i18n="tests.pricing.monthly-label">Monthly supplements:</span>
+                                <span class="monthly-price">€39.9/month</span>
+                            </div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li data-i18n="tests.longevity.feature1">Comprehensive health analysis</li>
+                                <li data-i18n="tests.longevity.feature2">Biomarkers of aging</li>
+                                <li data-i18n="tests.longevity.feature3">Hormone balance</li>
+                                <li data-i18n="tests.longevity.feature4">Inflammation markers</li>
+                            </ul>
+                        </div>
+                        <a href="packages/1.html" class="cta-button" data-i18n="tests.cta">Book Test</a>
+                    </div>
+
+                    <!-- Performance Test -->
+                    <div class="pricing-card animate-on-scroll">
+                        <div class="pricing-image">
+                            <img src="images/pexels-maksgelatin-4348631.jpg" alt="Performance and vitality" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md);">
+                        </div>
+                        <div class="pricing-header">
+                            <h3 class="pricing-title" data-i18n="tests.performance.title">Performance</h3>
+                            <p class="pricing-subtitle" data-i18n="tests.performance.subtitle">Optimize your physical and mental performance</p>
+                            <div class="pricing-price">
+                                <span class="price-amount">€199</span>
+                                <span class="price-label" data-i18n="tests.pricing.initial">one-time test</span>
+                            </div>
+                            <div class="pricing-monthly">
+                                <span class="monthly-label" data-i18n="tests.pricing.monthly-label">Monthly supplements:</span>
+                                <span class="monthly-price">€39.9/month</span>
+                            </div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li data-i18n="tests.performance.feature1">Energy metabolism</li>
+                                <li data-i18n="tests.performance.feature2">Recovery indicators</li>
+                                <li data-i18n="tests.performance.feature3">Performance hormones</li>
+                                <li data-i18n="tests.performance.feature4">Stress markers</li>
+                            </ul>
+                        </div>
+                        <a href="packages/2.html" class="cta-button" data-i18n="tests.cta">Book Test</a>
+                    </div>
+
+                    <!-- Nutrition Test -->
+                    <div class="pricing-card animate-on-scroll">
+                        <div class="pricing-image">
+                            <img src="images/pexels-karola-g-4589438.jpg" alt="Nutrition and natural health" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md);">
+                        </div>
+                        <div class="pricing-header">
+                            <h3 class="pricing-title" data-i18n="tests.nutrition.title">Nutrition</h3>
+                            <p class="pricing-subtitle" data-i18n="tests.nutrition.subtitle">Identify nutritional deficiencies and optimize your diet</p>
+                            <div class="pricing-price">
+                                <span class="price-amount">€179</span>
+                                <span class="price-label" data-i18n="tests.pricing.initial">one-time test</span>
+                            </div>
+                            <div class="pricing-monthly">
+                                <span class="monthly-label" data-i18n="tests.pricing.monthly-label">Monthly supplements:</span>
+                                <span class="monthly-price">€39.9/month</span>
+                            </div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li data-i18n="tests.nutrition.feature1">Vitamin and mineral status</li>
+                                <li data-i18n="tests.nutrition.feature2">Omega fatty acids</li>
+                                <li data-i18n="tests.nutrition.feature3">Metabolic health</li>
+                                <li data-i18n="tests.nutrition.feature4">Food sensitivities indicators</li>
+                            </ul>
+                        </div>
+                        <a href="packages/3.html" class="cta-button" data-i18n="tests.cta">Book Test</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What's Included (Common to All Tests) -->
+        <section class="content-block" style="background-image: url('images/9794e446-fb0b-4fba-a107-6da568fb1347-2.png'); background-size: cover; background-position: center; color: white;">
+            <div class="container">
+                <h2 class="section-title center animate-on-scroll" data-i18n="tests.included.title" style="color: white;">What's Included in Every Test</h2>
+                <div class="ecosystem-grid" style="margin-top: 4rem;">
+                    <div class="ecosystem-card animate-on-scroll" style="border-color: rgba(255, 255, 255, 0.3);">
+                        <h3 data-i18n="tests.included.item1.title" style="color: white;">At-Home Collection</h3>
+                        <p data-i18n="tests.included.item1.desc" style="color: white;">Simple finger-prick blood and saliva (DNA) collection kit delivered to your door</p>
+                    </div>
+                    <div class="ecosystem-card animate-on-scroll" style="border-color: rgba(255, 255, 255, 0.3);">
+                        <h3 data-i18n="tests.included.item2.title" style="color: white;">Combined Lab Analysis</h3>
+                        <p data-i18n="tests.included.item2.desc" style="color: white;">Unique combination of blood biomarkers and DNA analysis in EU-certified labs</p>
+                    </div>
+                    <div class="ecosystem-card animate-on-scroll" style="border-color: rgba(255, 255, 255, 0.3);">
+                        <h3 data-i18n="tests.included.item3.title" style="color: white;">Mobile App Access</h3>
+                        <p data-i18n="tests.included.item3.desc" style="color: white;">Monitor your test results and health markers through our dedicated app during your treatment journey</p>
+                    </div>
+                    <div class="ecosystem-card animate-on-scroll" style="border-color: rgba(255, 255, 255, 0.3);">
+                        <h3 data-i18n="tests.included.item4.title" style="color: white;">Personalized Supplements</h3>
+                        <p data-i18n="tests.included.item4.desc" style="color: white;">Custom formulations based on your unique blood + DNA insights</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="process-section">
+            <div class="container">
+                <h2 class="section-title center animate-on-scroll" data-i18n="tests.how-works.title">Your Health Journey</h2>
+                <p class="section-subtitle center" data-i18n="tests.how-works.subtitle">Testing is just the beginning—your personalized supplementation journey starts with insights</p>
+                <div class="steps">
+                    <div class="step animate-on-scroll">
+                        <span class="step-number">1</span>
+                        <h3 data-i18n="tests.how-works.step1.title">Test</h3>
+                        <p data-i18n="tests.how-works.step1.desc">Blood + DNA samples collected at home and analyzed in our labs</p>
+                    </div>
+                    <div class="step animate-on-scroll">
+                        <span class="step-number">2</span>
+                        <h3 data-i18n="tests.how-works.step2.title">Analyze</h3>
+                        <p data-i18n="tests.how-works.step2.desc">Unique insights from combining blood biomarkers with genetic data</p>
+                    </div>
+                    <div class="step animate-on-scroll">
+                        <span class="step-number">3</span>
+                        <h3 data-i18n="tests.how-works.step3.title">Formulate</h3>
+                        <p data-i18n="tests.how-works.step3.desc">Custom supplement blend tailored to your unique biology</p>
+                    </div>
+                    <div class="step animate-on-scroll">
+                        <span class="step-number">4</span>
+                        <h3 data-i18n="tests.how-works.step5.title">Optimize</h3>
+                        <p data-i18n="tests.how-works.step5.desc">Continuous adjustments based on your evolving health data</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Table -->
+        <section class="comparison-section">
+            <div class="container">
+                <h2 class="section-title center animate-on-scroll" data-i18n="tests.comparison.title">Compare Tests</h2>
+                <p class="section-subtitle center" data-i18n="tests.comparison.subtitle">Each test focuses on different biomarkers specific to your health goals</p>
+                <div class="comparison-table-tests animate-on-scroll">
+                    <div class="comparison-row header">
+                        <div class="comparison-cell"></div>
+                        <div class="comparison-cell">Nutrition</div>
+                        <div class="comparison-cell">Performance</div>
+                        <div class="comparison-cell highlight">Longevity</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-cell label" data-i18n="tests.comparison.row1">Focus Area</div>
+                        <div class="comparison-cell" data-i18n="tests.comparison.nutrition-focus">Nutritional deficiencies</div>
+                        <div class="comparison-cell" data-i18n="tests.comparison.performance-focus">Energy & recovery</div>
+                        <div class="comparison-cell highlight" data-i18n="tests.comparison.longevity-focus">Aging & longevity</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-cell label" data-i18n="tests.comparison.row2">Key Markers Tested</div>
+                        <div class="comparison-cell" data-i18n="tests.comparison.nutrition-markers">Vitamins, minerals, omega-3</div>
+                        <div class="comparison-cell" data-i18n="tests.comparison.performance-markers">Cortisol, testosterone, metabolic markers</div>
+                        <div class="comparison-cell highlight" data-i18n="tests.comparison.longevity-markers">Inflammation, hormones, cellular health</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-cell label" data-i18n="tests.comparison.row3">DNA Analysis</div>
+                        <div class="comparison-cell">—</div>
+                        <div class="comparison-cell">✓</div>
+                        <div class="comparison-cell highlight">✓</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-cell label" data-i18n="tests.comparison.row4">Number of Biomarkers</div>
+                        <div class="comparison-cell">15+</div>
+                        <div class="comparison-cell">25+</div>
+                        <div class="comparison-cell highlight">40+</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="trust-section" style="background: var(--color-bg-light);">
+            <div class="container">
+                <h2 class="section-title center animate-on-scroll" data-i18n="tests.faq.title">Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="trust-card animate-on-scroll">
+                        <h3 data-i18n="tests.faq.q1.question">How long until I get results?</h3>
+                        <p data-i18n="tests.faq.q1.answer">Results are typically available within 5-7 business days after your sample arrives at our laboratory.</p>
+                    </div>
+                    <div class="trust-card animate-on-scroll">
+                        <h3 data-i18n="tests.faq.q2.question">Is the test safe?</h3>
+                        <p data-i18n="tests.faq.q2.answer">Yes, completely safe. A simple finger-prick blood sample is all that's needed. Detailed instructions are included.</p>
+                    </div>
+                    <div class="trust-card animate-on-scroll">
+                        <h3 data-i18n="tests.faq.q3.question">Can I take multiple tests?</h3>
+                        <p data-i18n="tests.faq.q3.answer">Absolutely! Many customers start with one test and add others later. We offer bundle discounts for multiple tests.</p>
+                    </div>
+                    <div class="trust-card animate-on-scroll">
+                        <h3 data-i18n="tests.faq.q4.question">What happens after I get results?</h3>
+                        <p data-i18n="tests.faq.q4.answer">Your personalized supplementation journey begins! You'll receive custom formulations based on your unique blood+DNA insights, access our mobile app to track progress, and get ongoing support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="content-block" style="background: var(--color-bg-light);">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <h2 class="section-title center animate-on-scroll">Frequently Asked Questions</h2>
+                    <p class="section-subtitle center animate-on-scroll" style="margin-bottom: var(--space-2xl);">Everything you need to know about Core Line testing</p>
+
+                    <div style="display: grid; gap: var(--space-md);">
+                        <details class="faq-item" style="background: white; padding: var(--space-lg); border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                            <summary style="font-weight: 600; font-size: 1.125rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                                How does the testing process work?
+                                <span style="transition: transform 0.3s ease;">▼</span>
+                            </summary>
+                            <div style="margin-top: var(--space-md); color: var(--color-text-secondary);">
+                                <p>After ordering, you'll receive a test kit at home containing everything needed for DNA (cheek swab) and blood collection. You can either collect samples at home and mail them back, or visit a partner collection site. Results are typically ready in 2-3 weeks.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item" style="background: white; padding: var(--space-lg); border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                            <summary style="font-weight: 600; font-size: 1.125rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                                What's included in my monthly subscription?
+                                <span style="transition: transform 0.3s ease;">▼</span>
+                            </summary>
+                            <div style="margin-top: var(--space-md); color: var(--color-text-secondary);">
+                                <p>Your subscription includes your personalized daily supplement packs, full access to the Lab1 app with biomarker tracking, and one consultation with our nutrition team. Retesting is recommended every 6 months (additional cost).</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item" style="background: white; padding: var(--space-lg); border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                            <summary style="font-weight: 600; font-size: 1.125rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                                Can I switch between Nutrition, Performance, and Longevity tests?
+                                <span style="transition: transform 0.3s ease;">▼</span>
+                            </summary>
+                            <div style="margin-top: var(--space-md); color: var(--color-text-secondary);">
+                                <p>Yes! Your DNA data remains valid, so switching focus areas only requires new blood work to analyze the relevant biomarkers. Contact our support team to coordinate the switch.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item" style="background: white; padding: var(--space-lg); border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                            <summary style="font-weight: 600; font-size: 1.125rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                                Is my genetic and health data private?
+                                <span style="transition: transform 0.3s ease;">▼</span>
+                            </summary>
+                            <div style="margin-top: var(--space-md); color: var(--color-text-secondary);">
+                                <p>Absolutely. Your data is encrypted end-to-end, stored on EU servers complying with GDPR, and never shared with third parties without your explicit consent. You own your data and can request deletion at any time.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item" style="background: white; padding: var(--space-lg); border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                            <summary style="font-weight: 600; font-size: 1.125rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                                Can I cancel anytime?
+                                <span style="transition: transform 0.3s ease;">▼</span>
+                            </summary>
+                            <div style="margin-top: var(--space-md); color: var(--color-text-secondary);">
+                                <p>Yes, you can cancel your supplement subscription anytime with no penalties. Your test results and data remain accessible in your account even after cancellation.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item" style="background: white; padding: var(--space-lg); border-radius: var(--space-md); border: 1px solid var(--color-border);">
+                            <summary style="font-weight: 600; font-size: 1.125rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                                Do you ship internationally?
+                                <span style="transition: transform 0.3s ease;">▼</span>
+                            </summary>
+                            <div style="margin-top: var(--space-md); color: var(--color-text-secondary);">
+                                <p>Currently, we ship within the EU and UK. Testing services are available in Germany, Austria, Switzerland, Netherlands, and Belgium. Contact us for updates on expansion to other regions.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="final-cta" id="booking">
+            <div class="container">
+                <div class="cta-content animate-on-scroll">
+                    <h2 class="cta-title" data-i18n="tests.final-cta.title">Ready to Optimize Your Health?</h2>
+                    <p class="cta-subtitle" data-i18n="tests.final-cta.subtitle">Choose your test and start your personalized health journey today</p>
+                    <a href="#" class="cta-button large" data-i18n="tests.final-cta.button">Book Your Test</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">Lab1</div>
+                    <p class="footer-description" data-i18n="footer.description">Precision health insights powered by the unique combination of blood and DNA analysis.</p>
+                    <p class="footer-tagline" data-i18n="footer.tagline">Coded with ❤️ in Frankfurt</p>
+                </div>
+                <div class="footer-column">
+                    <h4 data-i18n="footer.contact.title">Contact</h4>
+                    <p><a href="mailto:max@eterno.health">max@eterno.health</a></p>
+                    <p><a href="tel:+491234567890">+49 (0) 123 456 789</a></p>
+                </div>
+                <div class="footer-column">
+                    <h4 data-i18n="footer.legal.title">Legal</h4>
+                    <p><a href="terms.html" data-i18n="footer.legal.terms">Terms of Service</a></p>
+                    <p><a href="privacy.html" data-i18n="footer.legal.privacy">Privacy Policy</a></p>
+                    <p><a href="#impressum" data-i18n="footer.legal.impressum">Impressum</a></p>
+                </div>
+                <div class="footer-column">
+                    <h4 data-i18n="footer.company.title">Company</h4>
+                    <p class="footer-company">
+                        <strong>AMO GmbH</strong><br>
+                        Mittelweg 25<br>
+                        20148 Hamburg
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">&copy; 2025 Lab1. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal" aria-label="Close">&times;</button>
+            <div class="modal-header">
+                <h2 data-i18n="login.title">Welcome Back</h2>
+                <p data-i18n="login.subtitle">Access your personalized health dashboard</p>
+            </div>
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="email" data-i18n="login.email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="password" data-i18n="login.password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="form-submit" data-i18n="login.submit">Login</button>
+            </form>
+            <div class="form-footer">
+                <p><a href="#" data-i18n="login.forgot">Forgot password?</a></p>
+                <p data-i18n="login.signup-prompt">Don't have an account? <a href="#" data-i18n="login.signup">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

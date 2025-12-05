@@ -29,11 +29,19 @@
                     <img src="images/lab1-logo.png" alt="Lab1" style="height: 50px; width: auto; display: block;">
                 </a>
                 <ul class="nav-links">
-                    <li><a href="#science" data-i18n="nav.science">Science</a></li>
-                    <li><a href="process.html" data-i18n="nav.process">Process</a></li>
-                    <li><a href="#results" data-i18n="nav.results">Results</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" data-i18n="nav.products">Products ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="products-compare.html">Compare All Lines</a></li>
+                            <li><a href="products-essential.html">Essential Line</a></li>
+                            <li><a href="products-core.html">Core Line</a></li>
+                            <li><a href="products-pro.html">Pro Line</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="how-it-works.html" data-i18n="nav.process">How It Works</a></li>
+                    <li><a href="science.html" data-i18n="nav.science">Science</a></li>
+                    <li><a href="results.html" data-i18n="nav.results">Results</a></li>
                     <li><a href="app.html" data-i18n="nav.app">App</a></li>
-                    <li><a href="tests.html" data-i18n="nav.shop">Shop</a></li>
                 </ul>
                 <div class="nav-actions">
                     <button class="login-btn" id="loginBtn" data-i18n="nav.login">Login</button>
@@ -51,22 +59,49 @@
         <!-- Hero Section -->
         <section class="hero" style="padding-top: calc(var(--space-2xl) - 40px);">
             <div class="container">
-                <div class="hero-grid">
-                    <div class="hero-content animate-on-scroll">
-                        <h1 class="hero-title">
-                            <span data-i18n="hero.title.line1">Informed by You.</span><br>
-                            <span>
-                                <span data-i18n="hero.title.line2">Built by </span>
-                                <img src="images/lab1-logo_cropped.png" alt="Lab1" style="height: 0.82em; width: auto; display: inline-block; vertical-align: middle; margin: 0 8px 5px 8px;">
-                                <span data-i18n="hero.title.period">.</span>
-                            </span><br>
-                            <span data-i18n="hero.title.line3">Proven by Science.</span>
-                        </h1>
-                        <p class="hero-subtitle" data-i18n="hero.subtitle">Precision nutrition based on your genes & blood</p>
-                        <a href="tests.html" class="cta-button" data-i18n="hero.cta">Begin Your Journey</a>
-                    </div>
-                    <div class="hero-image animate-on-scroll">
-                        <img src="images/lab1-eyes_long.jpeg" alt="Personalized health for everyone" style="width: 100%; aspect-ratio: 1/1; border-radius: var(--radius-lg); object-fit: cover;">
+                <div class="hero-content-centered animate-on-scroll" style="text-align: center; max-width: 900px; margin: 0 auto;">
+                    <h1 class="hero-title">
+                        Lab1: Precision Nutrition for Your Biology
+                    </h1>
+                    <p class="hero-subtitle" style="font-size: 1.25rem; margin-bottom: var(--space-xl);">Premium supplements designed for how you're built—available with or without testing.</p>
+
+                    <!-- Three-Path Selection -->
+                    <div class="product-line-selector" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-lg); margin-top: var(--space-2xl); margin-bottom: var(--space-lg);">
+                        <!-- Essential Line Card -->
+                        <div class="product-line-card essential-card" style="background: linear-gradient(135deg, #ff9a76 0%, #f97c5d 100%); padding: var(--space-lg); border-radius: var(--radius-lg); color: white; text-align: left;">
+                            <h2 style="font-size: 1.5rem; margin-bottom: var(--space-sm); color: white;">Essential Line</h2>
+                            <ul style="list-style: none; padding: 0; margin: var(--space-md) 0; font-size: 0.9rem;">
+                                <li style="margin-bottom: var(--space-xs);">✓ No testing</li>
+                                <li style="margin-bottom: var(--space-xs);">✓ Premium quality</li>
+                                <li style="margin-bottom: var(--space-xs);">✓ Self-select</li>
+                            </ul>
+                            <p style="font-size: 1.25rem; font-weight: 600; margin: var(--space-md) 0; color: white;">€35/month</p>
+                            <a href="products-essential.html" class="cta-button" style="background: white; color: #f97c5d; display: inline-block; margin-top: var(--space-sm); font-size: 0.9rem; padding: var(--space-sm) var(--space-md);">Shop Essential</a>
+                        </div>
+
+                        <!-- Core Line Card -->
+                        <div class="product-line-card core-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: var(--space-lg); border-radius: var(--radius-lg); color: white; text-align: left;">
+                            <h2 style="font-size: 1.5rem; margin-bottom: var(--space-sm); color: white;">Core Line</h2>
+                            <ul style="list-style: none; padding: 0; margin: var(--space-md) 0; font-size: 0.9rem;">
+                                <li style="margin-bottom: var(--space-xs);">✓ DNA + Blood</li>
+                                <li style="margin-bottom: var(--space-xs);">✓ 85%+ optimization</li>
+                                <li style="margin-bottom: var(--space-xs);">✓ Personalized</li>
+                            </ul>
+                            <p style="font-size: 1.25rem; font-weight: 600; margin: var(--space-md) 0; color: white;">€80/month</p>
+                            <a href="products-core.html" class="cta-button" style="background: white; color: #764ba2; display: inline-block; margin-top: var(--space-sm); font-size: 0.9rem; padding: var(--space-sm) var(--space-md);">Start Core</a>
+                        </div>
+
+                        <!-- Pro Line Card -->
+                        <div class="product-line-card pro-card" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: var(--space-lg); border-radius: var(--radius-lg); color: white; text-align: left; border: 2px solid #FFD700;">
+                            <h2 style="font-size: 1.5rem; margin-bottom: var(--space-sm); color: #FFD700;">Pro Line</h2>
+                            <ul style="list-style: none; padding: 0; margin: var(--space-md) 0; font-size: 0.9rem;">
+                                <li style="margin-bottom: var(--space-xs);">✓ Elite athletes</li>
+                                <li style="margin-bottom: var(--space-xs);">✓ 95%+ optimization</li>
+                                <li style="margin-bottom: var(--space-xs);">✓ Team support</li>
+                            </ul>
+                            <p style="font-size: 1.25rem; font-weight: 600; margin: var(--space-md) 0; color: white;">Custom pricing</p>
+                            <a href="products-pro.html" class="cta-button" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #1a1a1a; display: inline-block; margin-top: var(--space-sm); font-size: 0.9rem; padding: var(--space-sm) var(--space-md);">Learn More</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -176,104 +211,31 @@
             </div>
         </section>
 
-        <!-- Results -->
-        <section class="results-section" id="results">
+        <!-- Why Lab1 Works - Linking Sections -->
+        <section class="content-block" style="background: var(--color-bg-light);">
             <div class="container">
-                <h2 class="section-title center animate-on-scroll" data-i18n="results.title">Transformation, Quantified</h2>
-                <p class="section-subtitle center animate-on-scroll" data-i18n="results.subtitle">Real results from real people, measured through biomarker improvements</p>
-                <div class="results-grid">
-                    <div class="result-card animate-on-scroll">
-                        <div class="biomarker">
-                            <span class="biomarker-label">Vitamin D</span>
-                            <span class="biomarker-value">18 → 52 ng/mL</span>
-                        </div>
-                        <span class="result-timeline" data-i18n="results.card1.timeline">3 months</span>
-                        <p class="result-quote" data-i18n="results.card1.quote">"Finally have energy for my morning runs"</p>
-                        <p class="result-author">Michael R.</p>
-                    </div>
-                    <div class="result-card animate-on-scroll">
-                        <div class="biomarker">
-                            <span class="biomarker-label">Iron</span>
-                            <span class="biomarker-value">45 → 98 μg/dL</span>
-                        </div>
-                        <span class="result-timeline" data-i18n="results.card2.timeline">2 months</span>
-                        <p class="result-quote" data-i18n="results.card2.quote">"No more afternoon crashes at work"</p>
-                        <p class="result-author">Sarah K.</p>
-                    </div>
-                    <div class="result-card animate-on-scroll">
-                        <div class="biomarker">
-                            <span class="biomarker-label">B12</span>
-                            <span class="biomarker-value">280 → 680 pg/mL</span>
-                        </div>
-                        <span class="result-timeline" data-i18n="results.card3.timeline">6 weeks</span>
-                        <p class="result-quote" data-i18n="results.card3.quote">"Better focus and mental clarity throughout the day"</p>
-                        <p class="result-author">David L.</p>
-                    </div>
-                    <div class="result-card animate-on-scroll">
-                        <div class="biomarker">
-                            <span class="biomarker-label">Omega-3</span>
-                            <span class="biomarker-value">4.2% → 8.1%</span>
-                        </div>
-                        <span class="result-timeline" data-i18n="results.card4.timeline">4 months</span>
-                        <p class="result-quote" data-i18n="results.card4.quote">"Better focus and mental clarity throughout the day"</p>
-                        <p class="result-author">Jessica M.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+                    <h2 class="section-title center animate-on-scroll">Why Lab1 Works</h2>
+                    <p class="section-subtitle center animate-on-scroll" style="margin-bottom: var(--space-2xl);">Your biology determines how you absorb, process, and utilize nutrients. We test it, then optimize for it.</p>
 
-        <!-- Comparison Table -->
-        <section class="comparison-section" style="background-image: url('images/9794e446-fb0b-4fba-a107-6da568fb1347-2.png'); background-size: cover; background-position: center; background-blend-mode: soft-light; position: relative;">
-            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, 0.95); z-index: 0;"></div>
-            <div style="position: relative; z-index: 1;">
-            <div class="container">
-                <h2 class="section-title center animate-on-scroll" data-i18n="comparison.title">The Lab1 Difference</h2>
-                <div class="comparison-table animate-on-scroll">
-                    <div class="comparison-row header">
-                        <div class="comparison-cell"></div>
-                        <div class="comparison-cell" data-i18n="comparison.header.generic">Generic Supplements</div>
-                        <div class="comparison-cell highlight" data-i18n="comparison.header.lab1">Lab1 Approach</div>
-                    </div>
-                    <div class="comparison-row">
-                        <div class="comparison-cell label" data-i18n="comparison.row1.label">Approach</div>
-                        <div class="comparison-cell" data-i18n="comparison.row1.generic">One-size-fits-all</div>
-                        <div class="comparison-cell highlight" data-i18n="comparison.row1.lab1">Personalized to DNA & blood</div>
-                    </div>
-                    <div class="comparison-row">
-                        <div class="comparison-cell label" data-i18n="comparison.row2.label">Testing</div>
-                        <div class="comparison-cell" data-i18n="comparison.row2.generic">No testing</div>
-                        <div class="comparison-cell highlight" data-i18n="comparison.row2.lab1">Comprehensive analysis</div>
-                    </div>
-                    <div class="comparison-row">
-                        <div class="comparison-cell label" data-i18n="comparison.row3.label">Dosing</div>
-                        <div class="comparison-cell" data-i18n="comparison.row3.generic">Standard dosages</div>
-                        <div class="comparison-cell highlight" data-i18n="comparison.row3.lab1">Precise amounts</div>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </section>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-xl);">
+                        <div class="ecosystem-card">
+                            <h3>See Real Results</h3>
+                            <p>Discover how our customers have transformed their health through measurable biomarker improvements</p>
+                            <a href="results.html" style="color: var(--color-primary); font-weight: 600; text-decoration: none;">View Customer Results →</a>
+                        </div>
 
-        <!-- Trust Section -->
-        <section class="trust-section">
-            <div class="container">
-                <h2 class="section-title center animate-on-scroll" data-i18n="trust.title">Trust & Transparency</h2>
-                <div class="trust-grid">
-                    <div class="trust-card animate-on-scroll">
-                        <h3 data-i18n="trust.card1.title">Data Privacy</h3>
-                        <p data-i18n="trust.card1.desc">Your data is encrypted and never shared without consent</p>
-                    </div>
-                    <div class="trust-card animate-on-scroll">
-                        <h3 data-i18n="trust.card2.title">German Quality Standards</h3>
-                        <p data-i18n="trust.card2.desc">Manufactured in EU-certified facilities</p>
-                    </div>
-                    <div class="trust-card animate-on-scroll">
-                        <h3 data-i18n="trust.card3.title">Transparent Sourcing</h3>
-                        <p data-i18n="trust.card3.desc">Every ingredient traced from origin to bottle</p>
-                    </div>
-                    <div class="trust-card animate-on-scroll">
-                        <h3 data-i18n="trust.card4.title">Scientific Advisory Board</h3>
-                        <p data-i18n="trust.card4.desc">Overseen by leading health researchers</p>
+                        <div class="ecosystem-card">
+                            <h3>Explore the Science</h3>
+                            <p>Understand the research and clinical validation behind personalized nutrition</p>
+                            <a href="science.html" style="color: var(--color-primary); font-weight: 600; text-decoration: none;">See the Research →</a>
+                        </div>
+
+                        <div class="ecosystem-card">
+                            <h3>Find Your Match</h3>
+                            <p>Take our 60-second quiz or compare all product lines in detail</p>
+                            <a href="product-quiz.html" style="color: var(--color-primary); font-weight: 600; text-decoration: none;">Take the Quiz →</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -287,7 +249,7 @@
                         <span data-i18n="cta.title.line1">Designed for Your Day.</span><br>
                         <span data-i18n="cta.title.line2">Driven by Your Data.</span>
                     </h2>
-                    <a href="tests.html" class="cta-button large" data-i18n="cta.button">Begin Your Journey</a>
+                    <a href="products-core.html" class="cta-button large" data-i18n="cta.button">Begin Your Journey</a>
                 </div>
             </div>
         </section>

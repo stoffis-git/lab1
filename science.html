@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>The Science Behind Lab1 - Personalized Nutrition</title>
+    <meta name="title" content="The Science Behind Lab1 - Personalized Nutrition">
+    <meta name="description" content="Discover the scientific foundation of Lab1's personalized nutrition approach, combining DNA analysis and blood biomarkers.">
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="styles.css" as="style">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main" class="skip-link" data-i18n="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <header role="banner">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="container nav-container">
+                <a href="index.html" class="logo">
+                    <img src="images/lab1-logo.png" alt="Lab1" style="height: 50px; width: auto; display: block;">
+                </a>
+                <ul class="nav-links">
+                    <li class="nav-dropdown">
+                        <a href="#" data-i18n="nav.products">Products ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="products-compare.html">Compare All Lines</a></li>
+                            <li><a href="products-essential.html">Essential Line</a></li>
+                            <li><a href="products-core.html">Core Line</a></li>
+                            <li><a href="products-pro.html">Pro Line</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="how-it-works.html" data-i18n="nav.process">How It Works</a></li>
+                    <li><a href="science.html" data-i18n="nav.science">Science</a></li>
+                    <li><a href="results.html" data-i18n="nav.results">Results</a></li>
+                    <li><a href="app.html" data-i18n="nav.app">App</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="login-btn" id="loginBtn" data-i18n="nav.login">Login</button>
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
+                        <span class="lang-separator">/</span>
+                        <button class="lang-btn" data-lang="de" aria-label="Switch to German">DE</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" id="main">
+        <!-- Hero Section -->
+        <section class="hero" style="min-height: auto; padding-top: calc(80px + var(--space-2xl)); padding-bottom: var(--space-lg);">
+            <div class="container">
+                <div class="hero-content-centered animate-on-scroll">
+                    <h1 class="hero-title">Scientific Validation & Research</h1>
+                    <p class="hero-subtitle" style="max-width: 700px; margin: 0 auto;">Evidence-based personalized nutrition backed by clinical research and validated methodologies</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Methodology -->
+        <section class="content-block">
+            <div class="container">
+                <div class="animate-on-scroll" style="max-width: 900px; margin: 0 auto;">
+                    <h2 class="section-title center">Our Research Methodology</h2>
+                    <p class="section-subtitle center" style="margin-bottom: var(--space-2xl);">Lab1's approach combines genomic analysis, biomarker testing, and evidence-based supplementation strategies validated through peer-reviewed research.</p>
+
+                    <div class="feature-list" style="display: grid; grid-template-columns: 1fr; gap: var(--space-xl);">
+                        <div class="feature-item">
+                            <h3>Genomic Analysis: SNP-Based Nutrient Requirements</h3>
+                            <p>We analyze 40+ single nucleotide polymorphisms (SNPs) associated with nutrient metabolism, including:</p>
+                            <ul style="margin-top: var(--space-md); padding-left: var(--space-xl); list-style: disc;">
+                                <li><strong>MTHFR (C677T, A1298C):</strong> Folate metabolism and methylation capacity</li>
+                                <li><strong>VDR (FokI, BsmI):</strong> Vitamin D receptor function and calcium absorption</li>
+                                <li><strong>FUT2:</strong> B12 absorption and gut microbiome composition</li>
+                                <li><strong>BCMO1:</strong> Beta-carotene to vitamin A conversion efficiency</li>
+                                <li><strong>CYP1A2:</strong> Caffeine metabolism and antioxidant requirements</li>
+                            </ul>
+                            <p style="margin-top: var(--space-md); font-size: 0.9rem; color: var(--color-text-secondary);"><em>Reference: Fenech et al. (2011). "Nutrigenetics and nutrigenomics: viewpoints on the current status and applications in nutrition research and practice." Journal of Nutrigenetics and Nutrigenomics.</em></p>
+                        </div>
+
+                        <div class="feature-item">
+                            <h3>Blood Biomarker Assessment</h3>
+                            <p>Comprehensive analysis of 35+ biomarkers across multiple health domains:</p>
+                            <ul style="margin-top: var(--space-md); padding-left: var(--space-xl); list-style: disc;">
+                                <li><strong>Nutritional Status:</strong> Vitamins (D, B12, folate), minerals (iron, magnesium, zinc), omega-3 index</li>
+                                <li><strong>Metabolic Health:</strong> HbA1c, fasting glucose, lipid panel, homocysteine</li>
+                                <li><strong>Inflammation & Oxidative Stress:</strong> hs-CRP, oxidized LDL</li>
+                                <li><strong>Hormonal Balance:</strong> Thyroid panel (TSH, fT3, fT4), cortisol, testosterone</li>
+                            </ul>
+                            <p style="margin-top: var(--space-md); font-size: 0.9rem; color: var(--color-text-secondary);"><em>All testing performed in ISO 15189 accredited laboratories using validated assays.</em></p>
+                        </div>
+
+                        <div class="feature-item">
+                            <h3>Personalization Algorithm</h3>
+                            <p>Our proprietary algorithm integrates multiple data sources:</p>
+                            <ol style="margin-top: var(--space-md); padding-left: var(--space-xl);">
+                                <li><strong>Genetic predispositions</strong> from SNP analysis</li>
+                                <li><strong>Current nutritional status</strong> from blood biomarkers</li>
+                                <li><strong>Lifestyle factors</strong> (diet, exercise, stress, sleep)</li>
+                                <li><strong>Health goals</strong> and existing conditions</li>
+                            </ol>
+                            <p style="margin-top: var(--space-md);">The algorithm calculates optimal dosages based on documented nutrient interactions, absorption rates, and therapeutic ranges established in clinical literature.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Evidence for Personalization -->
+        <section class="content-block" style="background: var(--color-bg-light);">
+            <div class="container">
+                <div class="animate-on-scroll" style="max-width: 900px; margin: 0 auto;">
+                    <h2 class="section-title center">Clinical Evidence for Personalized Nutrition</h2>
+                    <p class="section-subtitle center" style="margin-bottom: var(--space-2xl);">Key studies demonstrating the efficacy of genotype-tailored supplementation</p>
+
+                    <div style="display: grid; gap: var(--space-xl);">
+                        <div class="ecosystem-card">
+                            <h3>MTHFR Variants & Folate Supplementation</h3>
+                            <p><strong>Finding:</strong> Individuals with MTHFR C677T variants show 30-70% reduced folate enzyme activity, requiring methylfolate over folic acid for optimal homocysteine management.</p>
+                            <p style="margin-top: var(--space-sm); font-size: 0.9rem; color: var(--color-text-secondary);"><em>Frosst et al. (1995). Nature Genetics; Gilbody et al. (2007). American Journal of Epidemiology.</em></p>
+                        </div>
+
+                        <div class="ecosystem-card">
+                            <h3>Vitamin D Receptor Polymorphisms</h3>
+                            <p><strong>Finding:</strong> VDR FokI variants influence calcium absorption efficiency and bone density response to vitamin D supplementation, with FF genotype requiring higher doses.</p>
+                            <p style="margin-top: var(--space-sm); font-size: 0.9rem; color: var(--color-text-secondary);"><em>Uitterlinden et al. (2004). Journal of Clinical Endocrinology & Metabolism; Gross et al. (1996). Journal of Bone and Mineral Research.</em></p>
+                        </div>
+
+                        <div class="ecosystem-card">
+                            <h3>Omega-3 Response & APOE Genotype</h3>
+                            <p><strong>Finding:</strong> APOE ε4 carriers show differential cardiovascular response to EPA/DHA supplementation compared to non-carriers, supporting genotype-based dosing strategies.</p>
+                            <p style="margin-top: var(--space-sm); font-size: 0.9rem; color: var(--color-text-secondary);"><em>Carvalho-Wells et al. (2010). British Journal of Nutrition; Minihane et al. (2007). Proceedings of the Nutrition Society.</em></p>
+                        </div>
+
+                        <div class="ecosystem-card">
+                            <h3>Iron Absorption & HFE Mutations</h3>
+                            <p><strong>Finding:</strong> HFE C282Y and H63D variants affect iron absorption and storage, requiring modified supplementation protocols to prevent overload or deficiency.</p>
+                            <p style="margin-top: var(--space-sm); font-size: 0.9rem; color: var(--color-text-secondary);"><em>Feder et al. (1996). Nature Genetics; Bacon et al. (2011). Hepatology.</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Biomarker Significance -->
+        <section class="content-block">
+            <div class="container">
+                <div class="animate-on-scroll" style="max-width: 900px; margin: 0 auto;">
+                    <h2 class="section-title center">Understanding Key Biomarkers</h2>
+                    <p class="section-subtitle center" style="margin-bottom: var(--space-2xl);">Why we test what we test: the clinical relevance of our biomarker panel</p>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: var(--space-xl);">
+                        <div class="ecosystem-card">
+                            <h3>Vitamin D (25-OH-D)</h3>
+                            <p><strong>Why it matters:</strong> Regulates calcium metabolism, immune function, and gene expression. Deficiency (&lt;50 nmol/L) associated with increased risk of osteoporosis, autoimmune disease, and mortality.</p>
+                            <p style="margin-top: var(--space-sm);"><strong>Optimal range:</strong> 75-125 nmol/L (30-50 ng/mL)</p>
+                        </div>
+
+                        <div class="ecosystem-card">
+                            <h3>Omega-3 Index</h3>
+                            <p><strong>Why it matters:</strong> Percentage of EPA+DHA in red blood cell membranes. Levels &gt;8% associated with 90% reduction in sudden cardiac death risk vs &lt;4%.</p>
+                            <p style="margin-top: var(--space-sm);"><strong>Optimal range:</strong> &gt;8% (cardioprotective zone)</p>
+                        </div>
+
+                        <div class="ecosystem-card">
+                            <h3>Homocysteine</h3>
+                            <p><strong>Why it matters:</strong> Marker of methylation capacity and B-vitamin status. Elevated levels (&gt;10 μmol/L) linked to cardiovascular disease, cognitive decline, and neural tube defects.</p>
+                            <p style="margin-top: var(--space-sm);"><strong>Optimal range:</strong> &lt;7 μmol/L</p>
+                        </div>
+
+                        <div class="ecosystem-card">
+                            <h3>hs-CRP (High-Sensitivity C-Reactive Protein)</h3>
+                            <p><strong>Why it matters:</strong> Sensitive marker of systemic inflammation. Levels &gt;3 mg/L associated with 2x cardiovascular risk. Responds to omega-3, antioxidants, and anti-inflammatory nutrients.</p>
+                            <p style="margin-top: var(--space-sm);"><strong>Optimal range:</strong> &lt;1 mg/L</p>
+                        </div>
+
+                        <div class="ecosystem-card">
+                            <h3>HbA1c (Glycated Hemoglobin)</h3>
+                            <p><strong>Why it matters:</strong> 3-month average blood glucose. Levels &gt;5.7% indicate prediabetes. Even within "normal" range, higher values predict diabetes risk. Modified by chromium, alpha-lipoic acid, berberine.</p>
+                            <p style="margin-top: var(--space-sm);"><strong>Optimal range:</strong> &lt;5.4%</p>
+                        </div>
+
+                        <div class="ecosystem-card">
+                            <h3>Ferritin (Iron Storage)</h3>
+                            <p><strong>Why it matters:</strong> Both deficiency (&lt;30 ng/mL) and excess (&gt;300 ng/mL) harmful. Women often deficient; men and post-menopausal women risk overload. Requires genotype-informed supplementation (HFE status).</p>
+                            <p style="margin-top: var(--space-sm);"><strong>Optimal range:</strong> 30-100 ng/mL (women), 50-150 ng/mL (men)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quality & Validation Standards -->
+        <section class="content-block" style="background: var(--color-bg-light);">
+            <div class="container">
+                <div class="animate-on-scroll" style="max-width: 900px; margin: 0 auto;">
+                    <h2 class="section-title center">Testing & Quality Standards</h2>
+
+                    <div style="display: grid; gap: var(--space-xl); margin-top: var(--space-2xl);">
+                        <div class="feature-item">
+                            <h3>Laboratory Accreditation</h3>
+                            <p>All blood biomarker testing performed in ISO 15189 accredited medical laboratories meeting international standards for accuracy, precision, and quality control. DNA analysis conducted in CLIA-certified and CAP-accredited laboratories.</p>
+                        </div>
+
+                        <div class="feature-item">
+                            <h3>Ingredient Sourcing & Forms</h3>
+                            <p>We use exclusively bioavailable, clinically studied forms:</p>
+                            <ul style="margin-top: var(--space-sm); padding-left: var(--space-xl); list-style: disc;">
+                                <li><strong>Methylfolate</strong> (L-5-MTHF) instead of folic acid (for MTHFR variants)</li>
+                                <li><strong>Methylcobalamin/Adenosylcobalamin</strong> instead of cyanocobalamin (B12)</li>
+                                <li><strong>Magnesium glycinate/threonate</strong> instead of oxide (superior absorption)</li>
+                                <li><strong>Vitamin K2 (MK-7)</strong> with documented half-life advantages</li>
+                                <li><strong>Algae-derived triglyceride EPA/DHA</strong> (superior to ethyl esters)</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-item">
+                            <h3>Third-Party Verification</h3>
+                            <p>Every production batch undergoes:</p>
+                            <ul style="margin-top: var(--space-sm); padding-left: var(--space-xl); list-style: disc;">
+                                <li>Heavy metal testing (lead, mercury, cadmium, arsenic)</li>
+                                <li>Microbiological contamination screening</li>
+                                <li>Potency verification (active ingredient content)</li>
+                                <li>Identity testing (confirming ingredient authenticity)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Section -->
+        <section class="trust-section">
+            <div class="container">
+                <h2 class="section-title center animate-on-scroll" data-i18n="trust.title">Trust & Transparency</h2>
+                <div class="trust-grid">
+                    <div class="trust-card animate-on-scroll">
+                        <h3 data-i18n="trust.card1.title">Data Privacy</h3>
+                        <p data-i18n="trust.card1.desc">Your data is encrypted and never shared without consent</p>
+                    </div>
+                    <div class="trust-card animate-on-scroll">
+                        <h3 data-i18n="trust.card2.title">German Quality Standards</h3>
+                        <p data-i18n="trust.card2.desc">Manufactured in EU-certified facilities</p>
+                    </div>
+                    <div class="trust-card animate-on-scroll">
+                        <h3 data-i18n="trust.card3.title">Transparent Sourcing</h3>
+                        <p data-i18n="trust.card3.desc">Every ingredient traced from origin to bottle</p>
+                    </div>
+                    <div class="trust-card animate-on-scroll">
+                        <h3 data-i18n="trust.card4.title">Scientific Advisory Board</h3>
+                        <p data-i18n="trust.card4.desc">Overseen by leading health researchers</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="final-cta">
+            <div class="container">
+                <div class="cta-content animate-on-scroll">
+                    <h2 class="cta-title">Learn How We Apply This Science</h2>
+                    <p style="color: rgba(255,255,255,0.9); margin: var(--space-lg) 0; font-size: 1.125rem;">Discover how our testing process translates research into personalized recommendations</p>
+                    <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+                        <a href="how-it-works.html" class="cta-button large">See How It Works</a>
+                        <a href="products-core.html" class="cta-button large" style="background: transparent; border: 2px solid white;">View Testing Options</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">Lab1</div>
+                    <p class="footer-description" data-i18n="footer.description">Precision health insights powered by the unique combination of blood and DNA analysis.</p>
+                    <p class="footer-tagline" data-i18n="footer.tagline">Coded with ❤️ in Frankfurt</p>
+                </div>
+                <div class="footer-column">
+                    <h4 data-i18n="footer.contact.title">Contact</h4>
+                    <p><a href="mailto:max@eterno.health">max@eterno.health</a></p>
+                    <p><a href="tel:+491234567890">+49 (0) 123 456 789</a></p>
+                </div>
+                <div class="footer-column">
+                    <h4 data-i18n="footer.legal.title">Legal</h4>
+                    <p><a href="terms.html" data-i18n="footer.legal.terms">Terms of Service</a></p>
+                    <p><a href="privacy.html" data-i18n="footer.legal.privacy">Privacy Policy</a></p>
+                    <p><a href="#impressum" data-i18n="footer.legal.impressum">Impressum</a></p>
+                </div>
+                <div class="footer-column">
+                    <h4 data-i18n="footer.company.title">Company</h4>
+                    <p class="footer-company">
+                        <strong>AMO GmbH</strong><br>
+                        Mittelweg 25<br>
+                        20148 Hamburg
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">&copy; 2025 Lab1. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal" aria-label="Close">&times;</button>
+            <div class="modal-header">
+                <h2 data-i18n="login.title">Welcome Back</h2>
+                <p data-i18n="login.subtitle">Access your personalized health dashboard</p>
+            </div>
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="email" data-i18n="login.email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="password" data-i18n="login.password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="form-submit" data-i18n="login.submit">Login</button>
+            </form>
+            <div class="form-footer">
+                <p><a href="#" data-i18n="login.forgot">Forgot password?</a></p>
+                <p data-i18n="login.signup-prompt">Don't have an account? <a href="#" data-i18n="login.signup">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

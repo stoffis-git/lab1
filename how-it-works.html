@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Lab1 Process - How It Works</title>
+    <meta name="title" content="Lab1 Process - How It Works">
+    <meta name="description" content="Discover how Lab1's personalized nutrition process works—from DNA testing to custom supplement formulation.">
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="styles.css" as="style">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-lg);
+            margin-top: var(--space-2xl);
+            align-items: start;
+            position: relative;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-image-placeholder {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background: var(--color-bg-light);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--color-text-secondary);
+        }
+
+        .process-step h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: var(--space-xs);
+        }
+
+        .process-step p {
+            font-size: 0.9375rem;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        .arrow-container {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            width: calc(100% - var(--space-lg));
+            transform: translateX(-50%);
+            height: 0;
+            border-top: 1px solid var(--color-border);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .arrow {
+            position: absolute;
+            right: -8px;
+            top: -4px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid var(--color-border);
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+        }
+
+        @media (max-width: 968px) {
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .arrow-container {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main" class="skip-link" data-i18n="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <header role="banner">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="container nav-container">
+                <a href="index.html" class="logo">
+                    <img src="images/lab1-logo.png" alt="Lab1" style="height: 50px; width: auto; display: block;">
+                </a>
+                <ul class="nav-links">
+                    <li class="nav-dropdown">
+                        <a href="#" data-i18n="nav.products">Products ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="products-compare.html">Compare All Lines</a></li>
+                            <li><a href="products-essential.html">Essential Line</a></li>
+                            <li><a href="products-core.html">Core Line</a></li>
+                            <li><a href="products-pro.html">Pro Line</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="how-it-works.html" data-i18n="nav.process">How It Works</a></li>
+                    <li><a href="science.html" data-i18n="nav.science">Science</a></li>
+                    <li><a href="results.html" data-i18n="nav.results">Results</a></li>
+                    <li><a href="app.html" data-i18n="nav.app">App</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="login-btn" id="loginBtn" data-i18n="nav.login">Login</button>
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
+                        <span class="lang-separator">/</span>
+                        <button class="lang-btn" data-lang="de" aria-label="Switch to German">DE</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" id="main">
+        <!-- Hero Section -->
+        <section class="hero" style="min-height: auto; padding-top: calc(80px + var(--space-2xl)); padding-bottom: var(--space-lg);">
+            <div class="container">
+                <div class="hero-content-centered animate-on-scroll">
+                    <h1 class="hero-title" data-i18n="process.title">How It Works</h1>
+                    <p class="hero-subtitle" data-i18n="process.cta.subtitle">Simple, science-backed, personalized</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Steps -->
+        <section style="padding: var(--space-2xl) 0;">
+            <div class="container">
+                <div class="process-grid">
+                    <div class="arrow-container">
+                        <div class="arrow"></div>
+                    </div>
+
+                    <div class="process-step animate-on-scroll">
+                        <div class="process-image-placeholder">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="20" y="30" width="40" height="30" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <circle cx="40" cy="45" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <path d="M35 45 L38 48 L45 41" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 data-i18n="process.step1.title">Test</h3>
+                        <p data-i18n="process.step1.desc">At-home DNA swab + blood test kit delivered to your door</p>
+                    </div>
+
+                    <div class="process-step animate-on-scroll">
+                        <div class="process-image-placeholder">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="40" cy="40" r="20" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <path d="M40 25 L40 40 L50 50" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="30" cy="30" r="3" fill="currentColor"/>
+                                <circle cx="50" cy="30" r="3" fill="currentColor"/>
+                                <circle cx="30" cy="50" r="3" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 data-i18n="process.step2.title">Analyze</h3>
+                        <p data-i18n="process.step2.desc">Lab analysis reveals nutrient deficiencies & genetic markers</p>
+                    </div>
+
+                    <div class="process-step animate-on-scroll">
+                        <div class="process-image-placeholder">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M35 25 L35 55 L45 55 L45 25 Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <circle cx="40" cy="20" r="5" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <path d="M30 35 L35 35 M45 35 L50 35 M30 45 L35 45 M45 45 L50 45" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 data-i18n="process.step3.title">Formulate</h3>
+                        <p data-i18n="process.step3.desc">Personalized supplement blend created for your biology</p>
+                    </div>
+
+                    <div class="process-step animate-on-scroll">
+                        <div class="process-image-placeholder">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M25 50 L30 40 L40 45 L50 30 L55 35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                <polyline points="48,30 55,35 55,28" fill="currentColor"/>
+                                <circle cx="30" cy="40" r="2" fill="currentColor"/>
+                                <circle cx="40" cy="45" r="2" fill="currentColor"/>
+                                <circle cx="50" cy="30" r="2" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 data-i18n="process.step4.title">Optimize</h3>
+                        <p data-i18n="process.step4.desc">Monthly adjustments based on your progress and goals</p>
+                    </div>
+                </div>
+
+                <div class="cta-block animate-on-scroll" style="margin-top: var(--space-2xl); text-align: center;">
+                    <h3 data-i18n="process.cta.title">Your journey to optimized health starts here</h3>
+                    <a href="products-core.html" class="cta-button" data-i18n="hero.cta" style="margin-top: var(--space-md);">Begin Your Journey</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">Lab1</div>
+                    <p class="footer-description" data-i18n="footer.description">Precision health insights powered by the unique combination of blood and DNA analysis.</p>
+                    <p class="footer-tagline" data-i18n="footer.tagline">Coded with ❤️ in Frankfurt</p>
+                </div>
+                <div class="footer-column">
+                    <h4 data-i18n="footer.contact.title">Contact</h4>
+                    <p><a href="mailto:max@eterno.health">max@eterno.health</a></p>
+                    <p><a href="tel:+491234567890">+49 (0) 123 456 789</a></p>
+                </div>
+                <div class="footer-column">
+                    <h4 data-i18n="footer.legal.title">Legal</h4>
+                    <p><a href="terms.html" data-i18n="footer.legal.terms">Terms of Service</a></p>
+                    <p><a href="privacy.html" data-i18n="footer.legal.privacy">Privacy Policy</a></p>
+                    <p><a href="#impressum" data-i18n="footer.legal.impressum">Impressum</a></p>
+                </div>
+                <div class="footer-column">
+                    <h4 data-i18n="footer.company.title">Company</h4>
+                    <p class="footer-company">
+                        <strong>AMO GmbH</strong><br>
+                        Mittelweg 25<br>
+                        20148 Hamburg
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">&copy; 2025 Lab1. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal" aria-label="Close">&times;</button>
+            <div class="modal-header">
+                <h2 data-i18n="login.title">Welcome Back</h2>
+                <p data-i18n="login.subtitle">Access your personalized health dashboard</p>
+            </div>
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="email" data-i18n="login.email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="password" data-i18n="login.password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="form-submit" data-i18n="login.submit">Login</button>
+            </form>
+            <div class="form-footer">
+                <p><a href="#" data-i18n="login.forgot">Forgot password?</a></p>
+                <p data-i18n="login.signup-prompt">Don't have an account? <a href="#" data-i18n="login.signup">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

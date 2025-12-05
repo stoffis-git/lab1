@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Product Lines - Essential vs Core vs Pro | Lab1</title>
+    <meta name="description" content="Compare Lab1's Essential, Core, and Pro supplement lines. Find the right personalized nutrition solution for your goals and budget.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .comparison-hero {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: white;
+            padding-top: calc(80px + var(--space-xl));
+            padding-bottom: var(--space-2xl);
+        }
+        .comparison-table-full {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .comparison-table-full table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .comparison-table-full th {
+            background: var(--color-bg-light);
+            padding: var(--space-lg);
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid var(--color-border);
+        }
+        .comparison-table-full th:first-child {
+            width: 30%;
+        }
+        .comparison-table-full td {
+            padding: var(--space-md) var(--space-lg);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .comparison-table-full tr:last-child td {
+            border-bottom: none;
+        }
+        .comparison-table-full .feature-name {
+            font-weight: 500;
+            color: var(--color-text);
+        }
+        .comparison-table-full .check {
+            color: #10b981;
+            font-size: 1.25rem;
+        }
+        .comparison-table-full .cross {
+            color: #ef4444;
+            font-size: 1.25rem;
+        }
+        .column-essential {
+            background: linear-gradient(to bottom, #fff5f0 0%, white 50%);
+        }
+        .column-core {
+            background: linear-gradient(to bottom, #f0f4ff 0%, white 50%);
+        }
+        .column-pro {
+            background: linear-gradient(to bottom, #fffbeb 0%, white 50%);
+        }
+        .product-card-compare {
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+        .product-card-compare:hover {
+            transform: translateY(-5px);
+        }
+        .product-card-essential {
+            background: linear-gradient(135deg, #ff9a76 0%, #f97c5d 100%);
+            color: white;
+        }
+        .product-card-core {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: white;
+        }
+        .product-card-pro {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            border: 2px solid #FFD700;
+        }
+        .price-tag {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: var(--space-md) 0;
+        }
+        .price-tag small {
+            font-size: 1rem;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+        @media (max-width: 768px) {
+            .comparison-table-full {
+                overflow-x: auto;
+            }
+            .comparison-table-full th:first-child {
+                min-width: 150px;
+            }
+            .product-grid-compare {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <header role="banner">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <a href="index.html" class="logo">
+                    <img src="images/lab1-logo.png" alt="Lab1" style="height: 50px; width: auto;">
+                </a>
+                <ul class="nav-links">
+                    <li class="nav-dropdown">
+                        <a href="#" data-i18n="nav.products">Products ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="products-compare.html">Compare All Lines</a></li>
+                            <li><a href="products-essential.html">Essential Line</a></li>
+                            <li><a href="products-core.html">Core Line</a></li>
+                            <li><a href="products-pro.html">Pro Line</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="how-it-works.html" data-i18n="nav.process">How It Works</a></li>
+                    <li><a href="science.html" data-i18n="nav.science">Science</a></li>
+                    <li><a href="results.html" data-i18n="nav.results">Results</a></li>
+                    <li><a href="app.html" data-i18n="nav.app">App</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="login-btn" id="loginBtn">Login</button>
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <span class="lang-separator">/</span>
+                        <button class="lang-btn" data-lang="de">DE</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" id="main">
+        <!-- Hero Section -->
+        <section class="comparison-hero">
+            <div class="container">
+                <div class="hero-content-centered animate-on-scroll" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                    <h1 class="hero-title" style="color: white; font-size: 3rem;">Compare Our Product Lines</h1>
+                    <p class="hero-subtitle" style="color: white; font-size: 1.25rem; margin-top: var(--space-md);">Find the right personalized nutrition solution for your goals and lifestyle</p>
+                    <div style="margin-top: var(--space-xl);">
+                        <a href="product-quiz.html" class="cta-button large" style="background: white; color: #764ba2;">Take Our Quiz - Find Your Match in 60 Seconds</a>
+                        <p style="margin-top: var(--space-md); color: rgba(255,255,255,0.9); font-size: 0.9rem;">Or scroll down to compare all options</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Overview Cards -->
+        <section class="content-block">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl); margin-bottom: var(--space-2xl);">
+                    <!-- Essential Card -->
+                    <div class="product-card-compare product-card-essential">
+                        <h2 style="font-size: 1.75rem; margin-bottom: var(--space-sm);">Essential Line</h2>
+                        <p style="opacity: 0.9; margin-bottom: var(--space-md);">Premium formulas, no testing required</p>
+                        <div class="price-tag">€49<small>/month</small></div>
+                        <p style="font-size: 0.875rem; opacity: 0.8; margin-bottom: var(--space-lg);">6 targeted formulas based on age, gender, lifestyle</p>
+                        <a href="products-essential.html" class="cta-button" style="margin-top: auto; background: white; color: #f97c5d;">View Essential Line</a>
+                    </div>
+
+                    <!-- Core Card -->
+                    <div class="product-card-compare product-card-core">
+                        <h2 style="font-size: 1.75rem; margin-bottom: var(--space-sm);">Core Line</h2>
+                        <p style="opacity: 0.9; margin-bottom: var(--space-md);">DNA + Blood testing with personalization</p>
+                        <div class="price-tag">€99<small>/month</small></div>
+                        <p style="font-size: 0.875rem; opacity: 0.8; margin-bottom: var(--space-lg);">Choose: Nutrition, Performance, or Longevity focus</p>
+                        <a href="products-core.html" class="cta-button" style="margin-top: auto; background: white; color: #764ba2;">View Core Line</a>
+                    </div>
+
+                    <!-- Pro Card -->
+                    <div class="product-card-compare product-card-pro">
+                        <span style="display: inline-block; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #1a1a1a; padding: var(--space-xs) var(--space-md); border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 700; margin-bottom: var(--space-md);">ELITE</span>
+                        <h2 style="font-size: 1.75rem; margin-bottom: var(--space-sm);">Pro Line</h2>
+                        <p style="opacity: 0.9; margin-bottom: var(--space-md);">Monthly monitoring & team support</p>
+                        <div class="price-tag">Custom<small> pricing</small></div>
+                        <p style="font-size: 0.875rem; opacity: 0.8; margin-bottom: var(--space-lg);">For athletes, teams, high performers</p>
+                        <a href="products-pro.html" class="cta-button" style="margin-top: auto; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #1a1a1a;">View Pro Line</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Comparison Table -->
+        <section class="content-block" style="background: var(--color-bg-light); padding: var(--space-2xl) 0;">
+            <div class="container">
+                <h2 class="section-title center" style="margin-bottom: var(--space-2xl);">Detailed Feature Comparison</h2>
+
+                <div class="comparison-table-full">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th class="column-essential">Essential</th>
+                                <th class="column-core">Core</th>
+                                <th class="column-pro">Pro</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Testing Section -->
+                            <tr>
+                                <td colspan="4" style="background: var(--color-bg-light); font-weight: 600; color: var(--color-primary); padding-top: var(--space-lg);">Testing & Analysis</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">DNA Analysis</td>
+                                <td class="column-essential"><span class="cross">✗</span></td>
+                                <td class="column-core"><span class="check">✓</span> 40+ genes</td>
+                                <td class="column-pro"><span class="check">✓</span> 60+ genes</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Blood Testing</td>
+                                <td class="column-essential"><span class="cross">✗</span></td>
+                                <td class="column-core"><span class="check">✓</span> Initial test</td>
+                                <td class="column-pro"><span class="check">✓</span> Monthly</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Biomarkers Analyzed</td>
+                                <td class="column-essential">None</td>
+                                <td class="column-core">35+ markers</td>
+                                <td class="column-pro">60+ markers</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Hormone Panel</td>
+                                <td class="column-essential"><span class="cross">✗</span></td>
+                                <td class="column-core"><span class="cross">✗</span></td>
+                                <td class="column-pro"><span class="check">✓</span></td>
+                            </tr>
+
+                            <!-- Supplements Section -->
+                            <tr>
+                                <td colspan="4" style="background: var(--color-bg-light); font-weight: 600; color: var(--color-primary); padding-top: var(--space-lg);">Supplementation</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Ingredient Quality</td>
+                                <td class="column-essential">Premium bioavailable</td>
+                                <td class="column-core">Premium bioavailable</td>
+                                <td class="column-pro">Ultra-premium</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Personalization Level</td>
+                                <td class="column-essential">Category-based</td>
+                                <td class="column-core">Fully personalized</td>
+                                <td class="column-pro">Hyper-personalized</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Formula Adjustments</td>
+                                <td class="column-essential">Self-managed</td>
+                                <td class="column-core">6-month retest</td>
+                                <td class="column-pro">Monthly adjustments</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Delivery Format</td>
+                                <td class="column-essential">Daily packs</td>
+                                <td class="column-core">Daily packs</td>
+                                <td class="column-pro">Daily packs + custom</td>
+                            </tr>
+
+                            <!-- Support Section -->
+                            <tr>
+                                <td colspan="4" style="background: var(--color-bg-light); font-weight: 600; color: var(--color-primary); padding-top: var(--space-lg);">Support & Guidance</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">App Access</td>
+                                <td class="column-essential"><span class="check">✓</span> Basic</td>
+                                <td class="column-core"><span class="check">✓</span> Full access</td>
+                                <td class="column-pro"><span class="check">✓</span> Premium features</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Expert Consultations</td>
+                                <td class="column-essential">Email support</td>
+                                <td class="column-core">1 consultation</td>
+                                <td class="column-pro">Unlimited consultations</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Nutrition Coaching</td>
+                                <td class="column-essential"><span class="cross">✗</span></td>
+                                <td class="column-core">Basic guidance</td>
+                                <td class="column-pro">Dedicated coach</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Team Support</td>
+                                <td class="column-essential"><span class="cross">✗</span></td>
+                                <td class="column-core"><span class="cross">✗</span></td>
+                                <td class="column-pro"><span class="check">✓</span></td>
+                            </tr>
+
+                            <!-- Best For Section -->
+                            <tr>
+                                <td colspan="4" style="background: var(--color-bg-light); font-weight: 600; color: var(--color-primary); padding-top: var(--space-lg);">Best For</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Ideal Customer</td>
+                                <td class="column-essential">General wellness seekers wanting premium supplements</td>
+                                <td class="column-core">Health-conscious individuals seeking precision optimization</td>
+                                <td class="column-pro">Professional athletes, teams, elite performers</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Starting Price</td>
+                                <td class="column-essential" style="font-weight: 600; font-size: 1.125rem;">€49/month</td>
+                                <td class="column-core" style="font-weight: 600; font-size: 1.125rem;">€99/month</td>
+                                <td class="column-pro" style="font-weight: 600; font-size: 1.125rem;">Contact for pricing</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Which Line Is Right For You -->
+        <section class="content-block">
+            <div class="container">
+                <h2 class="section-title center">Which Line Is Right For You?</h2>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl); margin-top: var(--space-2xl); max-width: 1200px; margin-left: auto; margin-right: auto;">
+                    <div class="ecosystem-card" style="border-left: 4px solid #f97c5d;">
+                        <h3 style="color: #f97c5d;">Choose Essential If...</h3>
+                        <ul style="list-style: none; padding: 0; margin-top: var(--space-md);">
+                            <li style="padding: var(--space-xs) 0;">✓ You want premium supplements without testing</li>
+                            <li style="padding: var(--space-xs) 0;">✓ You're looking for an affordable entry point</li>
+                            <li style="padding: var(--space-xs) 0;">✓ You prefer category-based formulations</li>
+                            <li style="padding: var(--space-xs) 0;">✓ You're focused on general wellness</li>
+                        </ul>
+                        <a href="products-essential.html" class="cta-button" style="margin-top: var(--space-lg); background: #f97c5d;">Explore Essential</a>
+                    </div>
+
+                    <div class="ecosystem-card" style="border-left: 4px solid #764ba2;">
+                        <h3 style="color: #764ba2;">Choose Core If...</h3>
+                        <ul style="list-style: none; padding: 0; margin-top: var(--space-md);">
+                            <li style="padding: var(--space-xs) 0;">✓ You want true personalization based on your biology</li>
+                            <li style="padding: var(--space-xs) 0;">✓ You're serious about optimizing your health</li>
+                            <li style="padding: var(--space-xs) 0;">✓ You have specific goals (longevity, performance, nutrition)</li>
+                            <li style="padding: var(--space-xs) 0;">✓ You want data-driven recommendations</li>
+                        </ul>
+                        <a href="products-core.html" class="cta-button" style="margin-top: var(--space-lg); background: #764ba2;">Explore Core</a>
+                    </div>
+
+                    <div class="ecosystem-card" style="border-left: 4px solid #FFD700;">
+                        <h3 style="color: #1a1a1a;">Choose Pro If...</h3>
+                        <ul style="list-style: none; padding: 0; margin-top: var(--space-md);">
+                            <li style="padding: var(--space-xs) 0;">✓ You're a professional athlete or high performer</li>
+                            <li style="padding: var(--space-xs) 0;">✓ You need monthly monitoring and adjustments</li>
+                            <li style="padding: var(--space-xs) 0;">✓ You want dedicated coaching and support</li>
+                            <li style="padding: var(--space-xs) 0;">✓ You're managing a team or organization</li>
+                        </ul>
+                        <a href="products-pro.html" class="cta-button" style="margin-top: var(--space-lg); background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #1a1a1a;">Explore Pro</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" style="background: linear-gradient(135deg, #764ba2 0%, #667eea 100%); padding: var(--space-2xl) 0; color: white; text-align: center;">
+            <div class="container">
+                <h2 style="color: white; font-size: 2rem; margin-bottom: var(--space-md);">Not Sure Which Line To Choose?</h2>
+                <p style="font-size: 1.125rem; margin-bottom: var(--space-xl); color: rgba(255,255,255,0.9);">Start with Essential and upgrade anytime, or jump straight to Core for personalized optimization.</p>
+                <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+                    <a href="products-essential.html" class="cta-button large" style="background: white; color: #764ba2;">Start with Essential - €49/mo</a>
+                    <a href="products-core.html" class="cta-button large" style="background: transparent; border: 2px solid white; color: white;">Get Personalized with Core</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="how-it-works.html">How It Works</a></p>
+                    <p><a href="science.html">Science</a></p>
+                </div>
+                <div class="footer-column">
+                    <h4>Products</h4>
+                    <p><a href="products-essential.html">Essential Line</a></p>
+                    <p><a href="products-core.html">Core Line</a></p>
+                    <p><a href="products-pro.html">Pro Line</a></p>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <p><a href="terms.html">Terms</a></p>
+                    <p><a href="privacy.html">Privacy</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

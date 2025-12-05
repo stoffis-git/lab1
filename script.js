@@ -145,122 +145,92 @@ document.addEventListener('mousedown', () => {
 });
 
 // ========================================
-// 5. MOBILE MENU TOGGLE
+// 5. MOBILE MENU TOGGLE & NAVIGATION
 // ========================================
 
 function initMobileMenu() {
-    const navLinks = document.querySelector('.nav-links');
-
-    if (window.innerWidth <= 768 && navLinks) {
-        // Check if menu button already exists
-        if (document.querySelector('.mobile-menu-toggle')) return;
-
-        // Create mobile menu toggle button
+    // Create mobile menu toggle button if it doesn't exist
+    if (!document.querySelector('.mobile-menu-toggle')) {
         const menuButton = document.createElement('button');
         menuButton.classList.add('mobile-menu-toggle');
         menuButton.setAttribute('aria-label', 'Toggle navigation menu');
         menuButton.setAttribute('aria-expanded', 'false');
         menuButton.innerHTML = `
-            <span class="menu-icon"></span>
-            <span class="menu-icon"></span>
-            <span class="menu-icon"></span>
+            <span></span>
+            <span></span>
+            <span></span>
         `;
 
-        // Add styles dynamically
-        const style = document.createElement('style');
-        style.textContent = `
-            .mobile-menu-toggle {
-                display: flex;
-                flex-direction: column;
-                gap: 4px;
-                background: none;
-                border: none;
-                cursor: pointer;
-                padding: 0.5rem;
-                z-index: 1001;
-            }
-
-            .menu-icon {
-                width: 24px;
-                height: 2px;
-                background: var(--color-black);
-                transition: all 0.3s ease;
-            }
-
-            .mobile-menu-toggle[aria-expanded="true"] .menu-icon:nth-child(1) {
-                transform: rotate(45deg) translateY(6px);
-            }
-
-            .mobile-menu-toggle[aria-expanded="true"] .menu-icon:nth-child(2) {
-                opacity: 0;
-            }
-
-            .mobile-menu-toggle[aria-expanded="true"] .menu-icon:nth-child(3) {
-                transform: rotate(-45deg) translateY(-6px);
-            }
-
-            @media (max-width: 768px) {
-                .nav-links {
-                    display: none;
-                    position: absolute;
-                    top: 100%;
-                    left: 0;
-                    right: 0;
-                    background: white;
-                    flex-direction: column;
-                    padding: var(--space-md);
-                    border-bottom: 1px solid var(--color-border);
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-                }
-
-                .nav-links.open {
-                    display: flex;
-                }
-
-                .nav-links li {
-                    margin: 0;
-                }
-
-                .nav-links a {
-                    display: block;
-                    padding: var(--space-sm);
-                }
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Insert menu button
         const navContainer = document.querySelector('.nav-container');
-        navContainer.appendChild(menuButton);
-
-        // Toggle menu on click
-        menuButton.addEventListener('click', () => {
-            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
-            menuButton.setAttribute('aria-expanded', !isExpanded);
-            navLinks.classList.toggle('open');
-        });
-
-        // Close menu when clicking nav links
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuButton.setAttribute('aria-expanded', 'false');
-                navLinks.classList.remove('open');
-            });
-        });
+        if (navContainer) {
+            navContainer.appendChild(menuButton);
+        }
     }
+
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const dropdowns = document.querySelectorAll('.nav-dropdown');
+
+    if (!menuToggle || !navLinks) return;
+
+    // Toggle mobile menu
+    menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isActive = navLinks.classList.contains('active');
+        menuToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        menuToggle.setAttribute('aria-expanded', !isActive);
+
+        // Prevent body scroll when menu is open
+        document.body.style.overflow = !isActive ? 'hidden' : '';
+    });
+
+    // Handle dropdown clicks on mobile
+    dropdowns.forEach(dropdown => {
+        const dropdownLink = dropdown.querySelector('a');
+
+        dropdownLink.addEventListener('click', (e) => {
+            if (window.innerWidth <= 1024) {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+            }
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Close menu when clicking nav links (except dropdowns)
+    navLinks.querySelectorAll('a:not(.nav-dropdown > a)').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        });
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 1024) {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+            dropdowns.forEach(d => d.classList.remove('active'));
+        }
+    });
 }
 
-// Initialize on load and resize
-window.addEventListener('load', initMobileMenu);
-window.addEventListener('resize', () => {
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    if (window.innerWidth > 768 && menuToggle) {
-        menuToggle.remove();
-        document.querySelector('.nav-links')?.classList.remove('open');
-    } else if (window.innerWidth <= 768 && !menuToggle) {
-        initMobileMenu();
-    }
-});
+// Initialize on DOM load
+document.addEventListener('DOMContentLoaded', initMobileMenu);
 
 // ========================================
 // 6. PERFORMANCE OPTIMIZATION

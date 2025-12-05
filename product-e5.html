@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant-Based Complete Formula - Essential Line | Lab1</title>
+    <meta name="description" content="The 9 nutrients missing from vegan diets. B12, algae omega-3, creatine, taurine in vegan forms.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    <header role="banner">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <a href="index.html" class="logo"><img src="images/lab1-logo.png" alt="Lab1" style="height: 50px; width: auto;"></a>
+                <ul class="nav-links">
+                    <li class="nav-dropdown">
+                        <a href="#" data-i18n="nav.products">Products ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="products-compare.html">Compare All Lines</a></li>
+                            <li><a href="products-essential.html">Essential Line</a></li>
+                            <li><a href="products-core.html">Core Line</a></li>
+                            <li><a href="products-pro.html">Pro Line</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="how-it-works.html" data-i18n="nav.process">How It Works</a></li>
+                    <li><a href="science.html" data-i18n="nav.science">Science</a></li>
+                    <li><a href="results.html" data-i18n="nav.results">Results</a></li>
+                    <li><a href="app.html" data-i18n="nav.app">App</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="login-btn" id="loginBtn">Login</button>
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <span class="lang-separator">/</span>
+                        <button class="lang-btn" data-lang="de">DE</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products-essential.html">Essential Line</a></li>
+                <li>Plant-Based Complete</li>
+            </ul>
+        </div>
+    </nav>
+
+    <main role="main" id="main">
+        <section class="hero" style="min-height: auto; padding-top: calc(80px + var(--space-xl));">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-image animate-on-scroll">
+                        <img src="images/pexels-karola-g-4589438.jpg" alt="Plant-based nutrition" style="width: 100%; aspect-ratio: 1/1; border-radius: var(--radius-lg); object-fit: cover;">
+                    </div>
+                    <div class="hero-content animate-on-scroll">
+                        <span style="display: inline-block; background: linear-gradient(135deg, #ff9a76 0%, #f97c5d 100%); color: white; padding: var(--space-xs) var(--space-md); border-radius: var(--radius-sm); font-size: 0.875rem; font-weight: 600; margin-bottom: var(--space-md);">ESSENTIAL LINE</span>
+                        <h1 class="hero-title" style="font-size: 2.5rem;">Plant-Based Complete</h1>
+                        <p class="hero-subtitle">The 9 nutrients missing from even perfect vegan diets</p>
+                        <div style="margin: var(--space-lg) 0;">
+                            <div style="font-size: 2.5rem; font-weight: 600;">€35<span style="font-size: 1.5rem; font-weight: 400; color: var(--color-text-secondary);">/month</span></div>
+                        </div>
+                        <a href="#" class="cta-button large" style="background: #f97c5d;">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-block" style="background: var(--color-bg-light);">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <h2 class="section-title">Who This Is For</h2>
+                    <p style="font-size: 1.125rem; margin: var(--space-lg) 0;">Vegans and vegetarians who need to fill specific nutritional gaps that plants cannot provide.</p>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); margin-top: var(--space-2xl);">
+                        <div><div style="font-size: 3rem; font-weight: 700; color: #f97c5d;">92%</div><p style="font-size: 0.9rem;">of vegans are B12 deficient</p></div>
+                        <div><div style="font-size: 3rem; font-weight: 700; color: #f97c5d;">70%</div><p style="font-size: 0.9rem;">suboptimal omega-3 status</p></div>
+                        <div><div style="font-size: 3rem; font-weight: 700; color: #f97c5d;">40%</div><p style="font-size: 0.9rem;">poor FADS conversion (genetic)</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-block">
+            <div class="container">
+                <h2 class="section-title center">Complete Formula</h2>
+                <div style="max-width: 1000px; margin: var(--space-2xl) auto 0; overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; background: white; border-radius: var(--radius-lg); box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                        <thead><tr style="background: #f97c5d; color: white;">
+                            <th style="padding: var(--space-md); text-align: left;">Ingredient</th>
+                            <th style="padding: var(--space-md);">Dose</th>
+                            <th style="padding: var(--space-md);">Form</th>
+                            <th style="padding: var(--space-md); text-align: left;">Why</th>
+                        </tr></thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: var(--space-md); font-weight: 600;">B12</td><td style="padding: var(--space-md); text-align: center;">2,000mcg</td><td style="padding: var(--space-md); text-align: center;">Methylcobalamin</td><td style="padding: var(--space-md);">ZERO in plant foods. Clinical dose</td></tr>
+                            <tr style="border-bottom: 1px solid var(--color-border); background: var(--color-bg-light);"><td style="padding: var(--space-md); font-weight: 600;">Omega-3</td><td style="padding: var(--space-md); text-align: center;">2,000mg</td><td style="padding: var(--space-md); text-align: center;">Algae EPA/DHA</td><td style="padding: var(--space-md);">Preformed EPA/DHA. Flax converts <5%</td></tr>
+                            <tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: var(--space-md); font-weight: 600;">Iron</td><td style="padding: var(--space-md); text-align: center;">30mg</td><td style="padding: var(--space-md); text-align: center;">Bisglycinate</td><td style="padding: var(--space-md);">Plant iron poorly absorbed, need 2x dose</td></tr>
+                            <tr style="border-bottom: 1px solid var(--color-border); background: var(--color-bg-light);"><td style="padding: var(--space-md); font-weight: 600;">Creatine</td><td style="padding: var(--space-md); text-align: center;">5g</td><td style="padding: var(--space-md); text-align: center;">Monohydrate (vegan)</td><td style="padding: var(--space-md);">ZERO in plants. Muscle + brain</td></tr>
+                            <tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: var(--space-md); font-weight: 600;">Taurine</td><td style="padding: var(--space-md); text-align: center;">1,000mg</td><td style="padding: var(--space-md); text-align: center;">Synthetic (vegan)</td><td style="padding: var(--space-md);">ZERO in plants. Cardiovascular health</td></tr>
+                            <tr style="border-bottom: 1px solid var(--color-border); background: var(--color-bg-light);"><td style="padding: var(--space-md); font-weight: 600;">Zinc</td><td style="padding: var(--space-md); text-align: center;">30mg</td><td style="padding: var(--space-md); text-align: center;">Picolinate</td><td style="padding: var(--space-md);">Phytates block absorption</td></tr>
+                            <tr style="border-bottom: 1px solid var(--color-border);"><td style="padding: var(--space-md); font-weight: 600;">Vitamin D3</td><td style="padding: var(--space-md); text-align: center;">4,000 IU</td><td style="padding: var(--space-md); text-align: center;">Lichen-derived</td><td style="padding: var(--space-md);">Few vegan food sources</td></tr>
+                            <tr style="border-bottom: 1px solid var(--color-border); background: var(--color-bg-light);"><td style="padding: var(--space-md); font-weight: 600;">Vitamin K2</td><td style="padding: var(--space-md); text-align: center;">200mcg</td><td style="padding: var(--space-md); text-align: center;">MK-7 from natto</td><td style="padding: var(--space-md);">K1 (greens) ≠ K2 (bones)</td></tr>
+                            <tr style="background: var(--color-bg-light);"><td style="padding: var(--space-md); font-weight: 600;">Iodine</td><td style="padding: var(--space-md); text-align: center;">150mcg</td><td style="padding: var(--space-md); text-align: center;">Potassium iodide</td><td style="padding: var(--space-md);">Low in plant diets</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-block" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: var(--space-2xl) 0;">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <h2 style="color: white;">Want Even Better Results?</h2>
+                    <p style="color: white; margin: var(--space-lg) 0;">40% have FADS variants making EPA/DHA conversion nearly impossible. DNA testing reveals your exact needs.</p>
+                    <a href="products-core.html" class="cta-button large" style="background: white; color: #764ba2;">Learn About Core Line</a>
+                    <p style="color: white; margin-top: var(--space-md);"><strong>€50 off</strong> Core testing for Essential customers</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column"><div class="footer-logo">Lab1</div></div>
+                <div class="footer-column"><h4>Contact</h4><p><a href="mailto:max@eterno.health">max@eterno.health</a></p></div>
+                <div class="footer-column"><h4>Legal</h4><p><a href="terms.html">Terms</a></p></div>
+                <div class="footer-column"><h4>Company</h4><p><strong>AMO GmbH</strong></p></div>
+            </div>
+        </div>
+    </footer>
+    <script src="translations.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
