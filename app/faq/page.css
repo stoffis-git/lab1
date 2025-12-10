@@ -1,0 +1,64 @@
+/* ========================================
+   FAQ SUBPAGE STYLES
+   ======================================== */
+
+.faq-category {
+  padding: 120px 60px;
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--color-white);
+}
+
+.faq-category:first-of-type {
+  padding-top: 120px;
+}
+
+.faq-category:last-of-type {
+  padding-bottom: 120px;
+}
+
+.faq-category__header {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--color-olive);
+  margin-bottom: 48px;
+  text-align: left;
+}
+
+/* Responsive: Tablet */
+@media (max-width: 1023px) {
+  .faq-category {
+    padding: 80px 32px;
+  }
+
+  .faq-category:first-of-type {
+    padding-top: 80px;
+  }
+
+  .faq-category__header {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+}
+
+/* Responsive: Mobile */
+@media (max-width: 767px) {
+  .faq-category {
+    padding: 60px 24px;
+  }
+
+  .faq-category:first-of-type {
+    padding-top: 60px;
+  }
+
+  .faq-category:last-of-type {
+    padding-bottom: 60px;
+  }
+
+  .faq-category__header {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+}
+

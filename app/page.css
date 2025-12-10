@@ -1,0 +1,364 @@
+/* ========================================
+   PAGE-SPECIFIC STYLES
+   ======================================== */
+
+/* Landing Page Hero - Full Viewport Height */
+main > .hero-split:first-child {
+  height: 100vh;
+}
+
+/* Find Us Section */
+.find-us-section {
+  padding: 0 60px;
+  background: var(--color-cream);
+}
+
+.find-us-headline {
+  font-family: var(--font-sans), sans-serif;
+  font-size: clamp(48px, 10vw, 140px);
+  font-weight: 700;
+  color: var(--color-olive);
+  text-align: left;
+  margin: 0;
+  padding: 100px 0 0 0;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 1023px) {
+  .find-us-section {
+    padding: 0 32px;
+  }
+  
+  .find-us-headline {
+    padding: 80px 0 8px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .find-us-section {
+    padding: 0 24px;
+  }
+  
+  .find-us-headline {
+    padding: 60px 0 8px 0;
+  }
+}
+
+/* Pullquote styling for TextSection */
+.text-section__pullquote {
+  font-family: var(--font-serif), serif;
+  font-size: 36px;
+  font-style: italic;
+  line-height: 1.5;
+  margin: 48px 0;
+  padding-left: 32px;
+  border-left: 3px solid var(--color-olive);
+  text-align: left;
+}
+
+/* Large pullquote */
+.pullquote-large {
+  font-family: var(--font-serif), serif;
+  font-size: 48px;
+  line-height: 1.4;
+  color: var(--color-olive);
+  margin: 64px 0;
+  padding-left: 48px;
+  border-left: 4px solid var(--color-olive);
+  font-style: italic;
+  text-align: left;
+}
+
+/* Process timeline detail text */
+.process-timeline__detail {
+  font-family: var(--font-mono), monospace;
+  font-size: 14px;
+  color: rgba(51, 54, 17, 0.6);
+}
+
+/* Proof Section */
+.proof-section {
+  padding: var(--subsection-gap) 0;
+  background: var(--color-cream);
+}
+
+.proof-section__content {
+  padding: 40px;
+}
+
+.proof-section__title {
+  font-family: var(--font-serif), serif;
+  font-size: var(--text-6xl);
+  font-weight: 400;
+  color: var(--color-olive);
+  margin-bottom: 32px;
+}
+
+.proof-section__quote {
+  font-family: var(--font-serif), serif;
+  font-size: 28px;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--color-olive);
+  margin: 32px 0;
+  text-align: left;
+}
+
+.proof-section__quote-large {
+  font-family: var(--font-serif), serif;
+  font-size: 36px;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--color-olive);
+  margin: 48px 0;
+  text-align: left;
+}
+
+.proof-section__timeline {
+  margin: 40px 0;
+}
+
+.proof-section__moment {
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--text-body);
+  line-height: 1.7;
+  color: var(--color-olive);
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(51, 54, 17, 0.15);
+  text-align: left;
+}
+
+.proof-section__moment:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.proof-section__attribution {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 18px;
+  color: rgba(51, 54, 17, 0.7);
+  text-align: left;
+}
+
+/* Biomarker Visualization */
+.biomarker-visualization {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  background: var(--color-white);
+}
+
+.circle-growth {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.circle {
+  border: 2px solid var(--color-olive);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 0px;
+  /* Use clip-path to create circular shape without border-radius */
+  clip-path: circle(50%);
+}
+
+.circle--month-0 {
+  width: 60px;
+  height: 60px;
+  background: rgba(51, 54, 17, 0.1);
+}
+
+.circle--month-3 {
+  width: 100px;
+  height: 100px;
+  background: rgba(51, 54, 17, 0.3);
+}
+
+.circle--month-6 {
+  width: 140px;
+  height: 140px;
+  background: rgba(51, 54, 17, 0.6);
+}
+
+.circle--month-9 {
+  width: 180px;
+  height: 180px;
+  background: var(--color-olive);
+}
+
+.circle__label {
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  color: var(--color-olive);
+  position: absolute;
+  bottom: -24px;
+}
+
+.biomarker-stat {
+  font-family: var(--font-mono), monospace;
+  font-size: 16px;
+  color: var(--color-olive);
+  text-align: center;
+}
+
+.stat-change {
+  font-weight: 600;
+}
+
+/* Invitation Section */
+.invitation-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--section-gap) 40px;
+  background: var(--color-white);
+  position: relative;
+}
+
+.invitation-section__divider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(51, 54, 17, 0.1);
+}
+
+.invitation-section__content {
+  max-width: 800px;
+  text-align: center;
+}
+
+.invitation-section__prelude {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 18px;
+  color: rgba(51, 54, 17, 0.7);
+  margin-bottom: 32px;
+}
+
+.invitation-section__question {
+  font-family: var(--font-serif), serif;
+  font-size: 30px;
+  line-height: 1.2;
+  color: var(--color-olive);
+  margin-bottom: 48px;
+}
+
+.invitation-section__prompts {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 24px;
+  line-height: 1.8;
+  color: var(--color-olive);
+  margin-bottom: 80px;
+}
+
+.invitation-section__prompts p {
+  margin-bottom: 16px;
+}
+
+.invitation-section__spacer {
+  height: 120px;
+}
+
+.invitation-section__closing {
+  font-family: var(--font-serif), serif;
+  font-size: 32px;
+  line-height: 1.6;
+  color: var(--color-olive);
+  margin-bottom: 64px;
+}
+
+.invitation-section__ctas {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+/* Responsive: Mobile */
+@media (max-width: 767px) {
+  .pullquote-large {
+    font-size: 32px;
+    padding-left: 24px;
+    margin: 32px 0;
+  }
+
+  .proof-section__content {
+    padding: 0;
+  }
+
+  .proof-section__title {
+    font-size: 32px;
+  }
+
+  .proof-section__quote {
+    font-size: 24px;
+  }
+
+  .proof-section__quote-large {
+    font-size: 28px;
+  }
+
+  .biomarker-visualization {
+    padding: 40px 24px;
+  }
+
+  .circle-growth {
+    gap: 16px;
+  }
+
+  .circle--month-0 {
+    width: 40px;
+    height: 40px;
+  }
+
+  .circle--month-3 {
+    width: 60px;
+    height: 60px;
+  }
+
+  .circle--month-6 {
+    width: 80px;
+    height: 80px;
+  }
+
+  .circle--month-9 {
+    width: 100px;
+    height: 100px;
+  }
+
+  .invitation-section {
+    padding: 80px 24px;
+  }
+
+  .invitation-section__question {
+    font-size: 40px;
+  }
+
+  .invitation-section__prompts {
+    font-size: 20px;
+  }
+
+  .invitation-section__closing {
+    font-size: 28px;
+  }
+
+  .invitation-section__ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+

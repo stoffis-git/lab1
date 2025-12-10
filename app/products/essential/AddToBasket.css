@@ -1,0 +1,28 @@
+/* ========================================
+   ADD TO BASKET STYLES
+   ======================================== */
+
+.add-to-basket {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.add-to-basket__quantity {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.add-to-basket__quantity-label {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-olive);
+}
+
+.add-to-basket__button {
+  width: 100%;
+}
+

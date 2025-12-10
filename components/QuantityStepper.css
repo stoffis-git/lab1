@@ -1,0 +1,46 @@
+/* ========================================
+   QUANTITY STEPPER STYLES
+   ======================================== */
+
+.quantity-stepper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(51, 54, 17, 0.2);
+  border-radius: 0;
+  width: fit-content;
+}
+
+.quantity-stepper__btn {
+  background: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--color-olive);
+  cursor: pointer;
+  transition: background 200ms ease;
+  padding: 0;
+}
+
+.quantity-stepper__btn:hover:not(:disabled) {
+  background: rgba(51, 54, 17, 0.05);
+}
+
+.quantity-stepper__btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.quantity-stepper__value {
+  font-family: var(--font-mono), monospace;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-olive);
+  min-width: 40px;
+  text-align: center;
+}
+

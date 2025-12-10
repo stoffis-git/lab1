@@ -1,0 +1,220 @@
+/* ========================================
+   NAVIGATION (FIXED HEADER)
+   ======================================== */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(248, 246, 240, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: transform 300ms ease-out, background 300ms ease-out, backdrop-filter 300ms ease-out;
+  transform: translateY(0);
+}
+
+.header--down {
+  transform: translateY(-100%);
+}
+
+.header--up {
+  transform: translateY(0);
+}
+
+.header--scrolled {
+  background: rgba(248, 246, 240, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 12px 60px;
+  transition: padding 300ms ease-out;
+}
+
+.header--scrolled .header__container {
+  padding: 8px 60px;
+}
+
+.header__logo {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-olive);
+  text-decoration: none;
+}
+
+.header__nav {
+  display: flex;
+  gap: 48px;
+  margin: 0 auto;
+}
+
+.header__nav-link {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-olive);
+  text-decoration: none;
+  position: relative;
+  transition: opacity 200ms ease;
+}
+
+.header__nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-olive);
+  transition: width 300ms ease-out;
+}
+
+.header__nav-link:hover::after {
+  width: 100%;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header__basket {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--color-olive);
+  transition: opacity 200ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__basket:hover {
+  opacity: 0.7;
+}
+
+.header__basket-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--color-olive);
+  color: var(--color-white);
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(25%, -25%);
+}
+
+.header__cta {
+  display: inline-block;
+}
+
+.header__mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.header__mobile-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--color-olive);
+  transition: all 300ms ease;
+  display: block;
+}
+
+/* Responsive: Tablet */
+@media (max-width: 1023px) {
+  .header__container {
+    padding: 10px 32px;
+  }
+
+  .header__nav {
+    gap: 32px;
+  }
+}
+
+/* Responsive: Mobile */
+@media (max-width: 767px) {
+  .header__container {
+    padding: 8px 24px;
+  }
+
+  .header__actions {
+    display: none;
+  }
+
+  .header__basket--mobile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 0;
+    font-family: var(--font-sans), sans-serif;
+    font-size: 24px;
+    color: var(--color-olive);
+    text-align: left;
+  }
+
+  .header__basket--mobile span:not(.header__basket-count) {
+    flex: 1;
+  }
+
+  .header__cta--mobile {
+    width: 100%;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .header__mobile-toggle {
+    display: flex;
+  }
+
+  /* Mobile Menu (when open) */
+  .header__nav--open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(248, 246, 240, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 40px 24px;
+    gap: 24px;
+    box-shadow: 0 8px 24px rgba(51, 54, 17, 0.1);
+    z-index: 999;
+    border-top: 1px solid rgba(51, 54, 17, 0.1);
+  }
+
+  .header__nav-link {
+    font-size: 24px;
+  }
+}
+
