@@ -73,7 +73,7 @@
 }
 
 .stat-tile {
-  padding: 48px 40px;
+  padding: 32px 32px;
   background: var(--color-white);
   border: none;
   border-right: 1px solid rgba(51, 54, 17, 0.1);
@@ -81,7 +81,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  min-height: 300px;
+  min-height: 200px;
   transition: all 300ms ease-out;
 }
 
@@ -117,11 +117,11 @@
 
 .stat-tile__number {
   font-family: var(--font-mono);
-  font-size: 96px;
+  font-size: 56px;
   font-weight: 400;
   line-height: 1;
   color: var(--color-olive);
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   letter-spacing: -0.02em;
 }
 
@@ -206,12 +206,12 @@
   }
 
   .stat-tile {
-    min-height: 250px;
-    padding: 32px 24px;
+    min-height: 180px;
+    padding: 24px 20px;
   }
 
   .stat-tile__number {
-    font-size: 64px;
+    font-size: 48px;
   }
 
   .stat-tile__text {

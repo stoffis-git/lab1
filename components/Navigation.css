@@ -30,6 +30,7 @@
 }
 
 .header__container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -85,14 +86,9 @@
   width: 100%;
 }
 
-.header__actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
 .header__basket {
-  position: relative;
+  position: absolute;
+  right: 200px;
   background: none;
   border: none;
   cursor: pointer;
@@ -102,6 +98,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 }
 
 .header__basket:hover {
@@ -128,6 +125,11 @@
 
 .header__cta {
   display: inline-block;
+}
+
+/* Hide mobile-only CTA on desktop - use !important to override btn class */
+.header__cta--mobile {
+  display: none !important;
 }
 
 .header__mobile-toggle {
@@ -157,6 +159,10 @@
   .header__nav {
     gap: 32px;
   }
+
+  .header__basket {
+    right: 180px;
+  }
 }
 
 /* Responsive: Mobile */
@@ -165,30 +171,12 @@
     padding: 8px 24px;
   }
 
-  .header__actions {
+  .header__nav {
     display: none;
   }
 
-  .header__basket--mobile {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    width: 100%;
-    padding: 12px 0;
-    font-family: var(--font-sans), sans-serif;
-    font-size: 24px;
-    color: var(--color-olive);
-    text-align: left;
-  }
-
-  .header__basket--mobile span:not(.header__basket-count) {
-    flex: 1;
-  }
-
-  .header__cta--mobile {
-    width: 100%;
-    text-align: center;
-    margin-top: 8px;
+  .header__cta {
+    display: none !important;
   }
 
   .header__mobile-toggle {
@@ -216,5 +204,18 @@
   .header__nav-link {
     font-size: 24px;
   }
-}
 
+  /* Show mobile CTA inside open menu - first item */
+  .header__nav--open .header__cta--mobile {
+    display: block !important;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 24px;
+    order: -1;
+  }
+
+  .header__basket {
+    position: relative;
+    right: auto;
+  }
+}

@@ -6,6 +6,7 @@ import AnnasStory from '@/components/AnnasStory';
 import Footer from '@/components/Footer';
 import Button from '@/components/Button';
 import ProjectScaleGrid from '@/components/ProjectScaleGrid';
+import LogoBanner from '@/components/LogoBanner';
 import './page.css';
 
 // Import images - Update these paths to match your actual image files
@@ -20,7 +21,7 @@ export default function Home() {
       <HeroSplit
         headline={['WE DESIGN', 'THE BIOLOGY', 'OF YOU.']}
         subtext="Improve health, energy, well-being and performance. Personalized on your DNA and blood-markers."
-        ctaText="Listen to your body"
+        ctaText="Learn more"
         ctaHref="/how-it-works"
         image="/Lab1-image-hero-eyes.png"
         imageAlt="Abstract human figure representing personalized biology"
@@ -32,16 +33,16 @@ export default function Home() {
         subtext="We believe personalized nutrition is more than just supplements — it's about creating formulas that optimize, function precisely, and reflect the biology of the person taking them."
         stats={[
           {
-            number: "85%+",
-            text: "optimization level on Precision Path. This is what your biology can do when it's given exactly what it needs.",
+            number: "70%",
+            text: "of adults have a deficiency they can't fix by guessing. Your body needs the measure to effectively correct it.",
           },
           {
-            number: "30",
-            text: "genetic markers we test to understand how your body processes nutrients.",
+            number: "1",
+            text: "ever-changing body, entirely your own. Only data reveals your individual current state.",
           },
           {
-            number: "45",
-            text: "biomarkers we track quarterly to see what's improving and what's emerging.",
+            number: "90",
+            text: "days to feel like yourself again. Most people notice the difference in weeks.",
           },
           {
             number: "",
@@ -49,10 +50,18 @@ export default function Home() {
             isHighlighted: true,
           },
         ]}
-        image="/Lab1-image-core_clean.png"
-        imageAlt="Natural elements representing personalized biology"
         ctaText="Learn more"
-        ctaHref="/how-it-works"
+        ctaHref="/science"
+      />
+
+      {/* Logo Banner */}
+      <LogoBanner
+        items={[
+          'Eintracht Frankfurt e.V.',
+          'in 150+ Pharmacies',
+          'soon available',
+          '250+ Doctors offices',
+        ]}
       />
 
       {/* Section 03: Project Scale */}
@@ -67,6 +76,7 @@ export default function Home() {
             number: '01',
             title: 'TESTING LOCATIONS',
             description: '',
+            href: '/locations',
           },
           {
             image: '/Lab1-image-media.jpg',
@@ -74,6 +84,7 @@ export default function Home() {
             number: '02',
             title: 'RESEARCH & MEDIA',
             description: '',
+            href: 'https://www.instagram.com/lab1.bio/',
           },
           {
             image: '/Lab1-image-community.jpg',
@@ -120,8 +131,7 @@ export default function Home() {
           {
             title: 'Explore',
             links: [
-              { label: 'Essential', href: '/get-started?path=essential' },
-              { label: 'Core', href: '/get-started?path=precision' },
+              { label: 'Products', href: '/get-started' },
               { label: 'How it works', href: '/how-it-works' }
             ]
           },
@@ -136,7 +146,8 @@ export default function Home() {
           {
             title: 'Connect',
             links: [
-              { label: 'Contact', href: '/contact' }
+              { label: 'Contact', href: '/contact' },
+              { label: 'Locations', href: '/locations' }
             ]
           }
         ]}

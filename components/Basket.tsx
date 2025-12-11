@@ -51,7 +51,9 @@ export default function Basket({ isOpen, onClose }: BasketProps) {
                     <div className="basket__item-details">
                       <h3 className="basket__item-title">{item.title}</h3>
                       {item.variant && (
-                        <p className="basket__item-variant">{item.variant}</p>
+                        <p className="basket__item-variant">
+                          {item.variant.charAt(0).toUpperCase() + item.variant.slice(1)}
+                        </p>
                       )}
                       <div className="basket__item-price">
                         {(item.price * item.quantity).toFixed(2)}€
@@ -108,6 +110,13 @@ export default function Basket({ isOpen, onClose }: BasketProps) {
                     Proceed to Payment
                   </button>
                 </div>
+                <button
+                  className="basket__pharmacy"
+                  onClick={handleCheckout}
+                  disabled={true}
+                >
+                  Pick up at a pharmacy near me.
+                </button>
               </div>
             </>
           )}

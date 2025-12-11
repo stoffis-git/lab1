@@ -390,6 +390,7 @@
 /* Process Steps */
 .path-guide__process {
   margin: 48px 0 0 0;
+  padding-left: 40px;
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -407,19 +408,18 @@
   content: '';
   position: absolute;
   left: 20px;
-  top: 64px;
+  top: 80px;
   width: 2px;
-  height: calc(100% - 32px);
+  height: calc(100% - 64px);
   background: rgba(51, 54, 17, 0.15);
 }
 
 .path-guide__process-number {
   flex-shrink: 0;
   width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--color-olive);
-  color: var(--color-white);
+  height: auto;
+  background: transparent;
+  color: var(--color-olive);
   font-family: var(--font-mono), monospace;
   font-size: 18px;
   font-weight: 600;
@@ -428,10 +428,11 @@
   justify-content: center;
   position: relative;
   z-index: 1;
+  padding-right: 0;
 }
 
 .path-guide__process-step--optional .path-guide__process-number {
-  background: rgba(51, 54, 17, 0.3);
+  color: rgba(51, 54, 17, 0.5);
 }
 
 .path-guide__process-content {
@@ -489,7 +490,7 @@
 
 .path-guide__process-title {
   font-family: var(--font-sans), sans-serif;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
   color: var(--color-olive);
   margin: 0 0 8px 0;
@@ -505,7 +506,7 @@
 
 .path-guide__process-description {
   font-family: var(--font-sans), sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   color: rgba(51, 54, 17, 0.7);
   margin: 0;
@@ -513,6 +514,11 @@
 
 .path-guide__cta {
   margin-top: 8px;
+}
+
+.path-guide__cta-wrapper {
+  margin-top: 2rem;
+  width: 100%;
 }
 
 /* Advantages Section */
@@ -941,6 +947,10 @@
     font-size: 12px;
   }
 
+  .path-guide__process {
+    padding-left: 24px;
+  }
+
   .path-guide__process-step {
     padding: 24px 0;
     gap: 20px;
@@ -948,13 +958,15 @@
 
   .path-guide__process-number {
     width: 36px;
-    height: 36px;
+    height: auto;
     font-size: 16px;
+    padding-right: 0;
   }
 
   .path-guide__process-step:not(:last-child)::after {
     left: 18px;
-    top: 56px;
+    top: 68px;
+    height: calc(100% - 48px);
   }
 
   .path-guide__process-content {
@@ -971,7 +983,7 @@
   }
 
   .path-guide__process-description {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .path-guide__optimization-main {

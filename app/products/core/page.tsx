@@ -1,17 +1,21 @@
 'use client';
 
+import { useState } from 'react';
 import Footer from '@/components/Footer';
 import Button from '@/components/Button';
 import Link from 'next/link';
 import ProductCarousel from '@/components/ProductCarousel';
 import CoreClient from './CoreClient';
 import AddToBasket from './AddToBasket';
+import '../essential/page.css';
 import './page.css';
 
 export default function CoreProduct() {
+  const [selectedFocus, setSelectedFocus] = useState<string>('');
+
   return (
-    <main className="product-page product-page--core">
-      <section className="product-hero product-hero--core">
+    <main className="product-page">
+      <section className="product-hero">
         <div className="product-hero__container">
           <nav className="product-hero__breadcrumb">
             <Link href="/">Home</Link> / <Link href="/get-started">Products</Link> / <span>Core</span>
@@ -21,45 +25,75 @@ export default function CoreProduct() {
               <ProductCarousel
                 images={[
                   '/Lab1-image-product-core_personalized-levitating.png',
-                  '/Lab1-image-product-core_clean.png'
+                  '/Lab1-image-product-welcome-package.png',
+                  '/Lab1-iamge-product-testingkits.png'
                 ]}
                 alt="Lab1 Core product"
-                variant="core"
               />
             </div>
             <div className="product-hero__right">
               <div className="product-hero__badge">Core</div>
-              <h1 className="product-hero__title">DNA + blood testing. Evolving formulas.</h1>
+              <h1 className="product-hero__title">Personalized to DNA & blood.</h1>
               <p className="product-hero__description">
                 Deep personalization through genetic and biomarker analysis. Your formula evolves every 3 months based on your body's actual needs and responses.
               </p>
-              <div className="product-hero__price">From $199/month</div>
-              <div className="product-hero__features">
-                <div className="product-hero__feature">
-                  <span className="product-hero__feature-label">Optimization level</span>
-                  <span className="product-hero__feature-value">85%+</span>
+              <div className="product-hero__pricing">
+                <div className="product-hero__pricing-item">
+                  <span className="product-hero__pricing-amount">59€<span className="product-hero__pricing-period"> / month</span></span>
+                  <span className="product-hero__pricing-label">for your personalized formula</span>
                 </div>
-                <div className="product-hero__feature">
-                  <span className="product-hero__feature-label">Genetic markers</span>
-                  <span className="product-hero__feature-value">30</span>
+                <div className="product-hero__pricing-item">
+                  <span className="product-hero__pricing-amount">+ 125€</span>
+                  <span className="product-hero__pricing-label">one-time for DNA & blood testing</span>
                 </div>
-                <div className="product-hero__feature">
-                  <span className="product-hero__feature-label">Biomarkers tracked</span>
-                  <span className="product-hero__feature-value">45</span>
+                <p className="product-hero__pricing-note">Subscription. Cancel anytime.</p>
+              </div>
+              <div className="product-hero__focus-selector">
+                <p className="product-hero__focus-label">Choose your focus</p>
+                <div className="product-hero__focus-options">
+                  <button 
+                    className={`product-hero__focus-option ${selectedFocus === 'health' ? 'product-hero__focus-option--active' : ''}`}
+                    onClick={() => setSelectedFocus('health')}
+                  >
+                    Health
+                  </button>
+                  <button 
+                    className={`product-hero__focus-option ${selectedFocus === 'performance' ? 'product-hero__focus-option--active' : ''}`}
+                    onClick={() => setSelectedFocus('performance')}
+                  >
+                    Performance
+                  </button>
+                  <button 
+                    className={`product-hero__focus-option ${selectedFocus === 'longevity' ? 'product-hero__focus-option--active' : ''}`}
+                    onClick={() => setSelectedFocus('longevity')}
+                  >
+                    Longevity
+                  </button>
                 </div>
+              </div>
+              <div className="product-hero__cta">
+                <AddToBasket
+                  productType="core"
+                  variant={selectedFocus}
+                  price={125}
+                  title="Lab1 Core"
+                  image="/Lab1-image-product-core_personalized-levitating.png"
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/*
       <section className="product-version-picker-section">
         <div className="product-version-picker-section__container">
           <CoreClient />
         </div>
       </section>
+      */}
 
-      <section className="product-details product-details--core">
+      <section className="product-details">
         <div className="product-details__container">
           <div className="product-details__content">
             <div className="product-details__layout">
@@ -87,12 +121,6 @@ export default function CoreProduct() {
                 </div>
               </div>
               <div className="product-details__right">
-                <AddToBasket
-                  productType="core"
-                  price={199}
-                  title="Lab1 Core"
-                  image="/Lab1-image-product-core_personalized-levitating.png"
-                />
               </div>
             </div>
           </div>
@@ -123,6 +151,7 @@ export default function CoreProduct() {
             title: 'Connect',
             links: [
               { label: 'Contact', href: '/contact' },
+              { label: 'Locations', href: '/locations' },
             ],
           },
         ]}

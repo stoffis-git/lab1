@@ -1,0 +1,68 @@
+/* ========================================
+   LOGO BANNER (Rotating Marquee)
+   ======================================== */
+
+.logo-banner {
+  width: 100%;
+  overflow: hidden;
+  background: var(--color-olive);
+  padding: 16px 0;
+}
+
+.logo-banner__track {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+}
+
+.logo-banner__item {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-cream);
+  flex-shrink: 0;
+}
+
+.logo-banner__separator {
+  margin: 0 48px;
+  opacity: 0.5;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+/* Pause on hover */
+.logo-banner:hover .logo-banner__track {
+  animation-play-state: paused;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .logo-banner {
+    padding: 12px 0;
+  }
+
+  .logo-banner__item {
+    font-size: 12px;
+  }
+
+  .logo-banner__separator {
+    margin: 0 32px;
+  }
+
+  .logo-banner__track {
+    animation-duration: 20s;
+  }
+}
+
+

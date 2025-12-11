@@ -101,7 +101,7 @@ export default function PathSelector() {
       title: 'Longevity',
       images: [
         '/Lab1-image-longevity-man.png',
-        undefined, // placeholder
+        '/Lab1-image-health-longevity_female.png',
       ],
       alt: 'Longevity persona - Long-term health optimization',
       stats: [
@@ -269,11 +269,6 @@ export default function PathSelector() {
                 <div className="path-guide__process-step">
                   <div className="path-guide__process-number">1</div>
                   <div className="path-guide__process-content">
-                    <div className="path-guide__process-image-container">
-                      <div className="path-guide__process-image-placeholder">
-                        <span className="path-guide__process-image-text">DNA + Blood Test</span>
-                      </div>
-                    </div>
                     <div className="path-guide__process-text">
                       <h4 className="path-guide__process-title">Get DNA + Blood Test</h4>
                       <p className="path-guide__process-description">
@@ -283,12 +278,25 @@ export default function PathSelector() {
                   </div>
                 </div>
 
-                {/* Step 2: Health Report */}
+                {/* Step 2: Monthly Subscription */}
                 <div className="path-guide__process-step">
                   <div className="path-guide__process-number">2</div>
                   <div className="path-guide__process-content">
                     <div className="path-guide__process-text">
-                      <h4 className="path-guide__process-title">Receive & Connect</h4>
+                      <h4 className="path-guide__process-title">Receive Personalized Lab1</h4>
+                      <p className="path-guide__process-description">
+                        Personalized formula delivered on subscription basis.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Step 3: Health Report */}
+                <div className="path-guide__process-step">
+                  <div className="path-guide__process-number">3</div>
+                  <div className="path-guide__process-content">
+                    <div className="path-guide__process-text">
+                      <h4 className="path-guide__process-title">Learn about your Data</h4>
                       <p className="path-guide__process-description">
                         Gain insights and establish a starting point for treatment.
                       </p>
@@ -296,19 +304,6 @@ export default function PathSelector() {
                         <li>Download Lab1 app</li>
                         <li>View your complete biomarker dashboard</li>
                       </ul>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Step 3: Monthly Subscription */}
-                <div className="path-guide__process-step">
-                  <div className="path-guide__process-number">3</div>
-                  <div className="path-guide__process-content">
-                    <div className="path-guide__process-text">
-                      <h4 className="path-guide__process-title">Receive Monthly Lab1 (Core)</h4>
-                      <p className="path-guide__process-description">
-                        Personalized formula delivered on subscription basis.
-                      </p>
                     </div>
                   </div>
                 </div>
@@ -364,28 +359,10 @@ export default function PathSelector() {
                 <p className="path-guide__optimization-subtext">Generic supplements guess at your needs. Pattern-based formulas are ~2× better. Personalized formulas based on YOUR data are 3-4× more effective.</p>
               </div>
 
-              {/* App Callout Section */}
-              <div className="path-guide__app-callout">
-                <div className="path-guide__app-callout-icon">
-                  <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="16" y="8" width="48" height="64" rx="4" stroke="currentColor" strokeWidth="2"/>
-                    <line x1="32" y1="16" x2="48" y2="16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                    <rect x="24" y="24" width="32" height="20" rx="2" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                    <line x1="24" y1="32" x2="56" y2="32" stroke="currentColor" strokeWidth="1" strokeLinecap="round"/>
-                    <line x1="24" y1="38" x2="48" y2="38" stroke="currentColor" strokeWidth="1" strokeLinecap="round"/>
-                  </svg>
-                </div>
-                <div className="path-guide__app-callout-content">
-                  <p className="path-guide__app-callout-main">Your data. Your insights. Always accessible.</p>
-                  <p className="path-guide__app-callout-subtext">The Lab1 app transforms complex biomarker data into clear, actionable insights. See exactly what's improving, understand why, and get personalized education tailored to your biology.</p>
-                  <a href="#app" className="path-guide__app-callout-link">Learn more about the app →</a>
-                </div>
-              </div>
-
               {/* CTA Button */}
-              <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center' }}>
-                <Button href="/products/core" variant="primary">
-                  Explore Core
+              <div className="path-guide__cta-wrapper">
+                <Button href="/products/core" variant="primary" fullWidth>
+                  EXPLORE PERSONALIZED
                 </Button>
               </div>
             </div>
@@ -454,13 +431,10 @@ export default function PathSelector() {
                 <p className="path-guide__optimization-subtext">Generic supplements guess blindly (1×). Our pattern-based formulas target the statistically most common needs for people like you (2×). Not as precise as Personalized (3-4×), but significantly better than guessing.</p>
               </div>
 
-              {/* Upgrade Note */}
-              <p className="path-guide__upgrade-note">→ Switch to Personalized anytime</p>
-
               {/* CTA Button */}
-              <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center' }}>
-                <Button href="/products/essential" variant="primary">
-                  Explore Essential
+              <div className="path-guide__cta-wrapper">
+                <Button href="/products/essential" variant="primary" fullWidth>
+                  EXPLORE GENERAL
                 </Button>
               </div>
             </div>

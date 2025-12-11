@@ -77,6 +77,7 @@ export default function HowItWorks() {
             title: 'Connect',
             links: [
               { label: 'Contact', href: '/contact' },
+              { label: 'Locations', href: '/locations' },
             ],
           },
         ]}

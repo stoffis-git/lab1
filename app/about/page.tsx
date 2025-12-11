@@ -6,110 +6,41 @@ import './page.css';
 export default function About() {
   return (
     <main>
-      {/* Section 01: Hero - Half/Half with background */}
-      <section className="about-hero">
-        <div className="about-hero__container">
-          <div className="about-hero__left">
-            <h1 className="about-hero__headline">ABOUT LAB1</h1>
-          </div>
-          <div className="about-hero__right">
-            <div className="about-hero__grid">
-              <div className="about-hero__tile">
-                <div className="about-hero__tile-number">01</div>
-                <div className="about-hero__tile-text">Measure biology</div>
-              </div>
-              <div className="about-hero__tile">
-                <div className="about-hero__tile-number">02</div>
-                <div className="about-hero__tile-text">Correct deficiencies</div>
-              </div>
-              <div className="about-hero__tile">
-                <div className="about-hero__tile-number">03</div>
-                <div className="about-hero__tile-text">Optimize quarterly</div>
-              </div>
-              <div className="about-hero__tile about-hero__tile--accent">
-                <div className="about-hero__tile-accent-text">
-                  Not guesswork.<br />
-                  Precision.
-                </div>
-              </div>
-            </div>
-          </div>
+      {/* Section 01: Hero - Full width image with centered headline */}
+      <section className="about-hero-new">
+        <div className="about-hero-new__image">
+          <img src="/Lab1-image-expert-team.png" alt="Lab1 expert team" />
+        </div>
+        <div className="about-hero-new__overlay" />
+        <div className="about-hero-new__content">
+          <h1 className="about-hero-new__headline">
+            <span>Trusted by elite sport.</span>
+            <span>Guaranteed for you.</span>
+          </h1>
         </div>
       </section>
 
-      {/* Section 02: Expert Assurance - Split with Image */}
-      <section className="about-problem">
-        <div className="about-problem__container">
-          <div className="about-problem__image">
-            <img src="/Lab1-image-placeholder.png" alt="Lab1 expert assurance" />
-          </div>
-          <div className="about-problem__content">
-            <span className="about-problem__eyebrow">EXPERT ASSURANCE</span>
-            <h2 className="about-problem__headline">
-              Trusted by elite sport. Guaranteed for you.
-            </h2>
-            <p className="about-problem__text">
-              Official health and nutrition coaches of Eintracht Frankfurt e.V.:
-            </p>
-            <ul className="about-problem__list">
-              <li><strong>Fabian Plachel</strong> — oversees health strategy</li>
-              <li><strong>Christian Haser</strong> — oversees nutrition and formulation</li>
-            </ul>
-            <p className="about-problem__text">
-              They don’t just advise—they guarantee the formulations work as intended.
-            </p>
-          </div>
+      {/* Section 02: Expert Quote */}
+      <section className="about-expert-quote">
+        <div className="about-expert-quote__container">
+          <p className="about-expert-quote__text">
+            "Elite sports medicine doesn't belong only on the field. Everyone deserves formulations based on real biomarkers that evolve with them."
+          </p>
+          <p className="about-expert-quote__author">– Christian Haser, Head of Medical Department, Eintracht Frankfurt e.V.</p>
         </div>
       </section>
 
-      {/* Section 03: The Numbers - 2x2 Grid */}
-      <section className="about-stats">
-        <div className="about-stats__container">
-          <div className="about-stats__left">
-            <h2 className="about-stats__headline">THE DATA</h2>
-            <p className="about-stats__subtext">
-              These aren't marketing numbers.<br />
-              These are genetic realities.
-            </p>
-          </div>
-          <div className="about-stats__grid">
-            <div className="about-stats__tile">
-              <div className="about-stats__number">40%</div>
-              <p className="about-stats__label">carry MTHFR variants affecting folate processing</p>
-            </div>
-            <div className="about-stats__tile">
-              <div className="about-stats__number">40%</div>
-              <p className="about-stats__label">have FADS variants affecting omega-3 conversion</p>
-            </div>
-            <div className="about-stats__tile">
-              <div className="about-stats__number">2-3x</div>
-              <p className="about-stats__label">difference in vitamin D needs due to VDR polymorphisms</p>
-            </div>
-            <div className="about-stats__tile about-stats__tile--cta">
-              <p className="about-stats__cta-text">Your multivitamin doesn't know this.</p>
-              <p className="about-stats__cta-emphasis">We do.</p>
-            </div>
-          </div>
+      {/* Section 03: Pharma Grade for Everyone */}
+      <section className="about-pharma">
+        <div className="about-pharma__container">
+          <h2 className="about-pharma__headline">Health, truly accessible.</h2>
+          <p className="about-pharma__text">
+            We combine the latest biochemistry research with modern professional sports practice—and pharma-grade ingredients—to make real health optimization available to everyone.
+          </p>
         </div>
       </section>
 
-      {/* Section 04: How We're Different - Three Columns */}
-      <section className="about-difference">
-        <div className="about-difference__column">
-          <p className="about-difference__contrast">Most personalized nutrition asks you questions.</p>
-          <p className="about-difference__answer">WE MEASURE YOUR BIOLOGY.</p>
-        </div>
-        <div className="about-difference__column">
-          <p className="about-difference__contrast">Most supplements give you one formula forever.</p>
-          <p className="about-difference__answer">WE ROTATE YOURS QUARTERLY.</p>
-        </div>
-        <div className="about-difference__column">
-          <p className="about-difference__contrast">Most companies optimize for sales.</p>
-          <p className="about-difference__answer">WE OPTIMIZE FOR BIOMARKERS.</p>
-        </div>
-      </section>
-
-      {/* Section 05: Expertise - Dark Section with Cards */}
+      {/* Section 04: Expertise - Three Worlds */}
       <section className="about-expertise">
         <div className="about-expertise__container">
           <h2 className="about-expertise__headline">Built at the intersection of three worlds</h2>
@@ -139,13 +70,10 @@ export default function About() {
             </p>
           </div>
           </div>
-          <p className="about-expertise__closing">
-            This isn't theory. It's evidence, tested under the most demanding conditions.
-          </p>
         </div>
       </section>
 
-      {/* Section 07: CTA */}
+      {/* Section 04: CTA */}
       <section className="about-cta">
         <div className="about-cta__container">
           <h2 className="about-cta__headline">
@@ -156,10 +84,10 @@ export default function About() {
             what your body has been trying to tell you.
         </p>
           <div className="about-cta__buttons">
-            <Button variant="secondary" size="large" href="/get-started?path=essential">
+            <Button variant="secondary" size="large" href="/products/essential">
               Explore Essential →
             </Button>
-            <Button variant="secondary" size="large" href="/get-started?path=precision">
+            <Button variant="secondary" size="large" href="/products/core">
               Start Testing →
             </Button>
           </div>
@@ -174,8 +102,7 @@ export default function About() {
           {
             title: 'Explore',
             links: [
-              { label: 'Essential', href: '/get-started?path=essential' },
-              { label: 'Core', href: '/get-started?path=precision' },
+              { label: 'Products', href: '/get-started' },
               { label: 'How it works', href: '/how-it-works' },
             ],
           },
@@ -191,6 +118,7 @@ export default function About() {
             title: 'Connect',
             links: [
               { label: 'Contact', href: '/contact' },
+              { label: 'Locations', href: '/locations' },
             ],
           },
         ]}

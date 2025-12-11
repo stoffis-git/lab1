@@ -23,24 +23,10 @@ export default function GetStarted() {
               </div>
               <div className="product-card__content">
                 <div className="product-card__badge">Essential</div>
-                <h2 className="product-card__title">Begin today. No testing required.</h2>
+                <h2 className="product-card__title"><span className="nowrap">Begin today.</span> <span className="nowrap">No testing required.</span></h2>
                 <p className="product-card__description">
                   Premium formulas customized for your stage of life. Start your journey with trusted, science-backed nutrition that adapts to your demographic profile.
                 </p>
-                <div className="product-card__stats">
-                  <div className="product-card__stat">
-                    <span className="product-card__stat-number">medium</span>
-                    <span className="product-card__stat-label">optimization</span>
-                  </div>
-                  <div className="product-card__stat">
-                    <span className="product-card__stat-number">0</span>
-                    <span className="product-card__stat-label">genetic markers</span>
-                  </div>
-                  <div className="product-card__stat">
-                    <span className="product-card__stat-number">today</span>
-                    <span className="product-card__stat-label">start</span>
-                  </div>
-                </div>
                 <div className="product-card__price-cta">
                   <div className="product-card__price">From 49€</div>
                   <div className="product-card__cta">View Product →</div>
@@ -51,28 +37,14 @@ export default function GetStarted() {
             {/* Core/Personalized Product */}
             <Link href="/products/core" className="product-card product-card--core">
               <div className="product-card__image-container">
-                <img src="/Lab1-image-product-core_personalized-levitating.png" alt="Core line preview" className="product-card__image" />
+                <img src="/Lab1-image-product-core_clean.png" alt="Core line preview" className="product-card__image" />
               </div>
               <div className="product-card__content">
                 <div className="product-card__badge product-card__badge--core">Core</div>
-                <h2 className="product-card__title">DNA + blood testing. Evolving formulas.</h2>
+                <h2 className="product-card__title">Personalized to DNA & blood.</h2>
                 <p className="product-card__description">
                   Deep personalization through genetic and biomarker analysis. Your formula evolves every 3 months based on your body's actual needs and responses.
                 </p>
-                <div className="product-card__stats">
-                  <div className="product-card__stat">
-                    <span className="product-card__stat-number">personal</span>
-                    <span className="product-card__stat-label">optimization</span>
-                  </div>
-                  <div className="product-card__stat">
-                    <span className="product-card__stat-number">30+45</span>
-                    <span className="product-card__stat-label">genetic markers</span>
-                  </div>
-                  <div className="product-card__stat">
-                    <span className="product-card__stat-number">test today</span>
-                    <span className="product-card__stat-label">start</span>
-                  </div>
-                </div>
                 <div className="product-card__price-cta">
                   <div className="product-card__price">From 59€/month</div>
                   <div className="product-card__cta">View Product →</div>
@@ -107,6 +79,7 @@ export default function GetStarted() {
             title: 'Connect',
             links: [
               { label: 'Contact', href: '/contact' },
+              { label: 'Locations', href: '/locations' },
             ],
           },
         ]}

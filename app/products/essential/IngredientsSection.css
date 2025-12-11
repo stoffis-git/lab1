@@ -1,0 +1,217 @@
+/* ========================================
+   INGREDIENTS SECTION
+   ======================================== */
+
+.ingredients-section {
+  padding: 120px 60px;
+  background: var(--color-cream);
+}
+
+.ingredients-section__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ingredients-section__title {
+  font-family: var(--font-serif), serif;
+  font-size: 48px;
+  font-weight: 400;
+  color: var(--color-olive);
+  margin: 0 0 48px 0;
+  text-align: center;
+}
+
+.ingredients-section__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 48px;
+  border-bottom: 1px solid rgba(51, 54, 17, 0.1);
+  padding-bottom: 0;
+}
+
+.ingredients-section__tab {
+  padding: 12px 24px;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(51, 54, 17, 0.6);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 200ms ease;
+  margin-bottom: -1px;
+}
+
+.ingredients-section__tab:hover {
+  color: var(--color-olive);
+}
+
+.ingredients-section__tab--active {
+  color: var(--color-olive);
+  border-bottom-color: var(--color-olive);
+}
+
+.ingredients-section__content {
+  background: var(--color-white);
+  padding: 48px;
+  border: 1px solid rgba(51, 54, 17, 0.1);
+}
+
+.ingredients-section__panel {
+  animation: fadeIn 300ms ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ingredients-section__panel-title {
+  font-family: var(--font-serif), serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--color-olive);
+  margin: 0 0 32px 0;
+}
+
+.ingredients-section__ingredients {
+  margin-bottom: 40px;
+}
+
+.ingredients-section__ingredients-title {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(51, 54, 17, 0.6);
+  margin: 0 0 20px 0;
+}
+
+.ingredients-section__ingredients-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ingredients-section__ingredient {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(51, 54, 17, 0.8);
+  padding-left: 24px;
+  position: relative;
+}
+
+.ingredients-section__ingredient::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-olive);
+  font-weight: 600;
+}
+
+.ingredients-section__usage {
+  padding-top: 32px;
+  border-top: 1px solid rgba(51, 54, 17, 0.1);
+}
+
+.ingredients-section__usage-title {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(51, 54, 17, 0.6);
+  margin: 0 0 16px 0;
+}
+
+.ingredients-section__usage-text {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(51, 54, 17, 0.8);
+  margin: 0 0 16px 0;
+}
+
+.ingredients-section__usage-note {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(51, 54, 17, 0.6);
+  font-style: italic;
+  margin: 0;
+}
+
+/* Responsive: Tablet */
+@media (max-width: 1023px) {
+  .ingredients-section {
+    padding: 80px 32px;
+  }
+
+  .ingredients-section__tabs {
+    gap: 6px;
+  }
+
+  .ingredients-section__tab {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .ingredients-section__content {
+    padding: 32px;
+  }
+}
+
+/* Responsive: Mobile */
+@media (max-width: 767px) {
+  .ingredients-section {
+    padding: 60px 24px;
+  }
+
+  .ingredients-section__title {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
+
+  .ingredients-section__tabs {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    border-bottom: none;
+  }
+
+  .ingredients-section__tab {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid rgba(51, 54, 17, 0.1);
+    border-left: 3px solid transparent;
+    margin-bottom: 0;
+  }
+
+  .ingredients-section__tab--active {
+    border-left-color: var(--color-olive);
+    border-bottom-color: rgba(51, 54, 17, 0.1);
+  }
+
+  .ingredients-section__content {
+    padding: 24px;
+  }
+
+  .ingredients-section__panel-title {
+    font-size: 24px;
+  }
+}
+

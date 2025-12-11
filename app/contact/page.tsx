@@ -135,6 +135,7 @@ export default function Contact() {
             title: 'Connect',
             links: [
               { label: 'Contact', href: '/contact' },
+              { label: 'Locations', href: '/locations' },
             ],
           },
         ]}

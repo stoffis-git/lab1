@@ -16,42 +16,60 @@ export default function Science() {
       />
 
       {/* Section 02: The Problem */}
-      <TextSection background="white" maxWidth={700}>
-        <h2 className="text-section__headline">Why generic nutrition fails</h2>
-        <p>Most supplements are designed for "average."</p>
-        <p>
-          The problem?<br />
-          You are not average.
-        </p>
-        <div className="stat-callout">
-          <div className="stat-callout__number">40%</div>
-          <p className="stat-callout__text">
-            of people carry genetic variants that change how they process basic nutrients
-          </p>
+      <TextSection background="white" maxWidth={1200}>
+        <div className="problem-grid">
+          <div className="problem-grid__col">
+            <h2 className="text-section__headline">Why generic nutrition fails</h2>
+            <p>Most supplements are built for “average.”</p>
+            <p>You’re not.</p>
+            <p>MTHFR? You may not convert folic acid. VDR? You may need 2–3x vitamin D.</p>
+            <p>Ferritin at 20 ng/mL is “normal” on paper—and why you crash at 2pm.</p>
+            <p className="text-section__emphasis">Generic guesses. Your cells need certainty.</p>
+          </div>
+          <div className="problem-grid__col">
+            <div className="stat-callout">
+              <div className="stat-callout__number">40%</div>
+              <p className="stat-callout__text">
+                of people carry genetic variants that change how they process basic nutrients
+              </p>
+            </div>
+            <div className="stat-callout">
+              <div className="stat-callout__number">70%</div>
+              <p className="stat-callout__text">
+                of women are functionally iron deficient, but standard ranges call them "normal"
+              </p>
+            </div>
+          </div>
         </div>
-        <p>
-          The MTHFR variant means your cells can't convert folic acid.<br />
-          But your multivitamin doesn't know that.
-        </p>
-        <p>
-          The VDR variant means you need 2-3x more vitamin D.<br />
-          But your multivitamin gives you the same dose as everyone else.
-        </p>
-        <div className="stat-callout">
-          <div className="stat-callout__number">70%</div>
-          <p className="stat-callout__text">
-            of women are functionally iron deficient, but standard ranges call them "normal"
-          </p>
-        </div>
-        <p>
-          Ferritin at 20 ng/mL is technically "within range."<br />
-          It's also why you're exhausted by 2pm.
-        </p>
-        <p className="text-section__emphasis">
-          Generic supplements guess.<br />
-          Your cells need certainty.
-        </p>
       </TextSection>
+
+      {/* Section 02a: Expert Focus (moved up) */}
+      <section className="science-expert">
+        <div className="science-expert__grid">
+          <div className="science-expert__image">
+            <img src="/Lab1-image-expert-fabian_plachel.png" alt="Dr. Fabian Plachel portrait" />
+          </div>
+          <div className="science-expert__content">
+            <span className="science-expert__eyebrow">EXPERT OVERSIGHT</span>
+            <h2 className="science-expert__headline">PD Dr. Fabian Plachel, PhD</h2>
+            <p className="science-expert__subtext">
+              Sportmedizin & Nutrition Lead — Eintracht Frankfurt e.V.
+            </p>
+            <p className="science-expert__paragraph">
+              Fabian brings the rigor of top-flight football medicine to Lab1. As leitender Mannschaftsarzt in the Bundesliga with 50+ peer-reviewed publications, he built programs that lowered injury time, aligned biomarker testing with training loads, and made sleep, nutrition, and recovery non‑negotiable pillars. His “evidence first, personalization always” approach is exactly how we design and evolve every formula.
+            </p>
+            <p className="science-expert__paragraph">
+              At Lab1, Fabian doesn’t just advise—he safeguards the medical integrity of what we ship. He reviews every marker we track, stress-tests our rotation cadence, and insists on transparent, clinically grounded dosing. The same standards he applied to elite squads now keep our products accountable to you.
+            </p>
+            <ul className="science-expert__list">
+              <li>Bundesliga medical lead; Charité-trained sportmed specialist</li>
+              <li>Healthlab founder: Spitzensport-Medizin für jedermann</li>
+              <li>Biomarker-first: annual baselines, 90-day reviews, actionable insights</li>
+              <li>Guarantees: formulas meet the bar he set for elite athletes</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
       {/* Section 03: The Three Layers */}
       <section className="layers-headline-section">
@@ -263,35 +281,41 @@ export default function Science() {
       </section>
 
       {/* Section 06: Layer 3 - You */}
-      <TextSection background="cream" maxWidth={700} className="text-section--dark" id="layer-science">
-        <h2 className="text-section__headline">LAYER 3: YOU</h2>
-        <p>Data is not enough.</p>
-        <p>
-          You might have perfect ferritin levels<br />
-          but you're still exhausted at 2pm.
-        </p>
-        <p>Why?</p>
-        <p>
-          Maybe you're sleeping 5 hours a night.<br />
-          Maybe you just started a high-stress job.<br />
-          Maybe you're training for a marathon.
-        </p>
-        <p className="text-section__emphasis">Context changes everything.</p>
-        <p>This is why every Lab1 member has access to our care team.</p>
-        <p>
-          Real humans who ask:<br />
-          How are you sleeping?<br />
-          What changed this month?<br />
-          How do you actually feel?
-        </p>
-        <p>
-          We combine:<br />
-          Your genetics (the manual)<br />
-          Your biomarkers (the dashboard)<br />
-          Your life (the reality)
-        </p>
-        <p>And we formulate for all three.</p>
-      </TextSection>
+      <section className="layer-you" id="layer-science">
+        <div className="layer-you__grid">
+          <div className="layer-you__image">
+            <img src="/Lab1-image-user-woman.png" alt="Real person, real context" />
+          </div>
+          <div className="layer-you__content">
+            <h2 className="layer-you__title">LAYER 3: YOU</h2>
+            <p className="layer-you__lead">Data is not enough.</p>
+            <p>
+              Perfect ferritin but still exhausted at 2pm? Maybe you're sleeping 5 hours. 
+              Maybe you just started a high-stress job. Maybe you're training for a marathon.
+            </p>
+            <p className="layer-you__emphasis">Context changes everything.</p>
+            <p>
+              Every Lab1 member has access to our care team—real humans who ask: 
+              How are you sleeping? What changed? How do you actually feel?
+            </p>
+            <div className="layer-you__summary">
+              <div className="layer-you__summary-item">
+                <span className="layer-you__summary-label">Genetics</span>
+                <span className="layer-you__summary-value">The manual</span>
+              </div>
+              <div className="layer-you__summary-item">
+                <span className="layer-you__summary-label">Biomarkers</span>
+                <span className="layer-you__summary-value">The dashboard</span>
+              </div>
+              <div className="layer-you__summary-item">
+                <span className="layer-you__summary-label">Your life</span>
+                <span className="layer-you__summary-value">The reality</span>
+              </div>
+            </div>
+            <p className="layer-you__closing">We formulate for all three.</p>
+          </div>
+        </div>
+      </section>
 
       {/* Section 08: The Ingredients */}
       <section className="ingredients-section">
@@ -352,45 +376,6 @@ export default function Science() {
         </p>
       </section>
 
-      {/* Section 10: Expert Focus */}
-      <section className="science-expert">
-        <div className="science-expert__grid">
-          <div className="science-expert__image">
-            <img src="/Lab1-image-placeholder.png" alt="Dr. Fabian Plachel portrait" />
-          </div>
-          <div className="science-expert__content">
-            <span className="science-expert__eyebrow">EXPERT OVERSIGHT</span>
-            <h2 className="science-expert__headline">Dr. Fabian Plachel</h2>
-            <p className="science-expert__subtext">
-              Sportmedizin & Nutrition Lead — Eintracht Frankfurt e.V.
-            </p>
-            <p className="science-expert__paragraph">
-              Fabian brings the rigor of top-flight football medicine to Lab1. As leitender Mannschaftsarzt in the Bundesliga with 50+ peer-reviewed publications, he built programs that lowered injury time, aligned biomarker testing with training loads, and made sleep, nutrition, and recovery non‑negotiable pillars. His “evidence first, personalization always” approach is exactly how we design and evolve every formula.
-            </p>
-            <p className="science-expert__paragraph">
-              At Lab1, Fabian doesn’t just advise—he safeguards the medical integrity of what we ship. He reviews every marker we track, stress-tests our rotation cadence, and insists on transparent, clinically grounded dosing. The same standards he applied to elite squads now keep our products accountable to you.
-            </p>
-            <ul className="science-expert__list">
-              <li>Bundesliga medical lead; Charité-trained sportmed specialist</li>
-              <li>Healthlab founder: Spitzensport-Medizin für jedermann</li>
-              <li>Biomarker-first: annual baselines, 90-day reviews, actionable insights</li>
-              <li>Guarantees: formulas meet the bar he set for elite athletes</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 11: Expert Quote */}
-      <section className="science-expert-quote">
-        <div className="science-expert-quote__container">
-          <p className="science-expert-quote__text">
-            "Spitzensport-Medizin gehört nicht nur auf den Platz. Jede Person verdient Formulierungen, die auf echten Biomarkern beruhen und sich mit ihr weiterentwickeln."
-          </p>
-          <p className="science-expert-quote__author">– Dr. Fabian Plachel</p>
-        </div>
-      </section>
-
-
 
       {/* Section 11: Footer */}
       <Footer
@@ -417,6 +402,7 @@ export default function Science() {
             title: 'Connect',
             links: [
               { label: 'Contact', href: '/contact' },
+              { label: 'Locations', href: '/locations' },
             ],
           },
         ]}

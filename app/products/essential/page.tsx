@@ -3,7 +3,6 @@
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import ProductCarousel from '@/components/ProductCarousel';
-import EssentialClient from './EssentialClient';
 import AddToBasket from './AddToBasket';
 import './page.css';
 
@@ -19,7 +18,6 @@ export default function EssentialProduct() {
             <div className="product-hero__left">
               <ProductCarousel
                 images={[
-                  '/Lab1-image-product-essential_assembly.png',
                   '/Lab1-image-product-essential_selection.png'
                 ]}
                 alt="Lab1 Essential product"
@@ -31,29 +29,22 @@ export default function EssentialProduct() {
               <p className="product-hero__description">
                 Premium formulas customized for your stage of life. Start your journey with trusted, science-backed nutrition that adapts to your demographic profile.
               </p>
-              <div className="product-hero__price">From 49€</div>
-              <div className="product-hero__features">
-                <div className="product-hero__feature">
-                  <span className="product-hero__feature-label">Optimization level</span>
-                  <span className="product-hero__feature-value">medium</span>
+              <div className="product-hero__pricing">
+                <div className="product-hero__pricing-item">
+                  <span className="product-hero__pricing-amount">49€</span>
+                  <span className="product-hero__pricing-label">per month for your formula</span>
                 </div>
-                <div className="product-hero__feature">
-                  <span className="product-hero__feature-label">Genetic markers</span>
-                  <span className="product-hero__feature-value">0</span>
-                </div>
-                <div className="product-hero__feature">
-                  <span className="product-hero__feature-label">Start date</span>
-                  <span className="product-hero__feature-value">today</span>
-                </div>
+              </div>
+              <div className="product-hero__cta">
+                <AddToBasket
+                  productType="essential"
+                  price={49}
+                  title="Lab1 Essential"
+                  image="/Lab1-image-product-essential_selection.png"
+                />
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="product-version-picker-section">
-        <div className="product-version-picker-section__container">
-          <EssentialClient />
         </div>
       </section>
 
@@ -85,12 +76,6 @@ export default function EssentialProduct() {
                 </div>
               </div>
               <div className="product-details__right">
-                <AddToBasket
-                  productType="essential"
-                  price={49}
-                  title="Lab1 Essential"
-                  image="/Lab1-image-product-essential_assembly.png"
-                />
               </div>
             </div>
           </div>
@@ -121,6 +106,7 @@ export default function EssentialProduct() {
             title: 'Connect',
             links: [
               { label: 'Contact', href: '/contact' },
+              { label: 'Locations', href: '/locations' },
             ],
           },
         ]}

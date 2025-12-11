@@ -99,7 +99,7 @@
 
 .footer__copyright {
   font-family: var(--font-sans), sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   color: rgba(248, 246, 240, 0.6);
 }
 
@@ -110,7 +110,7 @@
 
 .footer__legal a {
   font-family: var(--font-sans), sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   color: rgba(248, 246, 240, 0.6);
   text-decoration: none;
   transition: color 200ms ease;

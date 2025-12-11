@@ -11,8 +11,8 @@ interface StatGridSectionProps {
   headline: string;
   subtext: string;
   stats: StatItem[];
-  image: string;
-  imageAlt: string;
+  image?: string;
+  imageAlt?: string;
   ctaText?: string;
   ctaHref?: string;
 }
@@ -33,9 +33,11 @@ export default function StatGridSection({
         <div className="stat-grid-section__left">
           <h2 className="stat-grid-section__headline">{headline}</h2>
           <p className="stat-grid-section__subtext">{subtext}</p>
-          <div className="stat-grid-section__image">
-            <img src={image} alt={imageAlt} />
-          </div>
+          {image && (
+            <div className="stat-grid-section__image">
+              <img src={image} alt={imageAlt || ''} />
+            </div>
+          )}
         </div>
 
         {/* Right Column: 2x2 Grid */}

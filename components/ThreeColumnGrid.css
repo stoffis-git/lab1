@@ -68,8 +68,14 @@
     border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-  .three-column-grid__column:first-child {
-    border-top: none;
-  }
+.three-column-grid__column:first-child {
+  border-top: none;
 }
+}
+
+/* Green variant */
+.mirror-section--green {
+  background: var(--color-olive);
+}
+
 
