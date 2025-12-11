@@ -40,10 +40,14 @@ export default function About() {
         </div>
       </section>
 
+      {/* Section 04: Expertise Heading */}
+      <section className="about-expertise-heading find-us-section">
+        <h2 className="find-us-headline">BUILT AT THE INTERSECTION</h2>
+      </section>
+
       {/* Section 04: Expertise - Three Worlds */}
       <section className="about-expertise">
         <div className="about-expertise__container">
-          <h2 className="about-expertise__headline">Built at the intersection of three worlds</h2>
           <div className="about-expertise__grid">
             <div className="about-expertise__card">
               <span className="about-expertise__card-number">01</span>
@@ -91,6 +95,19 @@ export default function About() {
               Start Testing →
             </Button>
           </div>
+        </div>
+      </section>
+
+      {/* Section 05: Team Banner */}
+      <section className="about-team-banner">
+        <div className="about-team-banner__image">
+          <img src="/Lab1-image-team.png" alt="Lab1 team working together" />
+        </div>
+        <div className="about-team-banner__content">
+          <h2 className="about-team-banner__headline">
+            <span>A team that powers</span>
+            <span>champions like you.</span>
+          </h2>
         </div>
       </section>
 
