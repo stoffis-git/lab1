@@ -155,17 +155,16 @@ export default function GetStartedClient() {
 
   const getProductName = () => {
     if (productLine === 'essential' && essentialDemographic) {
-      const names: Record<EssentialDemographic, string> = {
+      const names: Record<string, string> = {
         'women-25-40': 'Essential for Women 25-40',
         'men-30-45': 'Essential for Men 30-45',
         'women-40-55': 'Essential for Women 40-55',
         'men-45-60': 'Essential for Men 45-60',
-        'post-menopause': 'Essential Post-Menopause',
       };
       return names[essentialDemographic];
     }
     if (productLine === 'core' && coreGoal) {
-      const names: Record<CoreGoal, string> = {
+      const names: Record<string, string> = {
         health: 'Core Health',
         performance: 'Core Performance',
         longevity: 'Core Longevity',
