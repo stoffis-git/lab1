@@ -155,7 +155,7 @@ export default function GetStartedClient() {
 
   const getProductName = () => {
     if (productLine === 'essential' && essentialDemographic) {
-      const names: Record<NonNullable<EssentialDemographic>, string> = {
+      const names: Record<EssentialDemographic, string> = {
         'women-25-40': 'Essential for Women 25-40',
         'men-30-45': 'Essential for Men 30-45',
         'women-40-55': 'Essential for Women 40-55',
@@ -165,7 +165,7 @@ export default function GetStartedClient() {
       return names[essentialDemographic];
     }
     if (productLine === 'core' && coreGoal) {
-      const names: Record<NonNullable<CoreGoal>, string> = {
+      const names: Record<CoreGoal, string> = {
         health: 'Core Health',
         performance: 'Core Performance',
         longevity: 'Core Longevity',
