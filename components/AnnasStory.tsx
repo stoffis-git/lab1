@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import './AnnasStory.css';
 
 export default function AnnasStory() {
@@ -102,7 +103,15 @@ export default function AnnasStory() {
         {/* Right: Sticky Image */}
         <div className="annas-story__image-wrapper">
           <div className="annas-story__image">
-            <img src="/Lab1-image-women-smile.png" alt="Anna, satisfied Lab1 customer" />
+            <Image
+              src="/Lab1-image-women-smile.png"
+              alt="Anna, satisfied Lab1 customer"
+              fill
+              quality={85}
+              sizes="(max-width: 1023px) 100vw, 50vw"
+              className="annas-story__image-content"
+              style={{ objectFit: 'cover', objectPosition: 'calc(50% - 50px) center' }}
+            />
           </div>
         </div>
       </div>

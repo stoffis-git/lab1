@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import './ProductCarousel.css';
 
 interface ProductCarouselProps {
@@ -15,10 +16,15 @@ export default function ProductCarousel({ images, alt, variant = 'default' }: Pr
   return (
     <div className={`product-carousel ${variant === 'core' ? 'product-carousel--core' : ''}`}>
       <div className="product-carousel__main">
-        <img
+        <Image
           src={images[selectedIndex]}
           alt={alt}
+          fill
+          priority={selectedIndex === 0}
+          quality={selectedIndex === 0 ? 90 : 85}
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="product-carousel__main-image"
+          style={{ objectFit: 'cover' }}
         />
       </div>
       {images.length > 1 && (
@@ -30,10 +36,14 @@ export default function ProductCarousel({ images, alt, variant = 'default' }: Pr
               onClick={() => setSelectedIndex(index)}
               aria-label={`View image ${index + 1}`}
             >
-              <img
+              <Image
                 src={image}
                 alt={`${alt} - view ${index + 1}`}
+                width={80}
+                height={80}
+                quality={75}
                 className="product-carousel__thumbnail-image"
+                style={{ objectFit: 'cover' }}
               />
             </button>
           ))}

@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import Image from 'next/image';
 import './SplitSection.css';
 
 interface SplitSectionProps {
@@ -28,7 +29,14 @@ export default function SplitSection({
     >
       {image && (
         <div className="split-section__image">
-          <img src={image} alt={imageAlt} />
+          <Image
+            src={image}
+            alt={imageAlt}
+            fill
+            quality={85}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            style={{ objectFit: 'cover' }}
+          />
         </div>
       )}
       <div className="split-section__content">{children}</div>

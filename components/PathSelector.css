@@ -259,6 +259,20 @@
   visibility: visible;
 }
 
+.path-guide__persona-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.path-guide__persona-image-wrapper > span {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
 .path-guide__persona-image {
   width: 100%;
   height: 100%;
@@ -287,17 +301,6 @@
 
 .path-guide__persona-dot--active {
   background: rgba(255, 255, 255, 0.7);
-}
-
-.path-guide__persona-image--performance-runner {
-  object-position: 200px -50px;
-  transform: scale(2.5);
-  transform-origin: top right;
-}
-
-.path-guide__persona-image--performance-yoga {
-  transform: scale(1.2);
-  transform-origin: center;
 }
 
 @keyframes fadeInImage {

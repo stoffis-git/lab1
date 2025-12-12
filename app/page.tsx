@@ -23,6 +23,7 @@ export default function Home() {
         subtext="Improve health, energy, well-being and performance. Personalized on your DNA and blood-markers."
         ctaText="Learn more"
         ctaHref="/how-it-works"
+        isPriority
         image="/Lab1-image-hero-eyes.png"
         imageAlt="Abstract human figure representing personalized biology"
       />

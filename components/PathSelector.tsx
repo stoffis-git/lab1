@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import Button from './Button';
 import './PathSelector.css';
 
@@ -170,11 +171,40 @@ export default function PathSelector() {
                           className={`path-guide__persona-slide ${isActive ? 'path-guide__persona-slide--active' : ''}`}
                         >
                           {image ? (
-                            <img 
-                              src={image} 
-                              alt={`${corePersonas[activePersona].alt} - Image ${index + 1}`}
-                              className={`path-guide__persona-image ${activePersona === 'performance' && index === 0 ? 'path-guide__persona-image--performance-runner' : ''} ${activePersona === 'performance' && index === 1 ? 'path-guide__persona-image--performance-yoga' : ''}`}
-                            />
+                            <div
+                              className={`path-guide__persona-image-wrapper ${
+                                activePersona === 'performance' && index === 0 ? 'path-guide__persona-image-wrapper--performance-runner' : ''
+                              } ${
+                                activePersona === 'performance' && index === 1 ? 'path-guide__persona-image-wrapper--performance-yoga' : ''
+                              }`}
+                              style={{
+                                transform:
+                                  activePersona === 'performance' && index === 0
+                                    ? 'scale(2.5)'
+                                    : activePersona === 'performance' && index === 1
+                                    ? 'scale(1.2)'
+                                    : undefined,
+                                transformOrigin:
+                                  activePersona === 'performance' && index === 0
+                                    ? 'top right'
+                                    : activePersona === 'performance' && index === 1
+                                    ? 'center'
+                                    : undefined,
+                              }}
+                            >
+                              <Image
+                                src={image}
+                                alt={`${corePersonas[activePersona].alt} - Image ${index + 1}`}
+                                fill
+                                sizes="(max-width: 1200px) 50vw, 33vw"
+                                className="path-guide__persona-image"
+                                style={{
+                                  objectFit: 'cover',
+                                  objectPosition:
+                                    activePersona === 'performance' && index === 0 ? '200px -50px' : 'center',
+                                }}
+                              />
+                            </div>
                           ) : (
                             <div className="path-guide__persona-image-placeholder">
                               <span className="path-guide__persona-placeholder-text">{corePersonas[activePersona].title}</span>

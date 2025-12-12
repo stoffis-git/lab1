@@ -1,5 +1,6 @@
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import Image from 'next/image';
 import './page.css';
 
 export default function GetStarted() {
@@ -19,7 +20,15 @@ export default function GetStarted() {
             {/* Essential Product */}
             <Link href="/products/essential" className="product-card">
               <div className="product-card__image-container">
-                <img src="/Lab1-image-product-essential_assembly.png" alt="Essential line preview" className="product-card__image" />
+                <Image
+                  src="/Lab1-image-product-essential_assembly.png"
+                  alt="Essential line preview"
+                  fill
+                  quality={85}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="product-card__image"
+                  style={{ objectFit: 'cover' }}
+                />
               </div>
               <div className="product-card__content">
                 <div className="product-card__badge">Essential</div>
@@ -37,7 +46,15 @@ export default function GetStarted() {
             {/* Core/Personalized Product */}
             <Link href="/products/core" className="product-card product-card--core">
               <div className="product-card__image-container">
-                <img src="/Lab1-image-product-core_clean.png" alt="Core line preview" className="product-card__image" />
+                <Image
+                  src="/Lab1-image-product-core_clean.png"
+                  alt="Core line preview"
+                  fill
+                  quality={85}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="product-card__image"
+                  style={{ objectFit: 'cover' }}
+                />
               </div>
               <div className="product-card__content">
                 <div className="product-card__badge product-card__badge--core">Core</div>

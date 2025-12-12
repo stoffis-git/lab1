@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import './HeroSplit.css';
 
 interface HeroSplitProps {
@@ -8,6 +9,7 @@ interface HeroSplitProps {
   ctaHref?: string;
   image?: string;
   imageAlt?: string;
+  isPriority?: boolean;
 }
 
 export default function HeroSplit({
@@ -17,6 +19,7 @@ export default function HeroSplit({
   ctaHref = '#start',
   image,
   imageAlt = 'Hero image',
+  isPriority = false,
 }: HeroSplitProps) {
   return (
     <section className="hero-split">
@@ -24,10 +27,26 @@ export default function HeroSplit({
         {image && (
           <>
             <div className="hero-split__image hero-split__image--full hero-split__image--desktop">
-              <img src={image} alt={imageAlt} />
+              <Image
+                src={image}
+                alt={imageAlt}
+                fill
+                priority={isPriority}
+                sizes="100vw"
+                className="hero-split__image-content"
+                style={{ objectFit: 'cover', objectPosition: 'center', transform: 'scale(1.15)' }}
+              />
             </div>
             <div className="hero-split__image hero-split__image--full hero-split__image--mobile">
-              <img src={image} alt={imageAlt} />
+              <Image
+                src={image}
+                alt={imageAlt}
+                fill
+                priority={isPriority}
+                sizes="100vw"
+                className="hero-split__image-content"
+                style={{ objectFit: 'cover', objectPosition: 'center', transform: 'scale(1.15)' }}
+              />
             </div>
           </>
         )}

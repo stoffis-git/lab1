@@ -30,6 +30,13 @@
   height: 100%;
 }
 
+.hero-split__image > span {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
 .hero-split__image--desktop {
   display: block;
 }

@@ -1,5 +1,6 @@
 import Footer from '@/components/Footer';
 import Button from '@/components/Button';
+import Image from 'next/image';
 import '../page.css';
 import './page.css';
 
@@ -9,7 +10,15 @@ export default function About() {
       {/* Section 01: Hero - Full width image with centered headline */}
       <section className="about-hero-new">
         <div className="about-hero-new__image">
-          <img src="/Lab1-image-expert-team.png" alt="Lab1 expert team" />
+          <Image
+            src="/Lab1-image-expert-team.png"
+            alt="Lab1 expert team"
+            fill
+            priority
+            quality={85}
+            sizes="100vw"
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+          />
         </div>
         <div className="about-hero-new__overlay" />
         <div className="about-hero-new__content">
@@ -101,7 +110,14 @@ export default function About() {
       {/* Section 05: Team Banner */}
       <section className="about-team-banner">
         <div className="about-team-banner__image">
-          <img src="/Lab1-image-team.png" alt="Lab1 team working together" />
+          <Image
+            src="/Lab1-image-team.png"
+            alt="Lab1 team working together"
+            fill
+            quality={85}
+            sizes="100vw"
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+          />
         </div>
         <div className="about-team-banner__content">
           <h2 className="about-team-banner__headline">
