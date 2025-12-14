@@ -32,6 +32,7 @@ export default function HeroSplit({
                 alt={imageAlt}
                 fill
                 priority={isPriority}
+                quality={90}
                 sizes="100vw"
                 className="hero-split__image-content"
                 style={{ objectFit: 'cover', objectPosition: 'center', transform: 'scale(1.15)' }}
@@ -43,6 +44,7 @@ export default function HeroSplit({
                 alt={imageAlt}
                 fill
                 priority={isPriority}
+                quality={90}
                 sizes="100vw"
                 className="hero-split__image-content"
                 style={{ objectFit: 'cover', objectPosition: 'center', transform: 'scale(1.15)' }}

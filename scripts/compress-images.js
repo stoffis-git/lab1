@@ -65,10 +65,13 @@ async function compressImage(filePath, targetSizeMB, compressionLevel) {
       quality = Math.max(50, quality - 5); // Reduce quality by 5% each attempt, min 50%
 
       const buffer = await sharp(fullPath)
+        .keepMetadata() // Preserve color profiles and metadata
+        .toColorspace('srgb') // Explicitly set sRGB color space
         .png({
           compressionLevel: compressionLevel,
           quality: quality,
           effort: 7, // Higher effort = better compression but slower
+          palette: false, // Don't use palette mode (better color accuracy)
         })
         .toBuffer();
 

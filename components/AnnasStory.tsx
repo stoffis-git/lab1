@@ -104,7 +104,7 @@ export default function AnnasStory() {
         <div className="annas-story__image-wrapper">
           <div className="annas-story__image">
             <Image
-              src="/Lab1-image-women-smile.png"
+              src="/Lab1-image-women-smile.webp"
               alt="Anna, satisfied Lab1 customer"
               fill
               quality={85}

@@ -24,7 +24,7 @@ export default function Home() {
         ctaText="Learn more"
         ctaHref="/how-it-works"
         isPriority
-        image="/Lab1-image-hero-eyes.png"
+        image="/Lab1-image-hero-eyes.webp"
         imageAlt="Abstract human figure representing personalized biology"
       />
 

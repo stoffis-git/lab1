@@ -75,7 +75,7 @@ export default function PathSelector() {
     health: {
       title: 'Health',
       images: [
-        '/Lab1-image-health-mom.png',
+        '/Lab1-image-health-mom.webp',
         '/Lab1-image-health-youngman.png',
       ],
       alt: 'Health persona - Wellness and vitality',
@@ -89,7 +89,7 @@ export default function PathSelector() {
       title: 'Performance',
       images: [
         '/Lab1-image-performance-runner.png',
-        '/Lab1-image-performance-yoga.png',
+        '/Lab1-image-performance-yoga.webp',
       ],
       alt: 'Performance persona - Athletic excellence',
       stats: [
@@ -102,7 +102,7 @@ export default function PathSelector() {
       title: 'Longevity',
       images: [
         '/Lab1-image-longevity-man.png',
-        '/Lab1-image-health-longevity_female.png',
+        '/Lab1-image-health-longevity_female.webp',
       ],
       alt: 'Longevity persona - Long-term health optimization',
       stats: [
@@ -419,7 +419,7 @@ export default function PathSelector() {
               <div className="path-guide__persona-section">
                 <div className="path-guide__persona-image-container">
                   <img 
-                    src="/Lab1-image-general-people.png" 
+                    src="/Lab1-image-general-people.webp" 
                     alt="General Path - Premium nutrition formulas" 
                     className="path-guide__persona-image"
                   />

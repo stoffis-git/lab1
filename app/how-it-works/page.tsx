@@ -10,7 +10,7 @@ export default function HowItWorks() {
       {/* Section 01: Hero */}
       <HeroSplit
         headline={['CHOOSE YOUR', 'PATH TO', 'OPTIMIZATION.']}
-        image="/Lab1-image-testkit-woman.png"
+        image="/Lab1-image-testkit-woman.webp"
         imageAlt="Personalized nutrition paths"
       />
 

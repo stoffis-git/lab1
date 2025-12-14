@@ -11,11 +11,11 @@ export default function About() {
       <section className="about-hero-new">
         <div className="about-hero-new__image">
           <Image
-            src="/Lab1-image-expert-team.png"
+            src="/Lab1-image-expert-team.webp"
             alt="Lab1 expert team"
             fill
             priority
-            quality={85}
+            quality={90}
             sizes="100vw"
             style={{ objectFit: 'cover', objectPosition: 'center' }}
           />
@@ -111,7 +111,7 @@ export default function About() {
       <section className="about-team-banner">
         <div className="about-team-banner__image">
           <Image
-            src="/Lab1-image-team.png"
+            src="/Lab1-image-team.webp"
             alt="Lab1 team working together"
             fill
             quality={85}
