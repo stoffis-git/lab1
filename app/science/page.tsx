@@ -3,6 +3,7 @@ import TextSection from '@/components/TextSection';
 import SplitSection from '@/components/SplitSection';
 import ProcessTimeline from '@/components/ProcessTimeline';
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 import './page.css';
 
 export default function Science() {
@@ -11,7 +12,7 @@ export default function Science() {
       {/* Section 01: Hero */}
       <HeroSplit
         headline={['Cells don\'t guess.', 'Neither should you.']}
-        image="/Lab1-image-backrgound-plant1.png"
+        image="/Lab1-image-backrgound-plant1.webp"
         imageAlt="Science and precision"
       />
 
@@ -47,7 +48,15 @@ export default function Science() {
       <section className="science-expert">
         <div className="science-expert__grid">
           <div className="science-expert__image">
-            <img src="/Lab1-image-expert-fabian_plachel.png" alt="Dr. Fabian Plachel portrait" />
+            <Image
+              src="/Lab1-image-expert-fabian_plachel.webp"
+              alt="Dr. Fabian Plachel portrait"
+              width={800}
+              height={1000}
+              quality={90}
+              sizes="(max-width: 1023px) 100vw, 50vw"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
+            />
           </div>
           <div className="science-expert__content">
             <span className="science-expert__eyebrow">EXPERT OVERSIGHT</span>
@@ -116,7 +125,15 @@ export default function Science() {
       <section className="layer-detail" id="layer-dna">
         <div className="layer-detail__grid">
           <div className="layer-detail__image">
-            <img src="/Lab1-image-backrgound-plant1.png" alt="DNA - Genetic code visualization" />
+            <Image
+              src="/Lab1-image-backrgound-plant1.webp"
+              alt="DNA - Genetic code visualization"
+              width={800}
+              height={1000}
+              quality={90}
+              sizes="(max-width: 1023px) 100vw, 33vw"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            />
           </div>
           <div className="layer-detail__content">
             <h2 className="layer-detail__title">LAYER 1: DNA</h2>
@@ -275,7 +292,15 @@ export default function Science() {
             </p>
           </div>
           <div className="layer-detail__image layer-detail__image--right">
-            <img src="/Lab1-image-backrgound-plant2.png" alt="Biomarkers - Real-time health data" />
+            <Image
+              src="/Lab1-image-backrgound-plant2.webp"
+              alt="Biomarkers - Real-time health data"
+              width={800}
+              height={1000}
+              quality={90}
+              sizes="(max-width: 1023px) 100vw, 33vw"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            />
           </div>
         </div>
       </section>
@@ -284,7 +309,15 @@ export default function Science() {
       <section className="layer-you" id="layer-science">
         <div className="layer-you__grid">
           <div className="layer-you__image">
-            <img src="/Lab1-image-user-woman.png" alt="Real person, real context" />
+            <Image
+              src="/Lab1-image-user-woman.webp"
+              alt="Real person, real context"
+              width={800}
+              height={1000}
+              quality={90}
+              sizes="(max-width: 1023px) 100vw, 50vw"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            />
           </div>
           <div className="layer-you__content">
             <h2 className="layer-you__title">LAYER 3: YOU</h2>
