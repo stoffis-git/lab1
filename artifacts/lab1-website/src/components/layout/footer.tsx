@@ -7,9 +7,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="inline-block mb-4">
-              <div className="font-display font-bold text-2xl tracking-tighter text-white">
-                Lab<span className="text-primary">1</span>
-              </div>
+              <img src="/logo.png" alt="Lab1" className="h-8 w-auto" />
             </Link>
             <p className="text-muted-foreground text-sm max-w-sm mb-6">
               The intelligence infrastructure layer for European healthcare. 

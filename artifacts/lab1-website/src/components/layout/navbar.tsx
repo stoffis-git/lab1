@@ -46,9 +46,7 @@ export function Navbar() {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center z-50 relative group">
-          <div className="font-display font-bold text-[22px] tracking-[-0.04em] text-white select-none">
-            Lab<span className="text-primary">1</span>
-          </div>
+          <img src="/logo.png" alt="Lab1" className="h-7 w-auto" />
         </Link>
 
         {/* Desktop Nav */}
