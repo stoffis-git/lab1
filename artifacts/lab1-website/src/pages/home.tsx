@@ -42,13 +42,38 @@ function SphereNetwork() {
     }
 
     // Pre-select long line pairs (sphere → scatter)
-    const N_LINES = 55;
+    const N_LINES = 160;
     const lines: { si: number; sc: number }[] = [];
     for (let i = 0; i < N_LINES; i++) {
       lines.push({
         si: Math.floor(Math.random() * N_SPHERE),
         sc: Math.floor(Math.random() * N_SCATTER),
       });
+    }
+
+    // Pre-compute sphere particle 3D positions for neighbor lookup
+    const sphereXYZ = sphereParticles.map(p => ({
+      x: Math.sin(p.phi) * Math.cos(p.theta),
+      y: Math.cos(p.phi),
+      z: Math.sin(p.phi) * Math.sin(p.theta),
+    }));
+
+    // Pre-compute sphere→sphere mesh pairs (k nearest neighbors per particle)
+    const K_NEIGHBORS = 3;
+    const pairSet = new Set<string>();
+    const meshPairs: { a: number; b: number }[] = [];
+    for (let i = 0; i < N_SPHERE; i++) {
+      const dists = sphereXYZ.map((q, j) => {
+        if (j === i) return { j, d: Infinity };
+        const dx = sphereXYZ[i].x - q.x;
+        const dy = sphereXYZ[i].y - q.y;
+        const dz = sphereXYZ[i].z - q.z;
+        return { j, d: dx * dx + dy * dy + dz * dz };
+      }).sort((a, b) => a.d - b.d).slice(0, K_NEIGHBORS);
+      for (const { j } of dists) {
+        const key = j < i ? `${j}-${i}` : `${i}-${j}`;
+        if (!pairSet.has(key)) { pairSet.add(key); meshPairs.push({ a: i, b: j }); }
+      }
     }
 
     const resize = () => {
@@ -98,7 +123,20 @@ function SphereNetwork() {
         ctx.moveTo(sp.px, sp.py);
         ctx.lineTo(sx, sy);
         ctx.strokeStyle = `rgba(255,255,255,${alpha})`;
-        ctx.lineWidth = 0.9;
+        ctx.lineWidth = 1.0;
+        ctx.stroke();
+      });
+
+      // Sphere-to-sphere mesh lines
+      meshPairs.forEach(pair => {
+        const a = proj[pair.a];
+        const b = proj[pair.b];
+        const alpha = ((a.pz + b.pz) / 2) * 0.11;
+        ctx.beginPath();
+        ctx.moveTo(a.px, a.py);
+        ctx.lineTo(b.px, b.py);
+        ctx.strokeStyle = `rgba(255,255,255,${alpha})`;
+        ctx.lineWidth = 0.7;
         ctx.stroke();
       });
 
@@ -301,15 +339,16 @@ export default function Home() {
             </div>
           </motion.div>
 
-          <motion.div
-            animate={{ y: [0, 8, 0], opacity: [0.3, 0.6, 0.3] }}
-            transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute bottom-10 flex flex-col items-center gap-1.5 text-muted-foreground"
-          >
-            <span className="text-[10px] tracking-[0.2em] uppercase">Scroll</span>
-            <div className="w-px h-6 bg-gradient-to-b from-muted-foreground/50 to-transparent" />
-          </motion.div>
         </div>
+
+        <motion.div
+          animate={{ y: [0, 8, 0], opacity: [0.3, 0.6, 0.3] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-muted-foreground z-10"
+        >
+          <span className="text-[10px] tracking-[0.2em] uppercase">Scroll</span>
+          <div className="w-px h-6 bg-gradient-to-b from-muted-foreground/50 to-transparent" />
+        </motion.div>
       </section>
 
       {/* ── THE PROBLEM ── */}
