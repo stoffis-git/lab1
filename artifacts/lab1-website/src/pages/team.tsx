@@ -35,21 +35,25 @@ const advisors = [
     name: "Prof. Dr. W. Banzer",
     role: "Sports Medicine Advisory",
     context: "Goethe University Frankfurt, SGE. Specialist in internal medicine and sports medicine.",
+    photo: "/team/banzer.png",
   },
   {
     name: "Christian Haser",
     role: "Elite Sports Advisory",
     context: "Medical Director, Eintracht Frankfurt, Bundesliga.",
+    photo: "/team/haser.png",
   },
   {
     name: "Dr. Markus Schauer",
     role: "Nutrition & Performance Advisory",
     context: "Nutrition & sports scientist, Co-Founder VerticalMed.",
+    photo: "/team/schauer.png",
   },
   {
     name: "Prof. Dr. N. Thoennissen",
     role: "Internal Medicine Advisory",
     context: "Specialist in internal medicine, Co-Founder VerticalMed.",
+    photo: "/team/thoennissen.png",
   },
 ];
 
@@ -139,9 +143,14 @@ export default function Team() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="flex flex-col md:flex-row md:items-center gap-3 md:gap-10 px-8 py-6 bg-card/30 hover:bg-card/50 border-b border-border last:border-0 transition-colors"
+                  className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 px-8 py-6 bg-card/30 hover:bg-card/50 border-b border-border last:border-0 transition-colors"
                 >
-                  <div className="md:w-56 flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl overflow-hidden flex-shrink-0 bg-card border border-border">
+                    {advisor.photo
+                      ? <img src={advisor.photo} alt={advisor.name} className="w-full h-full object-cover object-top" />
+                      : <div className="w-full h-full flex items-center justify-center text-xs font-bold text-accent">{advisor.name.split(" ").map((w: string) => w[0]).join("").slice(0, 2)}</div>}
+                  </div>
+                  <div className="md:w-52 flex-shrink-0">
                     <div className="font-display font-bold text-white text-base">{advisor.name}</div>
                     <div className="text-xs font-bold tracking-widest uppercase text-accent mt-1">{advisor.role}</div>
                   </div>
