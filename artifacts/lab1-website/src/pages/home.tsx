@@ -277,7 +277,7 @@ export default function Home() {
               European Intelligence Infrastructure
             </div>
 
-            <h1 className="font-display text-4xl md:text-5xl lg:text-[56px] font-bold tracking-[-0.03em] text-white leading-[1.1] mb-7">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-[68px] font-bold tracking-[-0.03em] text-white leading-[1.1] mb-7">
               The Agent Standard for<br />
               Healthcare Decision Making
             </h1>
