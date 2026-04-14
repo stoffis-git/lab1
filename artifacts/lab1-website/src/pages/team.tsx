@@ -10,6 +10,7 @@ const team = [
     background: "Serial entrepreneur with deep roots in digital health and performance medicine. Drives the strategic vision and commercial growth of Lab1.",
     focus: "Company strategy, partnerships, commercial expansion.",
     initials: "AA",
+    photo: "/team/auer.png",
   },
   {
     name: "Fabian Plachel",
@@ -17,6 +18,7 @@ const team = [
     background: "Operator and builder across health technology and data infrastructure. Responsible for governance, operations, and product direction at board level.",
     focus: "Product direction, operations, board governance.",
     initials: "FP",
+    photo: "/team/plachel.png",
   },
   {
     name: "Christoph Wackher",
@@ -24,6 +26,7 @@ const team = [
     background: "Execution-focused operator with experience scaling health ventures from early stage through enterprise deployment across European markets.",
     focus: "Operations, scaling, enterprise delivery.",
     initials: "CW",
+    photo: "/team/wackher.png",
   },
 ];
 
@@ -63,8 +66,10 @@ function TeamCard({ member, index }: { member: typeof team[0]; index: number }) 
       className="group bg-card/40 border border-border rounded-2xl p-8 hover:border-white/20 transition-colors duration-300 flex flex-col"
     >
       <div className="mb-6 flex items-center gap-4">
-        <div className="w-14 h-14 rounded-2xl bg-background border border-border flex items-center justify-center font-display text-lg font-bold text-accent flex-shrink-0">
-          {member.initials}
+        <div className="w-14 h-14 rounded-2xl overflow-hidden bg-background border border-border flex items-center justify-center font-display text-lg font-bold text-accent flex-shrink-0">
+          {member.photo
+            ? <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
+            : member.initials}
         </div>
         <div>
           <h3 className="font-display text-lg font-bold text-white leading-tight">{member.name}</h3>
