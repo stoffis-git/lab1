@@ -9,6 +9,9 @@ import UseCases from "@/pages/use-cases";
 import About from "@/pages/about";
 import Contact from "@/pages/contact";
 import Team from "@/pages/team";
+import Privacy from "@/pages/privacy";
+import Terms from "@/pages/terms";
+import Imprint from "@/pages/imprint";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { useEffect } from "react";
@@ -27,6 +30,9 @@ function Router() {
           <Route path="/about" component={About} />
           <Route path="/team" component={Team} />
           <Route path="/contact" component={Contact} />
+          <Route path="/privacy" component={Privacy} />
+          <Route path="/terms" component={Terms} />
+          <Route path="/imprint" component={Imprint} />
           <Route component={NotFound} />
         </Switch>
       </main>
