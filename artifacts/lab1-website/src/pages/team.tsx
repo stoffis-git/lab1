@@ -117,7 +117,7 @@ export default function Team() {
 
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
             {team.map((member, i) => (
               <TeamCard key={member.name} member={member} index={i} />
             ))}
@@ -135,26 +135,26 @@ export default function Team() {
               <h2 className="font-display text-3xl font-bold text-white">Advisory Board</h2>
             </motion.div>
 
-            <div className="space-y-px border border-border rounded-2xl overflow-hidden">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {advisors.map((advisor, i) => (
                 <motion.div
                   key={advisor.name}
-                  initial={{ opacity: 0, x: -16 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 px-8 py-6 bg-card/30 hover:bg-card/50 border-b border-border last:border-0 transition-colors"
+                  className="bg-card/40 border border-border rounded-2xl p-5 flex flex-col gap-4 hover:border-white/20 transition-colors duration-300"
                 >
-                  <div className="w-12 h-12 rounded-xl overflow-hidden flex-shrink-0 bg-card border border-border">
+                  <div className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 bg-card border border-border">
                     {advisor.photo
                       ? <img src={advisor.photo} alt={advisor.name} className="w-full h-full object-cover object-top" />
                       : <div className="w-full h-full flex items-center justify-center text-xs font-bold text-accent">{advisor.name.split(" ").map((w: string) => w[0]).join("").slice(0, 2)}</div>}
                   </div>
-                  <div className="md:w-52 flex-shrink-0">
-                    <div className="font-display font-bold text-white text-base">{advisor.name}</div>
-                    <div className="text-xs font-bold tracking-widest uppercase text-accent mt-1">{advisor.role}</div>
+                  <div>
+                    <div className="font-display font-bold text-white text-sm leading-tight">{advisor.name}</div>
+                    <div className="text-[10px] font-bold tracking-widest uppercase text-accent mt-1">{advisor.role}</div>
                   </div>
-                  <div className="flex-1 text-sm text-muted-foreground leading-relaxed">{advisor.context}</div>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{advisor.context}</p>
                 </motion.div>
               ))}
             </div>
