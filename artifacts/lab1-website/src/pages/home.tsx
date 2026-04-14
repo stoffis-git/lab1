@@ -84,7 +84,7 @@ function SphereNetwork() {
     const animate = (time: number) => {
       ctx.clearRect(0, 0, W, H);
 
-      const rot = time * 0.00012;
+      const rot = time * 0.00005;
       const cx = W / 2;
       const cy = H / 2;
       const scale = Math.min(W, H) * 0.21;
