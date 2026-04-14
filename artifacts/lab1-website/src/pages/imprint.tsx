@@ -37,19 +37,6 @@ export default function Imprint() {
           </div>
 
           <div className="space-y-4">
-            <h2 className="font-display text-xl font-bold text-white">Handelsregister</h2>
-            <p>Amtsgericht Frankfurt am Main</p>
-            <p>HRB [Nummer]</p>
-          </div>
-
-          <div className="space-y-4">
-            <h2 className="font-display text-xl font-bold text-white">Umsatzsteuer-Identifikationsnummer</h2>
-            <p>
-              Gemäß § 27a Umsatzsteuergesetz: DE[Nummer]
-            </p>
-          </div>
-
-          <div className="space-y-4">
             <h2 className="font-display text-xl font-bold text-white">Verantwortlich für den Inhalt</h2>
             <p>
               Gemäß § 18 Abs. 2 MStV:
