@@ -82,8 +82,8 @@ function SphereNetwork() {
         const sx = cx + sp.nx * W * 0.47;
         const sy = cy + sp.ny * H * 0.47;
         ctx.beginPath();
-        ctx.arc(sx, sy, 0.65, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255,255,255,0.10)';
+        ctx.arc(sx, sy, 1.4, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255,255,255,0.22)';
         ctx.fill();
       });
 
@@ -93,12 +93,12 @@ function SphereNetwork() {
         const sc = scatter[l.sc];
         const sx = cx + sc.nx * W * 0.47;
         const sy = cy + sc.ny * H * 0.47;
-        const alpha = sp.pz * 0.055;
+        const alpha = sp.pz * 0.13;
         ctx.beginPath();
         ctx.moveTo(sp.px, sp.py);
         ctx.lineTo(sx, sy);
         ctx.strokeStyle = `rgba(255,255,255,${alpha})`;
-        ctx.lineWidth = 0.45;
+        ctx.lineWidth = 0.9;
         ctx.stroke();
       });
 
@@ -185,71 +185,6 @@ function DataSilosDiagram() {
   );
 }
 
-// ── DAC Architecture Flow Diagram ─────────────────────────────────────────────
-function DACFlowDiagram() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-60px' });
-
-  const stages = [
-    {
-      label: 'Data Sources',
-      items: ['Home Testing', 'POC Testing', 'Lab Results', 'Wearables', "Doctor's Letters", 'Self-Reportings'],
-      highlight: false,
-    },
-    {
-      label: 'DAC — Orchestration',
-      items: ['Data Validator', 'Context Builder', 'Routing Agent'],
-      highlight: true,
-    },
-    {
-      label: 'DAC — Interpretation',
-      items: ['Biomarker Agent', 'Pattern Agent', 'Consolidation Agent'],
-      highlight: true,
-    },
-    {
-      label: 'Action Outputs',
-      items: ['Recommendation', 'Care Guidance', 'Insights', 'Alert'],
-      highlight: false,
-    },
-  ];
-
-  return (
-    <div ref={ref} className="w-full overflow-x-auto py-4">
-      <div className="flex items-start gap-0 min-w-[720px]">
-        {stages.map((stage, si) => (
-          <div key={stage.label} className="flex items-start flex-1">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: si * 0.15 }}
-              className="flex-1"
-            >
-              <div className="text-xs font-bold tracking-widest uppercase text-muted-foreground/50 mb-3 px-2">{stage.label}</div>
-              <div className={`border rounded-xl p-4 space-y-2 bg-card/50 ${stage.highlight ? 'border-white/15 bg-white/3' : 'border-border/60'}`}>
-                {stage.items.map((item) => (
-                  <div key={item} className={`flex items-center gap-2 text-sm px-2 py-1.5 rounded-lg ${stage.highlight ? 'bg-background/50' : ''}`}>
-                    <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${stage.highlight ? 'bg-accent/70' : 'bg-muted-foreground/40'}`} />
-                    <span className={stage.highlight ? 'text-white' : 'text-muted-foreground'}>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-            {si < stages.length - 1 && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={isInView ? { opacity: 1 } : {}}
-                transition={{ duration: 0.4, delay: si * 0.15 + 0.4 }}
-                className="flex items-center px-2 pt-10 flex-shrink-0"
-              >
-                <ArrowRight className="w-4 h-4 text-white/20" />
-              </motion.div>
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 // ── Stat ──────────────────────────────────────────────────────────────────────
 function Stat({ prefix = '', value, suffix = '', label }: { prefix?: string; value: string; suffix?: string; label: string }) {
@@ -471,10 +406,6 @@ export default function Home() {
               The Diagnostic Agent Core (DAC) is the intelligence infrastructure that turns raw diagnostics into real, actionable output. Data flows in from every source. Intelligence flows out to every vertical.
             </p>
           </motion.div>
-
-          <div className="bg-background/60 border border-border rounded-3xl p-8 mb-12">
-            <DACFlowDiagram />
-          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[

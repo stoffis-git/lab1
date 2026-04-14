@@ -5,50 +5,48 @@ import { useRef } from "react";
 
 const team = [
   {
-    name: "Maximilian Koch",
-    role: "Co-Founder & CEO",
-    background: "Former clinical operations lead, 10 years in hospital group management across DACH. Built and exited a health data startup.",
-    focus: "Clinical strategy, DACH partnerships, regulatory pathways.",
-    initials: "MK",
+    name: "Alexander Auer",
+    role: "Founder & CEO",
+    background: "Serial entrepreneur with deep roots in digital health and performance medicine. Drives the strategic vision and commercial growth of Lab1.",
+    focus: "Company strategy, partnerships, commercial expansion.",
+    initials: "AA",
   },
   {
-    name: "Julia Berger",
-    role: "Co-Founder & CTO",
-    background: "Machine learning engineer with deep expertise in biomarker modeling and clinical NLP. Previously at a leading German health insurance tech firm.",
-    focus: "DAC architecture, agentic model design, FHIR infrastructure.",
-    initials: "JB",
+    name: "Fabian Plachel",
+    role: "Founder & Managing Board",
+    background: "Operator and builder across health technology and data infrastructure. Responsible for governance, operations, and product direction at board level.",
+    focus: "Product direction, operations, board governance.",
+    initials: "FP",
   },
   {
-    name: "Thomas Riedl",
-    role: "Co-Founder & CPO",
-    background: "Product leader at the intersection of diagnostics and digital health. Led product at a European diagnostic lab network scaling across 6 countries.",
-    focus: "Product surface, vertical expansion, customer success.",
-    initials: "TR",
-  },
-  {
-    name: "Dr. Sarah Müller",
-    role: "Head of Clinical Science",
-    background: "Medical doctor turned health data scientist. Research in preventive medicine and precision diagnostics at Ludwig Maximilian University.",
-    focus: "Biomarker validation, clinical protocols, evidence generation.",
-    initials: "SM",
+    name: "Christoph Wackher",
+    role: "Founder & COO",
+    background: "Execution-focused operator with experience scaling health ventures from early stage through enterprise deployment across European markets.",
+    focus: "Operations, scaling, enterprise delivery.",
+    initials: "CW",
   },
 ];
 
 const advisors = [
   {
-    name: "Prof. Dr. Andreas Völker",
-    role: "Clinical Advisory",
-    context: "Director of Digital Medicine, Charité Berlin. Pioneer in AI-assisted diagnostics in German hospital systems.",
+    name: "Prof. Dr. W. Banzer",
+    role: "Sports Medicine Advisory",
+    context: "Goethe University Frankfurt, SGE. Specialist in internal medicine and sports medicine.",
   },
   {
-    name: "Katharina Brandt",
-    role: "Industry Advisory",
-    context: "Former COO of a leading European health insurer. 20 years in GKV/PKV digital transformation.",
+    name: "Christian Haser",
+    role: "Elite Sports Advisory",
+    context: "Medical Director, Eintracht Frankfurt, Bundesliga.",
   },
   {
-    name: "Dr. Michael Steiner",
-    role: "Regulatory Advisory",
-    context: "Legal and regulatory expert in BfArM, DiGA, and DSGVO compliance for health tech in the DACH market.",
+    name: "Dr. Markus Schauer",
+    role: "Nutrition & Performance Advisory",
+    context: "Nutrition & sports scientist, Co-Founder VerticalMed.",
+  },
+  {
+    name: "Prof. Dr. N. Thoennissen",
+    role: "Internal Medicine Advisory",
+    context: "Specialist in internal medicine, Co-Founder VerticalMed.",
   },
 ];
 
