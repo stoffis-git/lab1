@@ -14,7 +14,7 @@ const team = [
   },
   {
     name: "Fabian Plachel",
-    role: "Founder & Managing Board",
+    role: "Medical Director",
     background: "Operator and builder across health technology and data infrastructure. Responsible for governance, operations, and product direction at board level.",
     focus: "Product direction, operations, board governance.",
     initials: "FP",
@@ -38,10 +38,10 @@ const advisors = [
     photo: "/team/banzer.png",
   },
   {
-    name: "Christian Haser",
-    role: "Elite Sports Advisory",
-    context: "Medical Director, Eintracht Frankfurt, Bundesliga.",
-    photo: "/team/haser.png",
+    name: "Maximilian Waldmann",
+    role: "Digital Health Advisory",
+    context: "Co-Founder & CEO, Eterno Health. Scaling modern outpatient care and digital health infrastructure across Germany.",
+    photo: "/team/waldmann.png",
   },
   {
     name: "Dr. Markus Schauer",
