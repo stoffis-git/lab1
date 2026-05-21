@@ -13,20 +13,20 @@ const team = [
     photo: "/team/auer.png",
   },
   {
-    name: "Fabian Plachel",
-    role: "Medical Director",
-    background: "Operator and builder across health technology and data infrastructure. Responsible for governance, operations, and product direction at board level.",
-    focus: "Product direction, operations, board governance.",
-    initials: "FP",
-    photo: "/team/plachel.png",
-  },
-  {
     name: "Christoph Wackher",
     role: "Founder & COO",
     background: "Execution-focused operator with experience scaling health ventures from early stage through enterprise deployment across European markets.",
     focus: "Operations, scaling, enterprise delivery.",
     initials: "CW",
     photo: "/team/wackher.png",
+  },
+  {
+    name: "Fabian Plachel",
+    role: "Medical Director",
+    background: "Operator and builder across health technology and data infrastructure. Responsible for governance, operations, and product direction at board level.",
+    focus: "Product direction, operations, board governance.",
+    initials: "FP",
+    photo: "/team/plachel.png",
   },
 ];
 
