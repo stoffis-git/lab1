@@ -25,6 +25,16 @@ export default function Imprint() {
           </div>
 
           <div className="space-y-4">
+            <h2 className="font-display text-xl font-bold text-white">Registereintrag</h2>
+            <div className="space-y-1">
+              <p>Handelsregister: HRB 141882</p>
+              <p>Registergericht: Amtsgericht Frankfurt am Main</p>
+              <p>Steuernummer: 261423801582</p>
+              <p>Umsatzsteuer-ID gemäß § 27a UStG: DE462783627</p>
+            </div>
+          </div>
+
+          <div className="space-y-4">
             <h2 className="font-display text-xl font-bold text-white">Kontakt</h2>
             <p>
               E-Mail: <a href="mailto:support@lab1.de" className="text-accent hover:underline">support@lab1.de</a>
