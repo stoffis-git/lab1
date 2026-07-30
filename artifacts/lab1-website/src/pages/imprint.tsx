@@ -18,8 +18,8 @@ export default function Imprint() {
             <h2 className="font-display text-xl font-bold text-white">Anbieter</h2>
             <div className="border border-border rounded-xl p-5 text-foreground/80 space-y-1">
               <p className="font-semibold text-white">Lab1 GmbH</p>
-              <p>Europa-Allee 42</p>
-              <p>60327 Frankfurt am Main</p>
+              <p>Mühlenkamp 12</p>
+              <p>22303 Hamburg</p>
               <p>Deutschland</p>
             </div>
           </div>
@@ -53,7 +53,7 @@ export default function Imprint() {
             </p>
             <p>
               Alexander Auer<br />
-              Europa-Allee 42, 60327 Frankfurt am Main
+              Mühlenkamp 12, 22303 Hamburg
             </p>
           </div>
 

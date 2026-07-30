@@ -17,7 +17,7 @@ export default function Terms() {
           <div className="space-y-4">
             <h2 className="font-display text-xl font-bold text-white">1. Scope and Parties</h2>
             <p>
-              These Terms of Service ("Terms") govern all contracts between Lab1 GmbH, Europa-Allee 42, 60327 Frankfurt am Main, Germany, registered at the Commercial Register of the Local Court Frankfurt am Main under HRB [Number], represented by Managing Director Alexander Auer ("Lab1", "we", "us"), and its enterprise customers ("Customer").
+              These Terms of Service ("Terms") govern all contracts between Lab1 GmbH, Mühlenkamp 12, 22303 Hamburg, Germany, registered at the Commercial Register of the Local Court Frankfurt am Main under HRB [Number], represented by Managing Director Alexander Auer ("Lab1", "we", "us"), and its enterprise customers ("Customer").
             </p>
             <p>
               These Terms apply exclusively to businesses, legal entities, and professionals acting in the exercise of their trade or profession. <strong className="text-white">The DAC platform is not offered to consumers.</strong> By activating API access or signing an order form, the Customer agrees to these Terms.
@@ -172,7 +172,7 @@ export default function Terms() {
 
           <div className="border-t border-border/40 pt-10 text-foreground/60 space-y-1">
             <p className="font-semibold text-white">Lab1 GmbH</p>
-            <p>Europa-Allee 42, 60327 Frankfurt am Main, Germany</p>
+            <p>Mühlenkamp 12, 22303 Hamburg, Germany</p>
             <p>Email: <a href="mailto:support@lab1.de" className="text-accent hover:underline">support@lab1.de</a></p>
             <p>Managing Director: Alexander Auer</p>
           </div>

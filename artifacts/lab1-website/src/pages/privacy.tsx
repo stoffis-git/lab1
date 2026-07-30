@@ -24,7 +24,7 @@ export default function Privacy() {
             </p>
             <div className="border border-border rounded-xl p-5 text-foreground/80 space-y-1">
               <p className="font-semibold text-white">Lab1 GmbH</p>
-              <p>Europa-Allee 42, 60327 Frankfurt am Main, Germany</p>
+              <p>Mühlenkamp 12, 22303 Hamburg, Germany</p>
               <p>Email: <a href="mailto:support@lab1.de" className="text-accent hover:underline">support@lab1.de</a></p>
               <p>Data Protection: <a href="mailto:datenschutz@lab1.de" className="text-accent hover:underline">datenschutz@lab1.de</a></p>
             </div>
